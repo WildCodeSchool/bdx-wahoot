@@ -17,6 +17,12 @@ function App() {
         >
           Learn React
         </a>
+
+        <Main>
+      {/* <Home /> */}
+      {/* <Login /> */}
+        </Main>
+
       </header>
     </div>
   );
