@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Main from './Layout/Main/Main.jsx';
 import Home from './View/Home/Home.jsx';
