@@ -1,9 +1,12 @@
 import React from 'react';
 
+
 function Main(props) {
     const {children} = props;
 
     return (
+
+        
         <div>
             <div>Header</div>
             {children}
