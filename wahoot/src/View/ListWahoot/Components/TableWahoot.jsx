@@ -8,9 +8,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import EditIcon from '@material-ui/icons/Edit';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const columns = [
-  { id: 'ident', label: 'ID'},
+  { id: 'id', label: 'ID'},
   { id: 'titre', label: 'Titre'},
   {
     id: 'statut',
@@ -21,24 +24,24 @@ const columns = [
     label: 'Date fin'
   },
   {
-    id: 'edition',
-    label: 'Edition'
+    id: 'modifications',
+    label: 'Modifications'
   },
 ];
 
-function createData(ident, titre, statut, dateFin,edition) {
-  return { ident, titre, statut, dateFin,edition };
+function createData(id, titre, statut, dateFin,modifications) {
+  return { id, titre, statut, dateFin,modifications };
 }
 
 const rows = [
-  createData(1, 'Javascript', 'Publié','17/07/2020','éditer/publier/suppr'),
-  createData(2, 'HTML', 'Publié','12/11/2020','éditer/publier/suppr'),
-  createData(3, 'CSS', 'Brouillon','22/01/2021','éditer/publier/suppr'),
-  createData(4, 'PHP', 'Brouillon','27/04/2021','éditer/publier/suppr'),
-  createData(5, 'Javascript', 'Publié','17/07/2020','éditer/publier/suppr'),
-  createData(6, 'HTML', 'Publié','12/11/2020','éditer/publier/suppr'),
-  createData(7, 'CSS', 'Brouillon','22/01/2021','éditer/publier/suppr'),
-  createData(8, 'PHP', 'Brouillon','27/04/2021','éditer/publier/suppr'),
+  createData(1, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(2, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(3, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(4, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(5, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(6, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(7, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(8, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
 
   
 ];
