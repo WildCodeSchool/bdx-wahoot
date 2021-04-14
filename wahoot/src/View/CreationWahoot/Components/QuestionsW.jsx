@@ -1,9 +1,10 @@
     import React from "react";
+import ButtonQuestion from "./ButtonQuestion";
     
 
     const displayElement = false;
 
-    function QuestionsW (props) {
+    function QuestionsW () {
         return (
             <div>
                 <div>
@@ -12,7 +13,7 @@
 
                 <div>
                     {displayElement && (<p>Pas de question pour le moment.</p>)}
-                    {!displayElement && (<p>rien</p>)}
+                    {!displayElement && (<ButtonQuestion />)}
                 
                 </div>
             </div>

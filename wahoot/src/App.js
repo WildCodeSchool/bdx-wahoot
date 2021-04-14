@@ -8,8 +8,8 @@
 function App() {
   return (
   <Main>
-    {/* <Home />*/}
-    <CreationWahoot />
+    {/*<Home />*/}
+  <CreationWahoot />
     {/*loging*/}
   </Main>
 

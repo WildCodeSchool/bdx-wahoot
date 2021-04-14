@@ -9,15 +9,16 @@ function Main(props) {
 
     return (
 
-        
         <div>
             <Header />
             
-            {children}
-            
+                {children}
+           
             <Footer />
-
+           
         </div>
+
+           
     );
 }
 

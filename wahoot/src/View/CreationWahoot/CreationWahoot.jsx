@@ -5,12 +5,21 @@ import Calendar from './Components/Calendar';
 import MainTitleCreationWahoot from './Components/MainTitleCreationWahoot';
 import TitleCreationWahoot from './Components/TitleCreationWahoot';
 import ButtonCancel from "./Components/ButtonCancel";
-import ButtonQuestion from "./Components/ButtonQuestion";
 import ButtonSave from "./Components/ButtonSave";
 import QuestionsW from "./Components/QuestionsW";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+      display: "flex",
+      justifyContent:"center",
+    },
+  }));
 
 const CreationWahoot = () => {
 
+      
+    const classes = useStyles();
 
     return(
     <div>
@@ -19,9 +28,10 @@ const CreationWahoot = () => {
         <Calendar /> 
         <ButtonQuestionCreation /> 
         <QuestionsW/>
-        <ButtonSave/>
-        <ButtonCancel/>  
-        <ButtonQuestion/>
+        <div className={classes.container}>  
+            <ButtonCancel/> 
+            <ButtonSave/>
+        </div>
         
     
     </div>
