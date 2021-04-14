@@ -10,7 +10,7 @@ function App() {
 
       <Main>
         {/*<Home />*/}
-        <ListWahoot/>
+        <ListWahoot />
         <CreationWahoot />
         {/* <Login /> */}
       </Main>
