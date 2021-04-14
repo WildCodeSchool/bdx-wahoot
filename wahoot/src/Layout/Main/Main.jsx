@@ -1,21 +1,17 @@
 import React from 'react';
 import Header from './Header/Header.jsx';
-
+import Footer from './Footer/Footer.jsx';
 
 
 
 function Main(props) {
     const {children} = props;
-
-    return (
-
-        
+    return (        
         <div>
-            <Header/>
+            <Header />            
             {children}
-            <div></div>
+            <Footer />
         </div>
-    );
+    )
 }
-
 export default Main;
