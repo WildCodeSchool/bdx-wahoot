@@ -24,7 +24,6 @@ const CreationWahoot = () => {
         <ButtonCancel/>  
         <ButtonQuestion/>
         <ButtonHome/>
-    
     </div>
          
     );
