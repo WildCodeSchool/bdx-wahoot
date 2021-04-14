@@ -3,7 +3,6 @@
  import "./App.css";
  import Main from "./Layout/Main/Main";
  import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
- import Main from "./Layout/Main/Main.jsx";
  import Home from "./View/Home/Home.jsx";
 
 function App() {

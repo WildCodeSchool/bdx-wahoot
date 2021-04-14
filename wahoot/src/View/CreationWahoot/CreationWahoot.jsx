@@ -4,6 +4,11 @@ import ButtonQuestionCreation from './Components/ButtonQuestionCreation';
 import Calendar from './Components/Calendar';
 import MainTitleCreationWahoot from './Components/MainTitleCreationWahoot';
 import TitleCreationWahoot from './Components/TitleCreationWahoot';
+import ButtonCancel from "./Components/ButtonCancel";
+import ButtonHome from "./Components/ButtonHome";
+import ButtonQuestion from "./Components/ButtonQuestion";
+import ButtonSave from "./Components/ButtonSave";
+import QuestionsW from "./Components/QuestionsW";
 
 const CreationWahoot = () => {
 
@@ -14,11 +19,15 @@ const CreationWahoot = () => {
         <TitleCreationWahoot />
         <Calendar /> 
         <ButtonQuestionCreation /> 
+        <QuestionsW/>
+        <ButtonSave/>
+        <ButtonCancel/>  
+        <ButtonQuestion/>
+        <ButtonHome/>
+    
     </div>
          
-    )
-
-
+    );
 }
 
 export default CreationWahoot;
