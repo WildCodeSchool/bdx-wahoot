@@ -28,8 +28,8 @@ const CreationWahoot = () => {
         <Calendar /> 
         <ButtonQuestionCreation /> 
         <QuestionsW/>
-        <ButtonQuestion/>
-        <ButtonHome/>
+      {/*<ButtonQuestion/>
+        <ButtonHome/>*/}
         <div className={classes.container}>  
             <ButtonCancel/> 
             <ButtonSave/>
