@@ -1,4 +1,7 @@
 import React from 'react';
+import Header from './Header/Header.jsx';
+
+
 
 
 function Main(props) {
@@ -8,9 +11,9 @@ function Main(props) {
 
         
         <div>
-            <div>Header</div>
+            <Header/>
             {children}
-            <div>Footer</div>
+            <div></div>
         </div>
     );
 }
