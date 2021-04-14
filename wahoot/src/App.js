@@ -1,4 +1,3 @@
-import './App.css';
 import Main from './Layout/Main/Main.jsx';
 import Home from './View/Home/Home.jsx';
 import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
@@ -13,5 +12,3 @@ function App() {
       </Main>
   );
 }
-
-export default App;

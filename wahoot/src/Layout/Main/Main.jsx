@@ -3,10 +3,13 @@ import Header from './Header/Header.jsx';
 
 
 
+
 function Main(props) {
     const {children} = props;
 
     return (
+
+        
         <div>
             <Header/>
             {children}
