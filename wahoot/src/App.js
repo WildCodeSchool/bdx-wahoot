@@ -9,8 +9,8 @@ function App() {
   return (
   <Main>
     {/* <Home />*/}
-    <CreationWahoot />
-    <ListWahoot/>
+    {/*<CreationWahoot /> */}
+    {/*<ListWahoot/>*/}
     {/*loging*/}
   </Main>
 
