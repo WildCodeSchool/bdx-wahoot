@@ -9,11 +9,10 @@ function App() {
   return (
 
       <Main>
-        {/*<Home />*/}
+        <Home />
         <ListWahoot/>
         <CreationWahoot />
         {/* <Login /> */}
       </Main>
-
-
+  )};
 export default App;
