@@ -6,9 +6,10 @@ function App() {
   return (
 
       <Main>
-        {/*<Home />*/}
+        <Home />
         <CreationWahoot />
         {/* <Login /> */}
       </Main>
   );
 }
+export default App;
