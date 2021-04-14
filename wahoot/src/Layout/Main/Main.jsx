@@ -10,7 +10,7 @@ function Main(props) {
         <div>
             <Header/>
             {children}
-            <div></div>
+            <div>footer</div>
         </div>
     );
 }
