@@ -9,7 +9,7 @@ function App() {
   return (
 
       <Main>
-        {/*<Home />*/}
+        <Home />
         <ListWahoot />
         <CreationWahoot />
         {/* <Login /> */}

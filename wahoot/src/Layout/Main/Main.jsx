@@ -6,12 +6,18 @@ import Footer from './Footer/Footer.jsx';
 
 function Main(props) {
     const {children} = props;
-    return (        
+    return (
+
         <div>
-            <Header />            
-            {children}
+            <Header />
+            
+                {children}
+           
             <Footer />
+           
         </div>
-    )
+
+           
+    );
 }
 export default Main;
