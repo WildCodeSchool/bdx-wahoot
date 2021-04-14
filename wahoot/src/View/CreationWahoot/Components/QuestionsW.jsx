@@ -1,19 +1,22 @@
-import React from "react";
-import App from "./App";
+    import React from "react";
+    
 
+    const displayElement = false;
 
-function questionsW () {
-    return (
-        <div>
-        <div>
-            <h2>Questions du Wahoot</h2>
-        </div>
+    function QuestionsW (props) {
+        return (
+            <div>
+                <div>
+                    <h2>Questions du Wahoot</h2>
+                </div>
 
-        <div>
-            <p>Pas de question pour le moment.</p>
-        </div>
-        </div>
-    );
-}
+                <div>
+                    {displayElement && (<p>Pas de question pour le moment.</p>)}
+                    {!displayElement && (<p>rien</p>)}
+                
+                </div>
+            </div>
+        );
+    }
 
-export default questionsW;
+    export default QuestionsW;
