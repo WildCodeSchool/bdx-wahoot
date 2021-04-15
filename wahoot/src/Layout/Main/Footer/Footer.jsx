@@ -1,36 +1,26 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import HomeIcon from '@material-ui/icons/Home';
-import IconButton from '@material-ui/core/IconButton';
-
+import NavigationBar from './NavigationBar';
+import { makeStyles } from '@material-ui/core/styles'; 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),  
-      },
-     
-    position:"relative",
-    bottom:0,
-    marginLeft: "50%",
-    
-    },
-  }));
+  container: {
+    display: "flex",
+    justifyContent:"center",
+  },
+}));
 
- 
+
+
 const Footer = () => {
 
-    const classes = useStyles();
+  const classes = useStyles();
 
     return (
 
-        <div className={classes.root}>
-        <IconButton>
-          < HomeIcon fontSize="large"  color="primary" />
-        </IconButton>
+        <div className={classes.container}>
+        <NavigationBar />
         </div>
     );
   }
-
 
 export default Footer;
