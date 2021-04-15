@@ -1,4 +1,3 @@
-import { TextField } from '@material-ui/core';
 import React from 'react';
 import ButtonQuestionCreation from './Components/ButtonQuestionCreation';
 import Calendar from './Components/Calendar';
@@ -14,10 +13,14 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       justifyContent:"center",
     },
-    title:{
-        display: "flex",
-        
 
+    block: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        margin: 30,
+
+    }
   }));
 
  
@@ -28,15 +31,24 @@ const CreationWahoot = () => {
     const classes = useStyles();
 
     return(
-    <div>
-        <div className={classes.title}>
-        <MainTitleCreationWahoot />
-        <TitleCreationWahoot />
-        <Calendar /> 
-        <ButtonQuestionCreation /> 
-        <QuestionsW/>
+    <div> 
+        <div className={classes.block}>
+            <MainTitleCreationWahoot />
         </div>
-
+        <div className={classes.block}>
+            <TitleCreationWahoot />
+        </div>
+        <div className={classes.block}>
+            <Calendar /> 
+        </div>
+        <div className={classes.block}>
+            <ButtonQuestionCreation />
+        </div>
+        <div className={classes.block}>
+            <QuestionsW/>
+        </div>
+      {/*<ButtonQuestion/>
+        <ButtonHome/>*/}
         <div className={classes.container}>  
             <ButtonCancel/> 
             <ButtonSave/>

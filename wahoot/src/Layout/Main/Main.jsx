@@ -6,7 +6,6 @@ import Footer from './Footer/Footer.jsx';
 
 function Main(props) {
     const {children} = props;
-
     return (
 
         <div>
@@ -21,5 +20,4 @@ function Main(props) {
            
     );
 }
-
 export default Main;
