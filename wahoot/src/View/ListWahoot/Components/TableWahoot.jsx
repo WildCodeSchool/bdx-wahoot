@@ -8,9 +8,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import EditIcon from '@material-ui/icons/Edit';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import DeleteIcon from '@material-ui/icons/Delete';
+import SupprimeModal from './SupprimeModal';
+import PublicModal from './PublicModal';
+import EditIconLink from './EditIcon';
 
 const columns = [
   { id: 'id', label: 'ID'},
@@ -34,14 +34,14 @@ function createData(id, titre, statut, dateFin,modifications) {
 }
 
 const rows = [
-  createData(1, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(2, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(3, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(4, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(5, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(6, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(7, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(8, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(1, 'Javascript', 'Publié','17/07/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(2, 'HTML', 'Publié','12/11/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(3, 'CSS', 'Brouillon','22/01/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(4, 'PHP', 'Brouillon','27/04/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(5, 'Javascript', 'Publié','17/07/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(6, 'HTML', 'Publié','12/11/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(7, 'CSS', 'Brouillon','22/01/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(8, 'PHP', 'Brouillon','27/04/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
 
   
 ];
