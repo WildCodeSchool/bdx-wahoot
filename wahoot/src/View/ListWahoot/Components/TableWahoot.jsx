@@ -34,14 +34,14 @@ function createData(id, titre, statut, dateFin,modifications) {
 }
 
 const rows = [
-  createData(1, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(2, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(3, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(4, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(5, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(6, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(7, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(8, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W1', 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W2', 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W3', 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W4', 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W5', 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W6', 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W7', 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData('W8', 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
 
   
 ];
