@@ -8,12 +8,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),  
+        position: "absolute",
+        bottom:0,
       },
-     
-    position:"relative",
-    bottom:0,
-    marginLeft: "50%",
-    
     },
   }));
 

@@ -14,7 +14,13 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       justifyContent:"center",
     },
+    title:{
+        display: "flex",
+        
+
   }));
+
+ 
 
 const CreationWahoot = () => {
 
@@ -23,11 +29,14 @@ const CreationWahoot = () => {
 
     return(
     <div>
+        <div className={classes.title}>
         <MainTitleCreationWahoot />
         <TitleCreationWahoot />
         <Calendar /> 
         <ButtonQuestionCreation /> 
         <QuestionsW/>
+        </div>
+
         <div className={classes.container}>  
             <ButtonCancel/> 
             <ButtonSave/>
