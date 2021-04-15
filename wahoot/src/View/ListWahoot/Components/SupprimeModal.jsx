@@ -36,7 +36,9 @@ function SupprimeModal() {
 
   return (
     <div>
+
       <Button onClick={handleClickOpen('paper')} ><DeleteIcon/></Button>
+
       <Dialog
         open={open}
         onClose={handleClose}
