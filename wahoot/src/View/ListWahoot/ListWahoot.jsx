@@ -1,13 +1,13 @@
 import React from 'react';
 import CreateW from './Components/CreateW.jsx';
-import TableWahoot from './Components/TableWahoot.jsx';
+import QuestionnaireW from './Components/ListAffichageW.jsx';
 
 
 function ListWahoot() {
 
     return (
       <div>
-        <TableWahoot />
+        <QuestionnaireW />
         <CreateW/>
         
       </div>
