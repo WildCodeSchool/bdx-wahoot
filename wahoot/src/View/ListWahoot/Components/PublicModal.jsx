@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import ListWahoot from '../ListWahoot';
 import { Checkbox } from '@material-ui/core';
 import { StarRateOutlined } from '@material-ui/icons';
-
+import DoneIcon from '@material-ui/icons/Done';
 
 
 function PublicModal() {
@@ -37,7 +37,7 @@ function PublicModal() {
 
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')} ><Checkbox/></Button>
+      <Button onClick={handleClickOpen('paper')} ><DoneIcon/></Button>
       <Dialog
         open={open}
         onClose={handleClose}
