@@ -7,10 +7,24 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Home from '../../Home/Home';
 import Footer from '../../../Layout/Main/Footer/Footer';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),  
+    },
+   
+  position:"relative",
+  bottom:0,
+  marginLeft: "50%",
+  
+  },
+}));
 
 
 function HomeButtonModal() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
 

@@ -9,10 +9,11 @@ import HomeButtonModal from './View/CreationWahoot/Components/HomeButtonModal';
 function App() {
   return (
   <Main>
-    {/* <Home />*/}<Home />
-    {/*<CreationWahoot /> */}<CreationWahoot />
+    {/* <Home />*/}
+    {/*<CreationWahoot /> */}
     {/*<ListWahoot/>*/} <ListWahoot />
      {/* <Login /> */}
+     <HomeButtonModal/>
   </Main>
   );
 }
