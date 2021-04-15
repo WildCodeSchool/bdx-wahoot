@@ -11,17 +11,10 @@ function Main(props) {
         <div>
             <Header />
             
-<<<<<<< HEAD
                 {children}
            
             <Footer />
            
-=======
-            {children}
-            
-            <Footer />
-
->>>>>>> b6cc858d830ab864b1163964a42286fb3d7a338f
         </div>
 
            

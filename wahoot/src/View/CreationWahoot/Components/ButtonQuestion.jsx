@@ -7,6 +7,10 @@ const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
     },
+    test: {
+      display: "flex",
+      flexDirection: "column",
+    }
   }));
 
 const ButtonQuestion = () => {
@@ -15,7 +19,7 @@ const ButtonQuestion = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.test}>
       <Button
         variant="contained"
         color="secondary"
@@ -23,6 +27,22 @@ const ButtonQuestion = () => {
         endIcon={<BorderColorIcon />}
       >
         Question 1
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        endIcon={<BorderColorIcon />}
+      >
+        Question 2
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        endIcon={<BorderColorIcon />}
+      >
+        Question 3
       </Button>
     </div>
   );

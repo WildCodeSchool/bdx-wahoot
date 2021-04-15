@@ -5,8 +5,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import ButtonHome from '../../../View/CreationWahoot/Components/ButtonHome';
 import Home from '../../../View/Home/Home';
+import { IconButton } from '@material-ui/core';
 
 
 
@@ -35,7 +35,7 @@ function HomeButtonModal() {
 
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')} ><ButtonHome /></Button>
+      <Button onClick={handleClickOpen('paper')} ><IconButton /></Button>
       <Dialog
         open={open}
         onClose={handleClose}
