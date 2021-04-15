@@ -71,7 +71,7 @@ export default function TableWahoot() {
 
   return (
     <>
-    <h1>Liste des Wahoots</h1>
+    <h1 style={{textAlign:"center"}}>Liste des Wahoots</h1>
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
