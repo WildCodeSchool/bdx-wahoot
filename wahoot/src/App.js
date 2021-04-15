@@ -10,10 +10,11 @@ function App() {
 
       <Main>
         <Home />
-        <ListWahoot />
-        <CreationWahoot />
+        {/*<ListWahoot />*/}
+        {/*<CreationWahoot />*/}
         {/* <Login /> */}
       </Main>
+
   );
 }
 

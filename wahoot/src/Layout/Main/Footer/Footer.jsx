@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { makeStyles } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
 import IconButton from '@material-ui/core/IconButton';
@@ -32,5 +33,23 @@ const Footer = () => {
     );
   }
 
+=======
+import ButtonHome from '../../../View/CreationWahoot/Components/ButtonHome';
+import HomeButtonModal from './HomeButtonModal';
+
+
+
+
+function Footer() {
+return (
+    <div>
+        
+        <HomeButtonModal />
+      
+
+    </div>
+);
+}
+>>>>>>> b6cc858d830ab864b1163964a42286fb3d7a338f
 
 export default Footer;
