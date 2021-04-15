@@ -5,12 +5,13 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Home from '../../../View/Home/Home';
-import { IconButton } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
+import ListWahoot from '../ListWahoot';
 
 
 
-function HomeButtonModal() {
+function SupprimeModal() {
+  
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
 
@@ -35,7 +36,9 @@ function HomeButtonModal() {
 
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')} ><IconButton /></Button>
+
+      <Button onClick={handleClickOpen('paper')} ><DeleteIcon/></Button>
+
       <Dialog
         open={open}
         onClose={handleClose}
@@ -49,7 +52,7 @@ function HomeButtonModal() {
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
-          ><p>Êtes-vous sûre de vouloir quitter?</p>
+          ><p>Voulez-vous vraiment supprimer ce questionnaire ?</p>
             {[...new Array(10)]
               .map(
                 () => '',
@@ -58,7 +61,7 @@ function HomeButtonModal() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={<Home />} color="primary">
+          <Button onClick={<ListWahoot/>} color="primary">
             Oui
           </Button>
           <Button onClick={handleClose} color="secondary">
@@ -71,4 +74,4 @@ function HomeButtonModal() {
 }
 
   
-export default HomeButtonModal;
+export default SupprimeModal;

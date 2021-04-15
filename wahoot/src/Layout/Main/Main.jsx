@@ -4,6 +4,7 @@ import Footer from './Footer/Footer.jsx';
 
 
 
+
 function Main(props) {
     const {children} = props;
     return (

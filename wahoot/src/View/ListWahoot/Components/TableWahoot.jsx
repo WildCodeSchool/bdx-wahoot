@@ -8,9 +8,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import EditIcon from '@material-ui/icons/Edit';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import DeleteIcon from '@material-ui/icons/Delete';
+import SupprimeModal from './SupprimeModal';
+import PublicModal from './PublicModal';
+import EditIconLink from './EditIcon';
 
 const columns = [
   { id: 'id', label: 'ID'},
@@ -23,10 +23,7 @@ const columns = [
     id: 'dateFin',
     label: 'Date fin'
   },
-  {
-    id: 'modifications',
-    label: 'Modifications'
-  },
+  
 ];
 
 function createData(id, titre, statut, dateFin,modifications) {
@@ -34,14 +31,14 @@ function createData(id, titre, statut, dateFin,modifications) {
 }
 
 const rows = [
-  createData(1, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(2, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(3, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(4, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(5, 'Javascript', 'Publié','17/07/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(6, 'HTML', 'Publié','12/11/2020',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(7, 'CSS', 'Brouillon','22/01/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
-  createData(8, 'PHP', 'Brouillon','27/04/2021',<><EditIcon /><CheckCircleIcon /><DeleteIcon /></>),
+  createData(1, 'Javascript', 'Publié','17/07/2020'),
+  createData(2, 'HTML', 'Publié','12/11/2020'),
+  createData(3, 'CSS', 'Brouillon','22/01/2021'),
+  createData(4, 'PHP', 'Brouillon','27/04/2021'),
+  createData(5, 'Javascript', 'Publié','17/07/2020'),
+  createData(6, 'HTML', 'Publié','12/11/2020'),
+  createData(7, 'CSS', 'Brouillon','22/01/2021'),
+  createData(8, 'PHP', 'Brouillon','27/04/2021'),
 
   
 ];
@@ -53,9 +50,12 @@ const useStyles = makeStyles({
   container: {
     maxHeight: 440,
   },
+  icons: {
+    display: "flex",
+  }
 });
 
-export default function TableWahoot() {
+const TableWahoot = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -86,6 +86,12 @@ export default function TableWahoot() {
                   {column.label}
                 </TableCell>
               ))}
+              <TableCell
+                  
+                  align="center"
+                >
+                  Modifications
+                </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -97,9 +103,15 @@ export default function TableWahoot() {
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
+                        
                       </TableCell>
                     );
                   })}
+                  <TableCell align="center">
+                    <div className={classes.icons}>
+                    <EditIconLink /><PublicModal /><SupprimeModal />
+                    </div>
+                  </TableCell>
                 </TableRow>
               );
             })}
@@ -119,3 +131,5 @@ export default function TableWahoot() {
     </>
   );
 }
+
+export default TableWahoot;

@@ -18,7 +18,7 @@ const CreateW =() => {
 
     <div className={classes.root}>
 
-      <Button className="createW" variant="contained" color="primary">
+      <Button className="createW" link = "/CreationWahoot/CreationWahoot.jsx" variant="contained" color="primary">
         Créer un Wahoot!
       </Button>
     </div>
