@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
         margin: theme.spacing(1),
                 },
-        },
+        }
 }));
 
 const CreateW =() => {
@@ -18,7 +18,7 @@ const CreateW =() => {
 
     <div className={classes.root}>
 
-      <Button className="createW" link = "/CreationWahoot/CreationWahoot.jsx" variant="contained" color="primary">
+      <Button variant="contained" color="primary">
         Créer un Wahoot!
       </Button>
     </div>
