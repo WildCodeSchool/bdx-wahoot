@@ -5,10 +5,14 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import HomeIcon from '@material-ui/icons/Home';
+import PersonIcon from '@material-ui/icons/Person';
+import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
+    width: "100%",
+    position: "fixed",
+    bottom: "0px",
   },
 });
 
@@ -25,9 +29,9 @@ const NavigationBar = ()  => {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+      <BottomNavigationAction label="Admin" icon={<PersonIcon />} />
       <BottomNavigationAction label="Accueil" icon={<HomeIcon />} />
-      <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+      <BottomNavigationAction label="Joueur" icon={<VideogameAssetIcon />} />
     </BottomNavigation>
   );
 }

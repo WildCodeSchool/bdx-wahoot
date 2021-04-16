@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-    const displayElement = false;
+    const displayElement = !true;
 
     function QuestionsW () {
 

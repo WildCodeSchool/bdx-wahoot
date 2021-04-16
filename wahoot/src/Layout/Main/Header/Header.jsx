@@ -1,12 +1,26 @@
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
 
-
+const useStyles = makeStyles({
+    logo: {
+      display: "flex",
+      maxWidth: "100%",
+      height: "auto",
+      marginLeft: "auto",
+      marginRight: "auto",
+      //display:"none",
+    },logomini: {
+     display:"none",
+    }
+  });
+  
 function Header() {
+
+    const classes= useStyles();
 return (
     <div>
-        
-        <img className="logo" src="/Img/Logo.svg" alt="logo-Wahoot"/>
-        {/*<img className="logomini" src="/Img/LogoW-mini.svg" alt="logo-Wahoot-entête"/>*/}
+        <img className={classes.logo} src="/Img/logoW.png" alt="logo-Wahoot-entête"/> 
+        <img className={classes.logomini} src="/Img/LogoW-mini.svg" alt="logo-Wahoot-entête"/>
     </div>
 );
 }

@@ -23,10 +23,7 @@ const columns = [
     id: 'dateFin',
     label: 'Date fin'
   },
-  {
-    id: 'modifications',
-    label: 'Modifications'
-  },
+  
 ];
 
 function createData(id, titre, statut, dateFin,modifications) {
@@ -34,14 +31,14 @@ function createData(id, titre, statut, dateFin,modifications) {
 }
 
 const rows = [
-  createData(1, 'Javascript', 'Publié','17/07/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(2, 'HTML', 'Publié','12/11/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(3, 'CSS', 'Brouillon','22/01/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(4, 'PHP', 'Brouillon','27/04/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(5, 'Javascript', 'Publié','17/07/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(6, 'HTML', 'Publié','12/11/2020',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(7, 'CSS', 'Brouillon','22/01/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
-  createData(8, 'PHP', 'Brouillon','27/04/2021',<><EditIconLink /><PublicModal /><SupprimeModal /></>),
+  createData(1, 'Javascript', 'Publié','17/07/2020'),
+  createData(2, 'HTML', 'Publié','12/11/2020'),
+  createData(3, 'CSS', 'Brouillon','22/01/2021'),
+  createData(4, 'PHP', 'Brouillon','27/04/2021'),
+  createData(5, 'Javascript', 'Publié','17/07/2020'),
+  createData(6, 'HTML', 'Publié','12/11/2020'),
+  createData(7, 'CSS', 'Brouillon','22/01/2021'),
+  createData(8, 'PHP', 'Brouillon','27/04/2021'),
 
   
 ];
@@ -53,9 +50,12 @@ const useStyles = makeStyles({
   container: {
     maxHeight: 440,
   },
+  icons: {
+    display: "flex",
+  }
 });
 
-export default function TableWahoot() {
+const TableWahoot = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -71,7 +71,7 @@ export default function TableWahoot() {
 
   return (
     <>
-    <h1>Liste des Wahoots</h1>
+    <h1 style={{textAlign:"center"}}>Liste des Wahoots</h1>
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
@@ -86,6 +86,12 @@ export default function TableWahoot() {
                   {column.label}
                 </TableCell>
               ))}
+              <TableCell
+                  
+                  align="center"
+                >
+                  Modifications
+                </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -97,9 +103,15 @@ export default function TableWahoot() {
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
+                        
                       </TableCell>
                     );
                   })}
+                  <TableCell align="center">
+                    <div className={classes.icons}>
+                    <EditIconLink /><PublicModal /><SupprimeModal />
+                    </div>
+                  </TableCell>
                 </TableRow>
               );
             })}
@@ -119,3 +131,5 @@ export default function TableWahoot() {
     </>
   );
 }
+
+export default TableWahoot;
