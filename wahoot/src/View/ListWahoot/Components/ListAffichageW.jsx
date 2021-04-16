@@ -11,7 +11,7 @@ import TableWahoot from "./TableWahoot";
             
                 <div>
                     {displayElement && (<p style={{textAlign:"center"}}>Aucun Wahoot pour l'instant.</p>)}
-                    {!displayElement && [(<TableWahoot/>),(<CreateW />)]}
+                    {!displayElement && (<TableWahoot/>)}
                 
                 </div>
             

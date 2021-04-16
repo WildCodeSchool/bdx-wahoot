@@ -8,10 +8,9 @@ const useStyles = makeStyles({
       height: "auto",
       marginLeft: "auto",
       marginRight: "auto",
-      paddingTop: "20%",
-      display:"none",
-    },logomini: {
       //display:"none",
+    },logomini: {
+     display:"none",
     }
   });
   
