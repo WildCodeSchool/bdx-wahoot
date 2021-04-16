@@ -7,11 +7,11 @@ import Home from "./View/Home/Home.jsx";
 
 function App() {
   return (
-  <Main>
-    {/* <Home />*/} 
-    {/*<CreationWahoot /> */}
-    {/*<ListWahoot/>*/} <ListWahoot/>
-     {/* <Login /> */}
+  <Main> 
+    {/* <Home />*/}    <Home />
+    {/*<CreationWahoot /> */}   
+    {/*<ListWahoot/>*/}  
+     {/* <Login /> */} 
      
   </Main>
   );
