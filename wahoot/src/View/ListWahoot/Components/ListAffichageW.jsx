@@ -1,21 +1,20 @@
 import React from "react";
-import CreateW from "./CreateW";
-import TableWahoot from "./TableWahoot";
+import CardsWahootList from "./CardsWahootList";
 
     
 
     const displayElement = false;
 
-    function QuestionnaireW () {
+    function ListAffichageW () {
         return (
             
                 <div>
                     {displayElement && (<p style={{textAlign:"center"}}>Aucun Wahoot pour l'instant.</p>)}
-                    {!displayElement && (<TableWahoot/>)}
+                    {!displayElement && (<CardsWahootList />)}
                 
                 </div>
             
         );
     }
 
-    export default QuestionnaireW;
+    export default ListAffichageW;
