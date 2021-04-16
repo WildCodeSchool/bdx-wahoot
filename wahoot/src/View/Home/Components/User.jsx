@@ -9,8 +9,8 @@ const User =() => {
 
     <div>
 
-      <ButtonAdmin />
-      <ButtonJoueur />
+      <div><ButtonAdmin /></div>
+      <div><ButtonJoueur /></div>
 
 
     </div>
