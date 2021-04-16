@@ -1,4 +1,5 @@
 import React from "react";
+import CreateW from "./CreateW";
 import TableWahoot from "./TableWahoot";
 
     
@@ -9,7 +10,7 @@ import TableWahoot from "./TableWahoot";
         return (
             
                 <div>
-                    {displayElement && (<p>Aucun Wahoot pour l'instant.</p>)}
+                    {displayElement && (<p style={{textAlign:"center"}}>Aucun Wahoot pour l'instant.</p>)}
                     {!displayElement && (<TableWahoot/>)}
                 
                 </div>
