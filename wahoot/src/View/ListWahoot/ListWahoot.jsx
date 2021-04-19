@@ -1,6 +1,6 @@
 import React from 'react';
 import CreateW from './Components/CreateW.jsx';
-import QuestionnaireW from './Components/ListAffichageW.jsx';
+import AfficherListW from './Components/AfficherListW.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ function ListWahoot() {
   const classes = useStyles();
     return (
     <div>
-      <div> <QuestionnaireW /> </div>  
+      <div> <AfficherListW /> </div>  
       <div> <CreateW/> </div>
     </div>
     );

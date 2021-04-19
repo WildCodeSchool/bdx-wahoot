@@ -1,12 +1,11 @@
 import React from "react";
-import CreateW from "./CreateW";
 import TableWahoot from "./TableWahoot";
 
     
 
     const displayElement = false;
 
-    function QuestionnaireW () {
+    function AfficherListW () {
         return (
             
                 <div>
@@ -18,4 +17,4 @@ import TableWahoot from "./TableWahoot";
         );
     }
 
-    export default QuestionnaireW;
+    export default AfficherListW;
