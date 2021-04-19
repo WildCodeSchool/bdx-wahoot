@@ -6,6 +6,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import SwitchRightAnswer from './SwitchRightAnswer';
+
 
 
 
@@ -26,14 +28,15 @@ const Answers = () => {
 
     const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+    const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
+    const handleClose = () => {
     setOpen(false);
   };
 
+   
     return (
         <div>
             <Button className={classes.container} variant="contained" color="primary" onClick={handleClickOpen}>

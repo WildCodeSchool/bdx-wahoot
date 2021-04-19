@@ -13,9 +13,9 @@ function App() {
   <Main>
     {/* <Home /> */} 
     {/* <ListWahoot /> */}
-    {/* <CreationWahoot /> */}
+    {/* <CreationWahoot /> */}<CreationWahoot />
     {/* <CreationQuestion /> */}<CreationQuestion />
-    {/* <CreationQuestion /> */}
+    {/* <PseudoGamer /> */}
 
      
      {/* <Login /> */}

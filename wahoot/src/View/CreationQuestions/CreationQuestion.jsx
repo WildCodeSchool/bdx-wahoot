@@ -6,6 +6,7 @@ import Answers from './Components/Answers';
 import AddQuestionButton from './Components/AddQuestionButton';
 import ButtonCancel from '../CreationWahoot/Components/ButtonCancel';
 import ButtonSave from '../CreationWahoot/Components/ButtonSave';
+import SwitchRightAnswer from './Components/SwitchRightAnswer';
 
 
 const useStyles = makeStyles((theme) => ({
