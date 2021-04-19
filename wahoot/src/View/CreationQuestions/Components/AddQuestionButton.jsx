@@ -2,6 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,13 +29,15 @@ const useStyles = makeStyles((theme) => ({
 const AddQuestionButton = () => {
 
     const classes = useStyles();
-    
+
 
     return (
         <div>
-            <Fab size="medium" color="secondary" aria-label="add" className={classes.margin}>
-            <AddIcon className={classes.container}/>
-            </Fab>
+            <Tooltip title="Ajouter une question" aria-label="add" size="medium">
+                <Fab color="secondary" className={classes.fab}>
+                    <AddIcon />
+                </Fab>
+            </Tooltip>
       </div>
     );
 }
