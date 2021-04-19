@@ -19,7 +19,17 @@ const useStyles = makeStyles((theme) => ({
     margin:'10px auto',
     '& h2':{
         textAlign:"center",
-    }
+    },
+    '& h3':{
+        width:"40px",
+        height:"40px",
+        textAlign:"center",
+        lineHeight:"40px",
+        border:"solid 1px black",
+        borderRadius:"50%",
+        backgroundColor:"#7fe8a4"
+    },
+
   },
   inline: {
     display: 'inline',
