@@ -5,6 +5,7 @@ import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
 import ListWahoot from './View/ListWahoot/ListWahoot';
 import Home from "./View/Home/Home.jsx";
 import StartGame from './View/StartGameQuestions/StartGame';
+import PseudoGamer from './View/PseudoGamer/PseudoGamer';
 
 function App() {
   return (
@@ -12,8 +13,10 @@ function App() {
     {/* <Home /> */} 
     {/* <ListWahoot /> */}
     {/* <CreationWahoot /> */}
-     <StartGame />
+    <PseudoGamer />
+     
      {/* <Login /> */}
+
      
   </Main>
   );

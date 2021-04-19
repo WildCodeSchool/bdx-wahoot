@@ -1,20 +1,20 @@
 import React from "react";
-import TableWahoot from "./TableWahoot";
+import CardsWahootList from "./CardsWahootList";
 
     
 
     const displayElement = false;
 
-    function AfficherListW () {
+    function ListAffichageW () {
         return (
             
                 <div>
                     {displayElement && (<p style={{textAlign:"center"}}>Aucun Wahoot pour l'instant.</p>)}
-                    {!displayElement && (<TableWahoot/>)}
+                    {!displayElement && (<CardsWahootList />)}
                 
                 </div>
             
         );
     }
 
-    export default AfficherListW;
+    export default ListAffichageW;
