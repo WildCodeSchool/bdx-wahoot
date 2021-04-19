@@ -8,9 +8,9 @@ import Home from "./View/Home/Home.jsx";
 function App() {
   return (
   <Main>
-    {/* <Home /> */} <Home />
-    {/* <ListWahoot /> */}
-    {/* <CreationWahoot /> */}<CreationWahoot />
+    {/* <Home /> */} 
+    {/* <ListWahoot /> */}<ListWahoot />
+    {/* <CreationWahoot /> */}
      
      {/* <Login /> */}
      
