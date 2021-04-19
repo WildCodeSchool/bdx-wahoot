@@ -1,5 +1,4 @@
 import React from 'react';
-import IncrementationChip from './Components/IncrementationChip';
 import QuestionInput from './Components/QuestionInput';
 import TitleWahoot from './Components/TitleWahoot';
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,14 +9,22 @@ import ButtonSave from '../CreationWahoot/Components/ButtonSave';
 
 
 const useStyles = makeStyles((theme) => ({
+    
     container: {
-      display: "flex",
-      justifyContent:"flx-start",
-    },
-    containerbis: {
         display: "flex",
+        flexDirection: "column",
         justifyContent:"center",
+        alignItems: "center",
+        marginTop: "30px",
+
       },
+    
+    buttons: {
+        display: "flex",
+        justifyContent: "center",
+        
+    }
+      
   }));
 const CreationQuestion = () => {
 
@@ -25,23 +32,17 @@ const CreationQuestion = () => {
 
     return (
         <div>
-            <div className={classes.containerbis}>
+        <div className={classes.container}>
+            
             <TitleWahoot />
-            </div>
-            <div className={classes.containerbis}>
-                <IncrementationChip />
-                <QuestionInput /> 
-            </div>
-            <div className={classes.containerbis}>
-                <Answers />
-            </div>
-            <div className={classes.containerbis}>
-                <AddQuestionButton />
-            </div>
-            <div className={classes.containerbis}>
+            <QuestionInput /> 
+            <Answers />
+            <AddQuestionButton /> 
+        </div>
+        <div className={classes.buttons}>     
             <ButtonCancel/> 
             <ButtonSave/>
-            </div>
+        </div> 
         </div>
     );
 }

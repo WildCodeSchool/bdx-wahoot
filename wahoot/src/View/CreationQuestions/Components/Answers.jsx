@@ -1,94 +1,137 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-          margin: theme.spacing(1),
-          height: "150px",
-          display: "inline",
-          flexWrap: "wrap", 
-        },
+    container: {
+        display: "inline",
+        justifyContent: "center",
+        width: "120px",
+        height: "100px",
+        margin: "10px",
 
-      },
+    }
       
 }));
 
 const Answers = () => {
-
-    const [state, setState] = React.useState({
-        checkedA: false,
-        checkedB: false,
-        checkedC: false,
-        checkedD: false,
-      });
-      const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-      };
-
     const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
-        
-            <Button variant="contained" color="primary">
-            Ajouter une réponse
-                <div>
-                <Switch
-                    checked={state.checkedA}
-                    onChange={handleChange}
-                    color="secondary"
-                    name="checkedA"
-                    inputProps={{ 'aria-label': 'primary checkbox' }}
-                /> 
-                </div>   
-            </Button>
-            <Button variant="contained" color="primary">
-            Ajouter une réponse
-                <div>
-                <Switch
-                    checked={state.checkedB}
-                    onChange={handleChange}
-                    color="secondary"
-                    name="checkedB"
-                    inputProps={{ 'aria-label': 'primary checkbox' }}
-                    />    
-                </div>
-            </Button>
-            <Button variant="contained" color="primary">
-            Ajouter une réponse
-                <div>
-                <Switch
-                    checked={state.checkedC}
-                    onChange={handleChange}
-                    color="secondary"
-                    name="checkedC"
-                    inputProps={{ 'aria-label': 'primary checkbox' }}
-                    /> 
-                </div>   
-            </Button>
-            <Button variant="contained" color="primary">
-            Ajouter une réponse
-                <div>
-                <Switch
-                    checked={state.checkedD}
-                    onChange={handleChange}
-                    color="secondary"
-                    name="checkedD"
-                    inputProps={{ 'aria-label': 'primary checkbox' }}
-                    /> 
-                </div>   
-            </Button>
+    const [open, setOpen] = React.useState(false);
 
-            <div>
-      
-      
-      
-    </div>
-        
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+    return (
+        <div>
+            <Button className={classes.container} variant="contained" color="primary" onClick={handleClickOpen}>
+                Ajouter une réponse
+            </Button>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Saisir la réponse</DialogTitle>
+                <DialogContent>
+                <TextField
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    label="Réponse"
+                    type="text"
+                    fullWidth
+                />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Annuler
+                </Button>
+                <Button onClick={handleClose} color="primary">
+                    Valider
+                </Button>
+                </DialogActions>
+            </Dialog>
+            <Button className={classes.container} variant="contained" color="primary" onClick={handleClickOpen}>
+                Ajouter une réponse
+            </Button>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Saisir la réponse</DialogTitle>
+                <DialogContent>
+                <TextField
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    label="Réponse"
+                    type="text"
+                    fullWidth
+                />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Annuler
+                </Button>
+                <Button onClick={handleClose} color="primary">
+                    Valider
+                </Button>
+                </DialogActions>
+            </Dialog>
+            <Button className={classes.container} variant="contained" color="primary" onClick={handleClickOpen}>
+                Ajouter une réponse
+            </Button>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Saisir la réponse</DialogTitle>
+                <DialogContent>
+                <TextField
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    label="Réponse"
+                    type="text"
+                    fullWidth
+                />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Annuler
+                </Button>
+                <Button onClick={handleClose} color="primary">
+                    Valider
+                </Button>
+                </DialogActions>
+            </Dialog>
+            <Button className={classes.container} variant="contained" color="primary" onClick={handleClickOpen}>
+                Ajouter une réponse
+            </Button>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Saisir la réponse</DialogTitle>
+                <DialogContent>
+                <TextField
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    label="Réponse"
+                    type="text"
+                    fullWidth
+                />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Annuler
+                </Button>
+                <Button onClick={handleClose} color="primary">
+                    Valider
+                </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }

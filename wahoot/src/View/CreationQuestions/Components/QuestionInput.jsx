@@ -7,9 +7,23 @@ const useStyles = makeStyles((theme) => ({
       '& .MuiTextField-root': {
         margin: theme.spacing(1),
         width: 200,
-        
+    
       },
     },
+
+    p: {
+        width: "40px",
+        height: "40px",
+        lineHeight: "10px",
+        textAlign: "center",
+        border: "solid 1px black",
+        borderRadius: "50%",
+        
+  },
+
+    container: {
+        display:"flex",
+    }
   }));
 
 const QuestionInput = () => {
@@ -17,7 +31,7 @@ const QuestionInput = () => {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className={classes.container}>
             
             <form className={classes.root} noValidate autoComplete="off">
                 <div>
@@ -30,6 +44,9 @@ const QuestionInput = () => {
                     />
                 </div>
             </form>
+            <div className={classes.p}>
+             <p>1</p> 
+            </div>
         </div>
     );
 }

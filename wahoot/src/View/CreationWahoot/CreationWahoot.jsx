@@ -50,6 +50,8 @@ const CreationWahoot = () => {
             <ButtonCancel/> 
             <ButtonSave/>
         </div>
+{/*<ModalQuestions/>*/}
+
         
     
     </div>
