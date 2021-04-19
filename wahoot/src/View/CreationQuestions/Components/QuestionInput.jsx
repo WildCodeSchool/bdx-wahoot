@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
       '& .MuiTextField-root': {
         margin: theme.spacing(1),
         width: 200,
+        
       },
     },
   }));
@@ -16,18 +17,20 @@ const QuestionInput = () => {
     const classes = useStyles();
 
     return (
-
-        <form className={classes.root} noValidate autoComplete="off">
-            <div>
-                <TextField
-                label="Question"
-                id="outlined-size-small"
-                defaultValue=""
-                variant="outlined"
-                size="small"
-                />
-            </div>
-        </form>
+        <div>
+            
+            <form className={classes.root} noValidate autoComplete="off">
+                <div>
+                    <TextField
+                    label="Question"
+                    id="outlined-size-small"
+                    defaultValue=""
+                    variant="outlined"
+                    size="small"
+                    />
+                </div>
+            </form>
+        </div>
     );
 }
 
