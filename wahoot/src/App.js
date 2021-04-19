@@ -4,13 +4,15 @@ import Main from "./Layout/Main/Main";
 import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
 import ListWahoot from './View/ListWahoot/ListWahoot';
 import Home from "./View/Home/Home.jsx";
+import CreationQuestion from './View/CreationQuestions/CreationQuestion';
 
 function App() {
   return (
   <Main>
-    {/* <Home /> */} <Home />
+    {/* <Home /> */} 
     {/* <ListWahoot /> */}
-    {/* <CreationWahoot /> */}<CreationWahoot />
+    {/* <CreationWahoot /> */}
+    {/* <CreationQuestion /> */}<CreationQuestion />
      
      {/* <Login /> */}
      
