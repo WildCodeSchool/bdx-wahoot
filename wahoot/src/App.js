@@ -6,6 +6,7 @@ import ListWahoot from './View/ListWahoot/ListWahoot';
 import Home from "./View/Home/Home.jsx";
 import StartGame from './View/StartGameQuestions/StartGame';
 import PopupEndGame from './View/PopupEndGame/PopupEndGame';
+import Ranking from './View/Classement/Ranking';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
     {/* <ListWahoot /> */}
     {/* <CreationWahoot /> */}
      
-     {/* <Login /> */}<PopupEndGame />
+     {/* <Login /> */}<Ranking />
      
   </Main>
   );
