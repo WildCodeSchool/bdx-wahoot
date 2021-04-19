@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      width: '100%',
+      width: '90%',
       backgroundColor: "rgba(255, 255, 255, 0.4)",
       backdropFilter: "blur(30px)",
       border: "1px solid rgba(255, 255, 255, 0.18)",
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: "10px",
       webki: "10px",
       color: "rgb(31, 31, 31)",
-      
+      textAlign: "center"
     },
   }));
 
@@ -29,43 +29,52 @@ const ShowRanking = (rank, pseudo, points) => {
         <List className={classes.root}>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar >
                 1
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="pseudo1" secondary="1000 points" />
+            <ListItemText primary="pseudo1"  />
+            <ListItemText secondary="1000 points" />
           </ListItem>
+
           <ListItem>
             <ListItemAvatar>
               <Avatar>
                 2
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="pseudo2" secondary="960 points" />
+            <ListItemText primary="pseudo2"  />
+            <ListItemText secondary="960 points"/>
           </ListItem>
+
           <ListItem>
             <ListItemAvatar>
               <Avatar>
                 3
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="pseudo3" secondary="830 points" />
+            <ListItemText primary="pseudo3"  />
+            <ListItemText secondary="830 points"/>
           </ListItem>
+
           <ListItem>
             <ListItemAvatar>
               <Avatar>
                 4
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="pseudo4" secondary="700 points" />
+            <ListItemText primary="pseudo4"  />
+            <ListItemText secondary="700 points"/>
           </ListItem>
+
           <ListItem>
             <ListItemAvatar>
               <Avatar>
                 5
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="pseudo5" secondary="400 points" />
+            <ListItemText primary="pseudo5"  />
+            <ListItemText secondary="400 points"/>
           </ListItem>
         </List>
       );
