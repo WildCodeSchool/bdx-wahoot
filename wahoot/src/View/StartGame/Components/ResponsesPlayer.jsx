@@ -2,11 +2,20 @@ import { Box ,  makeStyles } from '@material-ui/core';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
-    
+    root: {
+        display:"flex",
+      justifyContent:"flex-start",
+      
+    },
     rep: {
-        width: "35%",
+        width: "100px",
         height: "100px",
-        textAlign: 'center',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        lineHeight: "100px",
+        margin: "10px"
+        
     }
   }));
   

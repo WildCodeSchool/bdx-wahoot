@@ -1,7 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import ShowRanking from './Components/ShowRanking';
 import WatchRightResButton from './Components/WatchRightResButton';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     block: {
