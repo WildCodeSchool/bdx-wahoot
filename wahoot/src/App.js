@@ -4,7 +4,7 @@ import Main from "./Layout/Main/Main";
 import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
 import ListWahoot from './View/ListWahoot/ListWahoot';
 import Home from "./View/Home/Home.jsx";
-import StartGame from './View/StartGameQuestions/StartGame';
+import StartGame from './View/StartGame/StartGame';
 import PseudoGamer from './View/PseudoGamer/PseudoGamer';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     {/* <Home /> */} 
     {/* <ListWahoot /> */}
     {/* <CreationWahoot /> */}
-    <PseudoGamer />
+    <StartGame />
      
      {/* <Login /> */}
 
