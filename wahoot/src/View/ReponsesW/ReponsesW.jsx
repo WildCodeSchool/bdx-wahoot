@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonClassement from "./Components/ButtonClassement";
+import ListW from "./Components/ListW";
 
 
 const ReponsesW = () => {
@@ -8,6 +9,8 @@ const ReponsesW = () => {
     return (
 
     <div>
+    <h2>Titre du Wahoot</h2>
+        <ListW />
       <ButtonClassement />
     </div>
     );
