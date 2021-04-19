@@ -4,8 +4,8 @@ const QuestionsPlayer = () => {
     return (
         
         <div>
-            <fieldset>
-            <p><label>Quels sont les langages ? </label></p>
+            <fieldset style={{backgroundColor:"white"}}>
+            <p>Quels sont les langages ? </p>
             </fieldset>
             
         </div>

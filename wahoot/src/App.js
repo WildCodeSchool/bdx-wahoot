@@ -16,8 +16,8 @@ function App() {
     {/* <ListWahoot /> */}
     {/* <CreationWahoot /> */}
     {/* <StartGame /> */}<StartGame />
-    {/* <PopupEndGame /> */}<PopupEndGame />
-    {/* <Ranking /> */}<Ranking />
+    {/* <PopupEndGame /> */}
+    {/* <Ranking /> */}
      
   </Main>
   );
