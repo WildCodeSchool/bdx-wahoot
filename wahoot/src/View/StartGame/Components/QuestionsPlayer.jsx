@@ -1,6 +1,4 @@
 import React from 'react';
-import QuestionsW from '../../CreationWahoot/Components/QuestionsW';
-import { FilledInput } from '@material-ui/core';
 
 const QuestionsPlayer = () => {
     return (

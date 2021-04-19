@@ -7,6 +7,7 @@ import Home from "./View/Home/Home.jsx";
 import StartGame from './View/StartGame/StartGame';
 import PopupEndGame from './View/PopupEndGame/PopupEndGame';
 import Ranking from './View/Ranking/Ranking';
+import PseudoGamer from './View/PseudoGamer/PseudoGamer';
 
 function App() {
   return (
