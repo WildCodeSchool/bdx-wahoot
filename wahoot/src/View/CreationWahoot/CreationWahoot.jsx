@@ -7,6 +7,7 @@ import ButtonCancel from "./Components/ButtonCancel";
 import ButtonSave from "./Components/ButtonSave";
 import QuestionsW from "./Components/QuestionsW";
 import { makeStyles } from '@material-ui/core/styles';
+import SwitchRightAnswer from '../CreationQuestions/Components/SwitchRightAnswer';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -47,12 +48,17 @@ const CreationWahoot = () => {
         <div className={classes.block}>
             <QuestionsW/>
         </div>
+        <div className={classes.block}>
+            <SwitchRightAnswer />
+        </div>
       {/*<ButtonQuestion/>
         <ButtonHome/>*/}
         <div className={classes.container}>  
             <ButtonCancel/> 
             <ButtonSave/>
         </div>
+{/*<ModalQuestions/>*/}
+
         
     
     </div>
