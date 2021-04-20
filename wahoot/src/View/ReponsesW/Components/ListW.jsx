@@ -5,18 +5,15 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-import EditIconLink from './EditIcon';
-import PublicModal from './PublicModal';
-import SupprimeModal from './SupprimeModal';
+ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       maxWidth: '36ch',
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: 'primary.main',
       margin:'10px auto',
+      
       '& h2':{
           textAlign:"center",
       },
@@ -25,46 +22,44 @@ const useStyles = makeStyles((theme) => ({
           height:"40px",
           textAlign:"center",
           lineHeight:"40px",
-          border:"solid 1px black",
+          color:'white',
           borderRadius:"50%",
-          backgroundColor:"#7fe8a4"
+          backgroundColor:" #3932bf"
+          
       },
   
     },
     inline: {
       display: 'inline',
+      color:"grey",
     },
-    icons:{
-        display:"flex",
-        justifyContent:"flex-start",
-    }
-    
+ 
+
   }));
   
-  const CardsWahootList = ()=> {
+  const ListW = ()=> {
     const classes = useStyles();
   
     return (
       <List className={classes.root}>
-      <h2>Liste des Wahoots</h2>
           <ListItem alignItems="flex-start">
                   <ListItemAvatar>
-                  <h3>W1</h3>
+                  <h3>Q1</h3>
                   </ListItemAvatar>
                   <ListItemText
-                  primary="PHP"
+                  primary="Quel langage utilise t'on pour le style?" 
                   secondary={
                       <React.Fragment>
-                      <Typography
+                      <Typography   
                           component="span"
                           variant="body2"
                           className={classes.inline}
                           color="textPrimary"
+                          
                       >
-                          Brouillon
+                         Bonne réponse :  CSS
                       </Typography>
-                      {" — 12/07/2020"}
-                      <div className={classes.icons}><EditIconLink /><PublicModal /><SupprimeModal /></div>
+                    
   
                       </React.Fragment>
                   }
@@ -73,33 +68,32 @@ const useStyles = makeStyles((theme) => ({
               <Divider variant="inset" component="li" />
               <ListItem alignItems="flex-start">
                   <ListItemAvatar>
-                  <h3>W2</h3>
+                  <h3>Q2</h3>
                   </ListItemAvatar>
-                  <ListItemText
-                  primary="Javascript"
+                  <ListItemText 
+                 primary= "Quels sont les langages back-end?"
                   secondary={
                       <React.Fragment>
                       <Typography
                           component="span"
                           variant="body2"
                           className={classes.inline}
-                          color="textPrimary"
+                          color="textPrimary"  
                       >
-                          Publié
+                          Bonne réponse: PHP, JAVA
                       </Typography>
-                      {" — 14/03/2021"}
-                      <div className={classes.icons}><EditIconLink /><PublicModal /><SupprimeModal /></div>
-                      </React.Fragment>
+                     
+                       </React.Fragment>
                   }
                   />
               </ListItem>
               <Divider variant="inset" component="li" />
               <ListItem alignItems="flex-start">
                   <ListItemAvatar>
-                  <h3>W3</h3>
+                  <h3>Q3</h3>
                   </ListItemAvatar>
                   <ListItemText
-                  primary="HTML"
+                  primary="Comment déclarer t'on une variable?"
                   secondary={
                       <React.Fragment>
                       <Typography
@@ -108,20 +102,19 @@ const useStyles = makeStyles((theme) => ({
                           className={classes.inline}
                           color="textPrimary"
                       >
-                          Publié
+                         Bonne réponse: avec let ou const
                       </Typography>
-                      {' — 07/04/2021'}
-                      <div className={classes.icons}><EditIconLink /><PublicModal /><SupprimeModal /></div>
-                      </React.Fragment>
+                    
+                       </React.Fragment>
                   }
                   />
               </ListItem>
               <ListItem alignItems="flex-start">
                   <ListItemAvatar>
-                  <h3>W1</h3>
+                  <h3>Q4</h3>
                   </ListItemAvatar>
                   <ListItemText
-                  primary="PHP"
+                  primary="Que veut dire API?"
                   secondary={
                       <React.Fragment>
                       <Typography
@@ -130,61 +123,14 @@ const useStyles = makeStyles((theme) => ({
                           className={classes.inline}
                           color="textPrimary"
                       >
-                          Brouillon
+                        Bonne réponse : Application Programming Interface
                       </Typography>
-                      {" — 12/07/2020"}
-                      <div className={classes.icons}><EditIconLink /><PublicModal /><SupprimeModal /></div>
-  
+    
                       </React.Fragment>
                   }
                   />
               </ListItem>
-              <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
-                  <ListItemAvatar>
-                  <h3>W2</h3>
-                  </ListItemAvatar>
-                  <ListItemText
-                  primary="Javascript"
-                  secondary={
-                      <React.Fragment>
-                      <Typography
-                          component="span"
-                          variant="body2"
-                          className={classes.inline}
-                          color="textPrimary"
-                      >
-                          Publié
-                      </Typography>
-                      {" — 14/03/2021"}
-                      <div className={classes.icons}><EditIconLink /><PublicModal /><SupprimeModal /></div>
-                      </React.Fragment>
-                  }
-                  />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
-                  <ListItemAvatar>
-                  <h3>W3</h3>
-                  </ListItemAvatar>
-                  <ListItemText
-                  primary="HTML"
-                  secondary={
-                      <React.Fragment>
-                      <Typography
-                          component="span"
-                          variant="body2"
-                          className={classes.inline}
-                          color="textPrimary"
-                      >
-                          Publié
-                      </Typography>
-                      {' — 07/04/2021'}
-                      <div className={classes.icons}><EditIconLink /><PublicModal /><SupprimeModal /></div>
-                      </React.Fragment>
-                  }
-                  />
-              </ListItem>
+   
       </List>
     );
   }

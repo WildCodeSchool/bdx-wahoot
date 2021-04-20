@@ -13,8 +13,8 @@ function App() {
     {/* <Home /> */} 
     {/* <ListWahoot /> */}
     {/* <CreationWahoot /> */}
-    <PseudoGamer />
-     
+    {/*<PseudoGamer />*/}
+     <ReponsesW />
      {/* <Login /> */}
 
      

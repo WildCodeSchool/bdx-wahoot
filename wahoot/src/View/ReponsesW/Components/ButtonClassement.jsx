@@ -18,8 +18,7 @@ const ButtonClassement= () => {
     return (
     
     <div> 
-      <h2>Titre du Wahoot </h2>
-    <div className={classes.root}>
+     <div className={classes.root}>
 
       <Button variant="contained" color="primary">
         Retour au classement
