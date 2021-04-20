@@ -4,15 +4,19 @@ import Main from "./Layout/Main/Main";
 import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
 import ListWahoot from './View/ListWahoot/ListWahoot';
 import Home from "./View/Home/Home.jsx";
+import CreationQuestion from './View/CreationQuestions/CreationQuestion';
 import PseudoGamer from './View/PseudoGamer/PseudoGamer';
+
 
 function App() {
   return (
   <Main>
     {/* <Home /> */} 
     {/* <ListWahoot /> */}
-    {/* <CreationWahoot /> */}
-    <PseudoGamer />
+    {/* <CreationWahoot /> */}<CreationWahoot />
+    {/* <CreationQuestion /> */}<CreationQuestion />
+    {/* <PseudoGamer /> */}
+
      
      {/* <Login /> */}
 
