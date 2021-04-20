@@ -7,7 +7,10 @@ import Home from "./View/Home/Home.jsx";
 import StartGame from './View/StartGame/StartGame';
 import PopupEndGame from './View/PopupEndGame/PopupEndGame';
 import Ranking from './View/Ranking/Ranking';
+import ReponsesW from './View/ReponsesW/ReponsesW';
+import CreationQuestion from './View/CreationQuestions/CreationQuestion';
 import PseudoGamer from './View/PseudoGamer/PseudoGamer';
+
 
 function App() {
   return (
@@ -18,6 +21,15 @@ function App() {
     {/* <StartGame /> */}
     {/* <PopupEndGame /> */}
     {/* <Ranking /> */}<Ranking />
+    {/*<PseudoGamer />*/}
+     <ReponsesW />
+    {/* <CreationWahoot /> */}<CreationWahoot />
+    {/* <CreationQuestion /> */}<CreationQuestion />
+    {/* <PseudoGamer /> */}
+
+     
+     {/* <Login /> */}
+
      
   </Main>
   );

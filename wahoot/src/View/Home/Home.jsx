@@ -2,16 +2,26 @@ import React from 'react';
 import User from './Components/User.jsx';
 import WahootRules from './Components/WahootRules.jsx';
 import { makeStyles } from '@material-ui/core/styles';
+ 
 
 const useStyles = makeStyles((theme) => ({
-    block: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        margin: "40%",
-    }
-  }));
+  block: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      margin: 65,
+      padding:10,
+      
+  },
 
+  container:{
+      display: "flex",
+      flexDirection: "column",
+      alignSelf: "center",
+      margin: 50,
+  }
+  
+}));
 
 
 function Home() {
@@ -26,6 +36,7 @@ function Home() {
         <div className={classes.block}><WahootRules /></div>
         
       </div>
+   
     );
 }
 
