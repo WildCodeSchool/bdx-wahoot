@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: "center",
     padding: "15px 0",
-    margin: "20px 10px",
     width: "100%",
     maxWidth: "36ch",
     backgroundColor: "primary.main",
@@ -35,44 +34,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const wahoots = [
+  {
+    title: "Wahoot 5",
+  },
+  {
+    title: "Wahoot 6",
+  },
+  {
+    title: "Wahoot 7",
+  },
+  {
+    title: "Wahoot 8",
+  },
+];
+
 const AvailableWahoot = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
       <h2>Wahoots disponibles</h2>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        endIcon={<SendIcon className={classes.go}></SendIcon>}
-      >
-        Wahoot 5
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        endIcon={<SendIcon className={classes.go}></SendIcon>}
-      >
-        Wahoot 6
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        endIcon={<SendIcon className={classes.go}></SendIcon>}
-      >
-        Wahoot 7
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        endIcon={<SendIcon className={classes.go}></SendIcon>}
-      >
-        Wahoot 8
-      </Button>
+      {wahoots.map((wahoot) => (
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.button}
+          endIcon={<SendIcon className={classes.go}></SendIcon>}
+        >
+          {wahoot.title}
+        </Button>
+      ))}
     </div>
   );
 };
