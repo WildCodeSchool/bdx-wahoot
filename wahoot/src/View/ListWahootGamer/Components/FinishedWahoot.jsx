@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
     webki: "10px",
     color: "rgb(31, 31, 31)",
     textAlign: "center",
+
+    margin: "20px 10px",
     "& h2": {
       margin: "5px",
     },
@@ -53,18 +55,16 @@ const FinishedWahoot = () => {
   return (
     <div className={classes.container}>
       <h2>Wahoots terminés</h2>
-      {wahoots.map((wahoot) => {
-        return (
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            endIcon={<StarsIcon className={classes.go}></StarsIcon>}
-          >
-            {wahoot.title}
-          </Button>
-        );
-      })}
+      {wahoots.map((wahoot) => (
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          endIcon={<StarsIcon className={classes.go}></StarsIcon>}
+        >
+          {wahoot.title}
+        </Button>
+      ))}
     </div>
   );
 };
