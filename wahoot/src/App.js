@@ -17,6 +17,7 @@ function App() {
     <Main>
       {/* <Home /> */}
       {/* <ListWahoot /> */}
+      <ListWahoot />
       {/* <CreationWahoot /> */}
       {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
@@ -29,7 +30,7 @@ function App() {
       {/* <CreationQuestion /> */}
 
       {/* <PseudoGamer /> */}
-      <ListWahootGamer />
+      {/*<ListWahootGamer />*/}
 
       {/* <Login /> */}
     </Main>
