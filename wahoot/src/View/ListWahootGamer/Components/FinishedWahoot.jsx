@@ -6,8 +6,19 @@ const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: "center",
     padding: "15px 0",
-    border: "1px solid #3f51b5",
+    width: "100%",
+    maxWidth: "36ch",
+    backgroundColor: "primary.main",
+    margin: "10px auto",
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    backdropFilter: "blur(30px)",
+    border: "1px solid rgba(255, 255, 255, 0.18)",
+    boxShadow: "rgba(142, 142, 142, 0.19) 0px 6px 15px 0px",
     borderRadius: "10px",
+    webki: "10px",
+    color: "rgb(31, 31, 31)",
+    textAlign: "center",
+
     margin: "20px 10px",
     "& h2": {
       margin: "5px",
