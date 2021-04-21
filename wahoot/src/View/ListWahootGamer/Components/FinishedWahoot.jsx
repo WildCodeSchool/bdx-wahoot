@@ -34,44 +34,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const wahoots = [
+  {
+    title: "Wahoot 1",
+  },
+  {
+    title: "Wahoot 2",
+  },
+  {
+    title: "Wahoot 3",
+  },
+  {
+    title: "Wahoot 4",
+  },
+];
+
 const FinishedWahoot = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
       <h2>Wahoots terminés</h2>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        endIcon={<StarsIcon className={classes.go}></StarsIcon>}
-      >
-        Wahoot 1
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        endIcon={<StarsIcon className={classes.go}></StarsIcon>}
-      >
-        Wahoot 2
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        endIcon={<StarsIcon className={classes.go}></StarsIcon>}
-      >
-        Wahoot 3
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        endIcon={<StarsIcon className={classes.go}></StarsIcon>}
-      >
-        Wahoot 4
-      </Button>
+      {wahoots.map((wahoot) => (
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          endIcon={<StarsIcon className={classes.go}></StarsIcon>}
+        >
+          {wahoot.title}
+        </Button>
+      ))}
     </div>
   );
 };
