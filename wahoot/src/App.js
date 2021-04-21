@@ -10,28 +10,25 @@ import Ranking from './View/Ranking/Ranking';
 import ReponsesW from './View/ReponsesW/ReponsesW';
 import CreationQuestion from './View/CreationQuestions/CreationQuestion';
 import PseudoGamer from './View/PseudoGamer/PseudoGamer';
+import Timer from './View/StartGame/Components/Timer';
+
+
 
 
 function App() {
   return (
-  <Main>
-    {/* <Home /> */} 
-    {/* <ListWahoot /> */}
-    {/* <CreationWahoot /> */}
-    {/* <StartGame /> */}
-    {/* <PopupEndGame /> */}
-    {/* <Ranking /> */}<Ranking />
-    {/*<PseudoGamer />*/}
-     <ReponsesW />
-    {/* <CreationWahoot /> */}<CreationWahoot />
-    {/* <CreationQuestion /> */}<CreationQuestion />
-    {/* <PseudoGamer /> */}
-
-     
-     {/* <Login /> */}
-
-     
-  </Main>
+    <Main>
+      {/* <Home /> */}
+      {/* <ListWahoot /> */}
+      {/* <CreationWahoot /> */}
+      {/* <StartGame /> */}
+      {/* <PopupEndGame /> */}
+      {/* <Ranking /> */}<Ranking />
+      {/*<PseudoGamer />*/}
+      {/* <CreationWahoot /> */}
+      {/* <CreationQuestion /> */}
+      {/* <PseudoGamer /> */}
+    </Main>
   );
 }
 
