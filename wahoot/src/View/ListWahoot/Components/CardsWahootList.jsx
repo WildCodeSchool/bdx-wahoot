@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: "36ch",
     backgroundColor: theme.palette.background.paper,
-    margin: "10px auto",
+    margin: "40px auto",
     "& h2": {
       textAlign: "center",
     },
