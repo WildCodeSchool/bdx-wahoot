@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Main from "./Layout/Main/Main";
 import CreationWahoot from "./View/CreationWahoot/CreationWahoot";
@@ -12,6 +12,7 @@ import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import ModificationW from "./View/ModificationWahoot/ModificationW";
 
 function App() {
   return (
@@ -20,16 +21,16 @@ function App() {
       {/* <Home /> */} 
       {/* <ListWahoot /> */}
       {/* <CreationWahoot /> */}
-      {/* <StartGame /> */} 
+      {/* <ModificationW /> */} <ModificationW />
+      {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
       {/* <Ranking /> */}
-      {/*<PseudoGamer />*/}<PseudoGamer />
-      {/* <CreationWahoot /> */}
-      {/* <CreationQuestion /> */}
-      {/* <PseudoGamer /> */}
+      {/*<PseudoGamer />*/}
+      {/*<ReponsesW />*/}
+      {/* <CreationQuesion /> */}
       {/*<ListWahootGamer />*/}
-       </Main> 
-   
+      {/* <Login /> */}
+    </Main>
   );
 }
 
