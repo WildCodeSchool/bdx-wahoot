@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const StartGame = () => {
+ 
     const classes = useStyles();
     return(
         <div className={classes.block}>
@@ -23,6 +24,7 @@ const StartGame = () => {
             <div><CounterQuestions /></div>
             <div><Timer /></div>
             <div><ResponsesPlayer /></div>
+            
         </div>
     )
 };
