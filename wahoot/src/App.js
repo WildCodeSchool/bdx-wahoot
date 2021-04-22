@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
+    <Main>
     <Router>
       <div>
         <nav>
@@ -95,6 +96,7 @@ function App() {
         {/*</Main>*/}
       </div>
     </Router>
+    </Main>
   );
 }
 
