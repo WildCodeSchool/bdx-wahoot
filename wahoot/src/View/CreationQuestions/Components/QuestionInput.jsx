@@ -3,28 +3,26 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: 200,
-    
-      },
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: 200,
     },
-
-    p: {
-        width: "40px",
-        height: "40px",
-        lineHeight: "10px",
-        textAlign: "center",
-        border: "solid 1px black",
-        borderRadius: "50%",
-        
   },
 
-    container: {
-        display:"flex",
-    }
-  }));
+  p: {
+    width: "40px",
+    height: "40px",
+    lineHeight: "10px",
+    textAlign: "center",
+    border: "solid 1px black",
+    borderRadius: "50%",
+  },
+
+  container: {
+    display: "flex",
+  },
+}));
 
 const QuestionInput = () => {
 

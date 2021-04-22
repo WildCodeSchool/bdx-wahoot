@@ -17,15 +17,14 @@ function App() {
   <Main>
     {/* <Home /> */} 
     {/* <ListWahoot /> */}
-    {/* <CreationWahoot /> */}
+    {/* <CreationWahoot /> */}<CreationWahoot />
     {/* <StartGame /> */}
     {/* <PopupEndGame /> */}
-    {/* <Ranking /> */}<Ranking />
+    {/* <Ranking /> */}
     {/*<PseudoGamer />*/}
-     <ReponsesW />
-    {/* <CreationWahoot /> */}<CreationWahoot />
-    {/* <CreationQuestion /> */}<CreationQuestion />
-    {/* <PseudoGamer /> */}
+    {/*<ReponsesW />*/}
+    
+    
 
      
      {/* <Login /> */}
