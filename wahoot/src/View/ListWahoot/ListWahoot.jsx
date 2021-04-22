@@ -5,10 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   content: {
-    width: "20%",
+    width: "90%",
     margin: "20px auto",
   },
-  container: {
+  /*container: {
     display: "flex",
     justifyContent: "center",
   },
@@ -17,22 +17,17 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     margin: 30,
-  },
+  },*/
 }));
 
-function ListWahoot() {
+const ListWahoot = () => {
   const classes = useStyles();
   return (
     <div className={classes.content}>
-      <div>
-        <ListAffichageW />
-      </div>
-      <div>
-        {" "}
-        <CreateW />{" "}
-      </div>
+      <CreateW />
+      <ListAffichageW />
     </div>
   );
-}
+};
 
 export default ListWahoot;
