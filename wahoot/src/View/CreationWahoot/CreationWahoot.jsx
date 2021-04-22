@@ -7,6 +7,7 @@ import ButtonCancel from "./Components/ButtonCancel";
 import ButtonSave from "./Components/ButtonSave";
 import QuestionsW from "./Components/QuestionsW";
 import { makeStyles } from '@material-ui/core/styles';
+import ButtonQuestion from './Components/ButtonQuestion';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -94,6 +95,9 @@ const CreationWahoot = () => {
     const [form, setForm] = React.useState(wahoots);
     const [question, setQuestion] = React.useState(questions);
 
+const handleTitleChange = (e) => {
+    setForm({...form, title:e.target.value});
+}
 
     const classes = useStyles();
 
@@ -103,7 +107,7 @@ const CreationWahoot = () => {
             <MainTitleCreationWahoot />
         </div>
         <div className={classes.block}>
-            <TitleCreationWahoot />
+            <TitleCreationWahoot value={form.title} handleChange={handleTitleChange}/>
         </div>
         <div className={classes.block}>
             <Calendar /> 
@@ -114,8 +118,6 @@ const CreationWahoot = () => {
         <div className={classes.block}>
             <QuestionsW/>
         </div>
-      {/*<ButtonQuestion/>
-        <ButtonHome/>*/}
         <div className={classes.container}>  
             <ButtonCancel/> 
             <ButtonSave/>
