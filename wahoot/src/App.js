@@ -79,21 +79,6 @@ function App() {
             <ReponsesW />
           </Route>
         </Switch>
-        {/*<Main>*/}
-        {/* <Home /> */}
-        {/* <ListWahoot /> */}
-        {/* <CreationWahoot /> */}
-        {/* <StartGame /> */}
-        {/* <PopupEndGame /> */}
-        {/* <Ranking /> */}
-        {/* <CreationWahoot /> */}
-
-        {/* <CreationQuestion /> */}
-        {/* <PseudoGamer /> */}
-        {/*<ReponsesW />*/}
-        {/*<ListWahootGamer />*/}
-        {/* <Login /> */}
-        {/*</Main>*/}
       </div>
     </Router>
     </Main>

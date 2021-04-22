@@ -10,11 +10,13 @@ const useStyles = makeStyles((theme) => ({
       margin: 20,
     },
     question: {
-        flexDirection: "column",
-        justifyContent: "center",
-        backgroundColor: "#3f51b5",
-        border: "solid 1px",
-        borderRadius: "10px",    
+        backgroundColor: "rgba(255, 255, 255, 0.4)",
+        backdropFilter: "blur(30px)",
+        border: "1px solid rgba(255, 255, 255, 0.18)",
+        boxShadow: "rgba(142, 142, 142, 0.19) 0px 6px 15px 0px",
+        borderRadius: "10px",
+        webki: "10px",
+        color: "rgb(31, 31, 31)",   
     },
     p: {
         textAlign:"center",
