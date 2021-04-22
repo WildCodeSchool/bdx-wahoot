@@ -11,21 +11,24 @@ import ReponsesW from "./View/ReponsesW/ReponsesW";
 import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import ModificationW from "./View/ModificationWahoot/ModificationW";
 
 function App() {
   return (
-    <Main>
-      {/* <Home /> */}
+    
+     <Main>
+      {/* <Home /> */} 
       {/* <ListWahoot /> */}
       {/* <CreationWahoot /> */}
       {/* <ModificationW /> */} <ModificationW />
       {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
       {/* <Ranking /> */}
-      {/*<PseudoGamer />*/}
+      {/* <CreationWahoot /> */}<CreationWahoot />
+      {/* <CreationQuestion /> */}
+      {/* <PseudoGamer /> */}
       {/*<ReponsesW />*/}
-      {/* <CreationQuesion /> */}
       {/*<ListWahootGamer />*/}
       {/* <Login /> */}
     </Main>
