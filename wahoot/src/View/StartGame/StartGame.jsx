@@ -19,12 +19,11 @@ const StartGame = () => {
     const classes = useStyles();
     return(
         <div className={classes.block}>
-            <div><TitlePlayer /></div>
-            <p><QuestionsPlayer /></p>
-            <div><CounterQuestions /></div>
-            <div><Timer /></div>
-            <div><ResponsesPlayer /></div>
-            
+            <TitlePlayer />
+            <QuestionsPlayer />
+            {/* <CounterQuestions /> */}
+           <p> <Timer /> </p>
+            <ResponsesPlayer /> 
         </div>
     )
 };

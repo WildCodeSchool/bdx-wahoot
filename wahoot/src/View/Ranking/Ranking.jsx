@@ -46,7 +46,8 @@ const topRank = [{
 const Ranking = () => {
     const classes = useStyles();
     return (
-        <div> <h2 className={classes.root}>CLASSEMENT</h2>
+        <div> 
+            <h2 className={classes.root}>CLASSEMENT</h2>
             <div className={classes.block}>
                 {topRank.map((player) => {
                     return (

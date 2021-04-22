@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button } from '@material-ui/core';
 import Calendar from '../CreationWahoot/Components/Calendar';
+import ColorButtonDeepPurple from '../StartGame/Components/ColorButtonDeepPurple';
+
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -22,7 +24,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 400,
+    width: '90%',
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -56,9 +58,9 @@ const PopupEndGame = () => {
   
     return (
       <div>
-        <button type="button" onClick={handleOpen}>
-          Fin questions 
-        </button>
+        <ColorButtonDeepPurple type="button" onClick={handleOpen}>
+          (Dernière réponse) 
+        </ColorButtonDeepPurple>
         <Modal
           open={open}
           onClose={handleClose}
