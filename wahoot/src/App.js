@@ -16,12 +16,12 @@ function App() {
   return (
     <Main>
       {/* <Home /> */}
-      {/* <ListWahoot /> */}<ListWahoot />
+      {/* <ListWahoot /> */}
       {/* <CreationWahoot /> */}
       {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
       {/* <Ranking /> */}
-      {/* <CreationWahoot /> */}
+      {/* <CreationWahoot /> */}<CreationWahoot />
       {/* <CreationQuestion /> */}
       {/* <PseudoGamer /> */}
       {/*<ListWahootGamer />*/}

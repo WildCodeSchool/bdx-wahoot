@@ -64,7 +64,9 @@ const ColorButtonPink = withStyles((theme) => ({
   },
 }))(Button);
 
-const Answers = () => {
+
+
+const Answers = ({ answerBis }) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -78,6 +80,7 @@ const Answers = () => {
 
   const handleChangeAnswer = (event) => {
     setAnswer(event.target.value);
+    //setAnswer(wahoots.questions.answersList.text)
   };
   const handleChangeAnswerOne = (event) => {
     setAnswerOne(event.target.value);
@@ -145,10 +148,12 @@ const Answers = () => {
             label="Réponse1"
             type="text"
             fullWidth
-            value={answer}
+            value={answerBis.text}
+            name={`text_${answerBis._id}`}
             onChange={handleChangeAnswer}
           />
           <SwitchRightAnswer />
+          <button>{answerBis.isGoodAnswer ? "oui" : "non"}</button>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
