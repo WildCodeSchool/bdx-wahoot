@@ -25,9 +25,10 @@ function App() {
       {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
       {/* <Ranking /> */}
-      {/*<PseudoGamer />*/}
+      {/* <CreationWahoot /> */}<CreationWahoot />
+      {/* <CreationQuestion /> */}
+      {/* <PseudoGamer /> */}
       {/*<ReponsesW />*/}
-      {/* <CreationQuesion /> */}
       {/*<ListWahootGamer />*/}
       {/* <Login /> */}
     </Main>
