@@ -53,11 +53,7 @@ function SupprimeModal() {
             ref={descriptionElementRef}
             tabIndex={-1}
           ><p>Voulez-vous vraiment supprimer ce questionnaire ?</p>
-            {[...new Array(10)]
-              .map(
-                () => '',
-              )
-              .join('\n')}
+            
           </DialogContentText>
         </DialogContent>
         <DialogActions>

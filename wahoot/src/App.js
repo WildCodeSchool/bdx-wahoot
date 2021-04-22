@@ -19,11 +19,11 @@ function App() {
   return (
     <Main>
       {/* <Home /> */}
-      {/* <ListWahoot /> */}
+      {/* <ListWahoot /> */}<ListWahoot />
       {/* <CreationWahoot /> */}
       {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
-      {/* <Ranking /> */}<Ranking />
+      {/* <Ranking /> */}
       {/*<PseudoGamer />*/}
       {/* <CreationWahoot /> */}
       {/* <CreationQuestion /> */}

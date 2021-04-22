@@ -52,11 +52,7 @@ function PublicModal() {
             tabIndex={-1}
           ><p>Voulez-vous vraiment publier ce
           questionnaire ?</p>
-            {[...new Array(10)]
-              .map(
-                () => '',
-              )
-              .join('\n')}
+            
           </DialogContentText>
         </DialogContent>
         <DialogActions>
