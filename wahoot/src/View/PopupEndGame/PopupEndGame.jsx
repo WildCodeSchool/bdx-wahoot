@@ -57,7 +57,7 @@ const PopupEndGame = () => {
     return (
       <div>
         <button type="button" onClick={handleOpen}>
-          Fin questions (à supp ça et relier à la dernière réponse choisie)
+          Fin questions 
         </button>
         <Modal
           open={open}
