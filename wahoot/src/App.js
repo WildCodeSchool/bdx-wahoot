@@ -11,29 +11,25 @@ import ReponsesW from "./View/ReponsesW/ReponsesW";
 import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <Main>
-      {/* <Home /> */}
+    
+     <Main>
+      {/* <Home /> */} 
       {/* <ListWahoot /> */}
-      <ListWahoot />
       {/* <CreationWahoot /> */}
-      {/* <StartGame /> */}
+      {/* <StartGame /> */} 
       {/* <PopupEndGame /> */}
       {/* <Ranking /> */}
-
-      {/*<PseudoGamer />*/}
-
+      {/*<PseudoGamer />*/}<PseudoGamer />
       {/* <CreationWahoot /> */}
-
       {/* <CreationQuestion /> */}
-
       {/* <PseudoGamer /> */}
       {/*<ListWahootGamer />*/}
-
-      {/* <Login /> */}
-    </Main>
+       </Main> 
+   
   );
 }
 
