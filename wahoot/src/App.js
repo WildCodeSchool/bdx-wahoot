@@ -10,9 +10,10 @@ import Ranking from "./View/Ranking/Ranking";
 import ReponsesW from "./View/ReponsesW/ReponsesW";
 import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
+import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
 import ModificationW from "./View/ModificationWahoot/ModificationW";
 
-function app() {
+function App() {
   return (
     <Main>
       {/* <Home /> */}
@@ -25,13 +26,15 @@ function app() {
       {/* <Ranking /> */}
       {/*<PseudoGamer />*/}
       {/*<ReponsesW />*/}
-      {/* <CreationWahoot /> */}
-      {/* <CreationQuestion /> */}
-      {/* <PseudoGamer /> */}
+
+      <ListWahoot />
+
+      {/* <CreationQuesion /> */}
+      {/*<ListWahootGamer />*/}
 
       {/* <Login /> */}
     </Main>
   );
 }
 
-export default app;
+export default App;
