@@ -8,8 +8,6 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-
-
         backgroundColor: "rgba(255, 255, 255, 0.4)",
         backdropFilter: "blur(30px)",
         border: "1px solid rgba(255, 255, 255, 0.18)",
