@@ -19,19 +19,14 @@ function App() {
       {/* <Home /> */}
       {/* <ListWahoot /> */}
       {/* <CreationWahoot /> */}
-      {/* <ModificationW /> */}
-      <ModificationW />
+      {/* <ModificationW /> */} <ModificationW />
       {/* <StartGame /> */}
       {/* <PopupEndGame /> */}
       {/* <Ranking /> */}
       {/*<PseudoGamer />*/}
       {/*<ReponsesW />*/}
-
-      <ListWahoot />
-
       {/* <CreationQuesion /> */}
       {/*<ListWahootGamer />*/}
-
       {/* <Login /> */}
     </Main>
   );
