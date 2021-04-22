@@ -48,7 +48,7 @@ const PopupEndGame = () => {
         <h2>Wahoot terminée!</h2>
         <p>
         Le classement et les réponses aux questionnaires seront disponibles à partir du 
-"DATE HEURE DEJA DETERMINEES"
+<Calendar />
         </p>
         <Button onClick={handleClose}>OK !</Button>
       </div>
