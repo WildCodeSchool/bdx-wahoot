@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   test: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center"
   },
 }));
 
