@@ -47,9 +47,9 @@ const PopupEndGame = () => {
   
     const body = (
       <div style={modalStyle} className={classes.paper}>
-        <h2>Wahoot terminée!</h2>
+        <h2>Wahoot terminé !</h2>
         <p>
-        Le classement et les réponses aux questionnaires seront disponibles à partir du 
+        Le classement et les réponses au questionnaire seront disponibles à partir du 
 <Calendar />
         </p>
         <Button onClick={handleClose}>OK !</Button>

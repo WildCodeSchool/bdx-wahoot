@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 const answers = [
   {
     number: "Q1",
-    question: "Comment déclare t'on une variable?",
+    question: "Comment déclare-t-on une variable?",
     rep: "let",
   },
   {
@@ -54,7 +54,7 @@ const answers = [
   },
   {
     number: "Q3",
-    question: "Quel est le langage front?",
+    question: "Quel est le langage front-end?",
     rep: "javascript",
   },
 ];

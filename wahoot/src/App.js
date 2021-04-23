@@ -13,8 +13,22 @@ import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import StartGameB from "./View/StartGame/StartGameB";
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles((theme) => ({
+  link: {
+    textDecoration: "none",
+    color: theme.palette.text.primary,
+    listStyleType: "none",
+  },
+}));
+
 
 function App() {
+
+  const classes = useStyles();
+
   return (
     <Main>
     <Router>
@@ -22,31 +36,31 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link className={classes.link} to="/">Home</Link>
             </li>
             <li>
-              <Link to="/admin">Admin</Link>
+              <Link className={classes.link} to="/admin">Admin</Link>
             </li>
             <li>
-              <Link to="/wahoot-creation">Création du Wahoot</Link>
+              <Link className={classes.link} to="/wahoot-creation">Création du Wahoot</Link>
             </li>
             <li>
-              <Link to="/home-player">Home Joueur</Link>
+              <Link className={classes.link} to="/home-player">Home Joueur</Link>
             </li>
             <li>
-              <Link to="/player">Joueur</Link>
+              <Link className={classes.link} to="/player">Joueur</Link>
             </li>
             <li>
-              <Link to="/game-player">Lancer Wahoot</Link>
+              <Link className={classes.link} to="/game-player">Lancer Wahoot</Link>
             </li>
             <li>
-              <Link to="/end-game-player">Fin Wahoot</Link>
+              <Link className={classes.link} to="/end-game-player">Fin Wahoot</Link>
             </li>
             <li>
-              <Link to="/ranking">Classement</Link>
+              <Link className={classes.link} to="/ranking">Classement</Link>
             </li>
             <li>
-              <Link to="/answers">Bonnes réponses</Link>
+              <Link className={classes.link} to="/answers">Bonnes réponses</Link>
             </li>
           </ul>
         </nav>
