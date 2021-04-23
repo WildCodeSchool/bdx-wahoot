@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-//à revoir
+//Should or Could 
 
 const CounterQuestions = () => {
     const [count, setCount] = useState(1);
