@@ -30,18 +30,18 @@ const useStyles = makeStyles((theme) => ({
 const topRank = [{
     id: "123",
     position: "1",
-    pseudo: "gito",
-    points: "1000 points"
+    pseudo: "Jennifer",
+    points: "10000 points"
 }, {
     id: "124",
     position: "2",
-    pseudo: "gitoo",
-    points: "100 points"
+    pseudo: "Poulidor",
+    points: "1000 points"
 }, {
     id: "125",
     position: "3",
-    pseudo: "gitooo",
-    points: "10 points"
+    pseudo: "Toto",
+    points: "100 points"
 },
 ];
 

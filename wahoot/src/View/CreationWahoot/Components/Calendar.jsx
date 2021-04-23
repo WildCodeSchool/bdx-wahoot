@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Calendar = () => {
+const Calendar = ({ value, handleChange }) => {
   const classes = useStyles();
 
   return (
@@ -24,6 +24,8 @@ const Calendar = () => {
         label="Date/heure fin Wahoot"
         type="datetime-local"
         defaultValue="2021-04-12T10:30"
+        value={value}
+        onChange={handleChange}
         className={classes.textField}
         InputLabelProps={{
           shrink: true,

@@ -28,7 +28,7 @@ const wahoots = {
     _id: "123456",
     title: "Le JS c'est de la balle",
     status: "Terminé",
-    endDate: "20/04/2021",
+    endDate: "2022-05-13T22:30",
 }
 
 const questions = [
@@ -92,8 +92,15 @@ const questions = [
 const CreationWahoot = () => {
 
     const [form, setForm] = React.useState(wahoots);
-    const [question, setQuestion] = React.useState(questions);
+    const [date, setDate] = React.useState(wahoots);
 
+const handleTitleChange = (e) => {
+  setForm({...form, title:e.target.value});
+}
+
+const handleDateChange = (e) => {
+  setDate({...date, endDate:e.target.value});
+}
 
     const classes = useStyles();
 
@@ -103,10 +110,10 @@ const CreationWahoot = () => {
             <MainTitleCreationWahoot />
         </div>
         <div className={classes.block}>
-            <TitleCreationWahoot />
+            <TitleCreationWahoot value={form.title} handleChange={handleTitleChange}/>
         </div>
         <div className={classes.block}>
-            <Calendar /> 
+            <Calendar value={form.endDate} handleChange={handleDateChange}/> 
         </div>
         <div className={classes.block}>  
                 <ButtonQuestionCreation /> 
@@ -114,8 +121,6 @@ const CreationWahoot = () => {
         <div className={classes.block}>
             <QuestionsW/>
         </div>
-      {/*<ButtonQuestion/>
-        <ButtonHome/>*/}
         <div className={classes.container}>  
             <ButtonCancel/> 
             <ButtonSave/>
