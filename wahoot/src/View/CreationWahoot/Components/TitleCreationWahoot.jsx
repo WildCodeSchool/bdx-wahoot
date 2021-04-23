@@ -11,8 +11,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TitleCreationWahoot= () => {
+const TitleCreationWahoot= ({value, handleChange}) => {
   const classes = useStyles();
+
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
@@ -23,6 +24,9 @@ const TitleCreationWahoot= () => {
           defaultValue=""
           variant="outlined"
           size="small"
+          value={value}
+          onChange={handleChange}
+
         />
       </div>
     </form>

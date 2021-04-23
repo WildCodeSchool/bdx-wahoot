@@ -32,13 +32,14 @@ const CreationQuestion = ({ question }) => {
             setForm({ ...form, questionText: e.target.value });
           }}
         />
-        {question.answersList.map((answer, index) => (
+        <Answers />
+        {/* {question.answersList.map((answer, index) => (
           <Answers
             answerBis={answer}
             onTextChange={() => {}}
             onStatusChange={() => {}}
           />
-        ))}
+        ))} */}
         <AddQuestionButton />
       </div>
       {/* <div className={classes.buttons}>     
