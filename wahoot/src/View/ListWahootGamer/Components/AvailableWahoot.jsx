@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import SendIcon from "@material-ui/icons/Send";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -56,14 +57,14 @@ const AvailableWahoot = () => {
     <div className={classes.container}>
       <h2>Wahoots disponibles</h2>
       {wahoots.map((wahoot) => (
-        <Button
+        <Link to="/game-player"><Button
           variant="contained"
           color="secondary"
           className={classes.button}
           endIcon={<SendIcon className={classes.go}></SendIcon>}
         >
           {wahoot.title}
-        </Button>
+        </Button></Link>
       ))}
     </div>
   );

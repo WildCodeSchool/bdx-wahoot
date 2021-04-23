@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,9 +21,9 @@ const ButtonSave = () => {
   return (
     <div className={classes.root}>
     
-      <Button variant="contained" color="primary">
+      <Link to="/admin"><Button variant="contained" color="primary">
         Enregistrer
-      </Button>
+      </Button></Link>
     </div>
   );
 }

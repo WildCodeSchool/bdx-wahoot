@@ -6,6 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import { Link } from 'react-router-dom';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -41,9 +42,9 @@ const OkGamer = ({pseudo})=>{
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Link to="/player"><Button onClick={handleClose} color="primary">
             Fermer
-          </Button>
+          </Button></Link>
         </DialogActions>
       </Dialog>
     </div>
