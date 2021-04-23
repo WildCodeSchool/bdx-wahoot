@@ -8,8 +8,6 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-
-
         backgroundColor: "rgba(255, 255, 255, 0.4)",
         backdropFilter: "blur(30px)",
         border: "1px solid rgba(255, 255, 255, 0.18)",
@@ -48,7 +46,8 @@ const topRank = [{
 const Ranking = () => {
     const classes = useStyles();
     return (
-        <div> <h2 className={classes.root}>CLASSEMENT</h2>
+        <div> 
+            <h2 className={classes.root}>CLASSEMENT</h2>
             <div className={classes.block}>
                 {topRank.map((player) => {
                     return (
