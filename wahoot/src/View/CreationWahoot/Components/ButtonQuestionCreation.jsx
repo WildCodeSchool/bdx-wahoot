@@ -109,9 +109,10 @@ const ButtonQuestionCreation = ()=> {
       >
         <DialogTitle className={classes.title} id="responsive-dialog-title">{"Titre du Wahoot"}</DialogTitle>
         <DialogContent>
-        {form.questions?.map((question) => (
+          <CreationQuestion />
+        {/* {form.questions?.map((question) => (
          <CreationQuestion question={question}/>
-         ))}
+         ))} */}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">

@@ -6,7 +6,6 @@ import HomeIcon from "@material-ui/icons/Home";
 import PersonIcon from "@material-ui/icons/Person";
 import VideogameAssetIcon from "@material-ui/icons/VideogameAsset";
 
-
 const useStyles = makeStyles({
   root: {
     width: "100%",
@@ -20,7 +19,7 @@ const NavigationBar = () => {
   const [value, setValue] = React.useState(0);
 
   return (
-    <BottomNavigation
+    <BottomNavigation button
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);
