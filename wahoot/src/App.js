@@ -29,13 +29,14 @@ function App() {
   const classes = useStyles();
 
   return (
-    <Main>
+    
     <Router>
+      <Main>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
-              <Link className={classes.link} to="/">Home</Link>
+              <Link className={classes.link} to="/"> Home</Link>
             </li>
             <li>
               <Link className={classes.link} to="/admin">Admin</Link>
@@ -62,7 +63,7 @@ function App() {
               <Link className={classes.link} to="/answers">Bonnes réponses</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <Switch>
           <Route exact path="/">
@@ -94,8 +95,9 @@ function App() {
           </Route>
         </Switch>
       </div>
+      </Main>
     </Router>
-    </Main>
+   
   );
 }
 
