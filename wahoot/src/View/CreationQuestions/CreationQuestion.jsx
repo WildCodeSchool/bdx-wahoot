@@ -40,7 +40,7 @@ const CreationQuestion = ({ question }) => {
             onStatusChange={() => {}}
           />
         ))} */}
-        <AddQuestionButton />
+        {/* <AddQuestionButton /> */}
       </div>
       {/* <div className={classes.buttons}>     
                 <ButtonCancel/> 
