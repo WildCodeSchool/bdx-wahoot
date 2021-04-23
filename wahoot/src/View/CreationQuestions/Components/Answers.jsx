@@ -145,15 +145,16 @@ const Answers = ({ answerBis }) => {
             autoFocus
             margin="dense"
             id="name"
-            label="Réponse1"
+            label="Réponse"
             type="text"
             fullWidth
-            value={answerBis.text}
-            name={`text_${answerBis._id}`}
+            value={answer}
+            // value={answerBis.text}
+            // name={`text_${answerBis._id}`}
             onChange={handleChangeAnswer}
           />
           <SwitchRightAnswer />
-          <button>{answerBis.isGoodAnswer ? "oui" : "non"}</button>
+          {/* <button>{answerBis.isGoodAnswer ? "oui" : "non"}</button> */}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
@@ -183,7 +184,7 @@ const Answers = ({ answerBis }) => {
             autoFocus
             margin="dense"
             id="name"
-            label="Réponse2"
+            label="Réponse"
             type="text"
             fullWidth
             value={answerone}
@@ -219,7 +220,7 @@ const Answers = ({ answerBis }) => {
             autoFocus
             margin="dense"
             id="name"
-            label="Réponse3"
+            label="Réponse"
             type="text"
             fullWidth
             value={answertwo}
@@ -255,7 +256,7 @@ const Answers = ({ answerBis }) => {
             autoFocus
             margin="dense"
             id="name"
-            label="Réponse4"
+            label="Réponse"
             type="text"
             fullWidth
             value={answerthree}
