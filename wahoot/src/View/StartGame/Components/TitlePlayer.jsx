@@ -1,9 +1,18 @@
 import React from 'react';
 
+const questionReps = [{
+    id:"123",
+    title: "Titre du Wahoot",
+}
+];
+
 const TitlePlayer = () => {
     return (
         <div>
-            <h2> TITRE DU WAHOOT (pré-rempli)</h2>
+            {questionReps.map((qr) => {
+                return <h2> {qr.title} </h2>
+            })}
+            
         </div>
     )
 };
