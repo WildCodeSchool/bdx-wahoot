@@ -12,7 +12,6 @@ import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import StartGameB from "./View/StartGame/StartGameB";
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -82,7 +81,7 @@ function App() {
             <ListWahootGamer />
           </Route>
           <Route path="/game-player">
-            <StartGameB />
+            <StartGame />
           </Route>
           <Route path="/end-game-player">
             <PopupEndGame />

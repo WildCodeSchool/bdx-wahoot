@@ -12,8 +12,8 @@ const ColorButtonTeal = withStyles((theme) => ({
       color: theme.palette.getContrastText(teal[500]),
       backgroundColor: teal[300],
       width: "120px",
-    height: "100px",
-    margin: "10px",
+      height: "100px",
+      margin: "10px",
       "&:hover": {
         backgroundColor: teal[700],
       },

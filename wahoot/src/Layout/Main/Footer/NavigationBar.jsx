@@ -9,7 +9,7 @@ import VideogameAssetIcon from "@material-ui/icons/VideogameAsset";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    // position: "fixed",
+    position: "fixed",
     bottom: "0px",
   },
 });
