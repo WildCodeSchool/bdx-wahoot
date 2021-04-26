@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
-import CreationQuestion from '../../CreationQuestions/CreationQuestion';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import CreationQuestion from "../../CreationQuestions/CreationQuestion";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
 }));
-
 
 const wahoots = {
   _id: "123456",
@@ -31,24 +30,24 @@ const wahoots = {
         {
           _id: "12345678",
           text: "JS",
-          isGoodAnswer: true
+          isGoodAnswer: true,
         },
         {
           _id: "8784",
           text: "Var",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "12345678",
           text: "Toto",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "8784",
           text: "Tata",
-          isGoodAnswer: false
-        }
-      ]
+          isGoodAnswer: false,
+        },
+      ],
     },
     {
       _id: "47256247",
@@ -58,73 +57,95 @@ const wahoots = {
         {
           _id: "98759286",
           text: "réponse 1",
-          isGoodAnswer: true
+          isGoodAnswer: true,
         },
         {
           _id: "454",
           text: "Réponse 2",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "98759286",
           text: "réponse 3",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "454",
           text: "Réponse 4",
-          isGoodAnswer: false
-        }
-      ]
-    }
-  ]
+          isGoodAnswer: false,
+        },
+      ],
+    },
+  ],
 };
 
-const ButtonQuestionCreation = ()=> {
-  const [form, setForm] = React.useState(wahoots);
+const ButtonQuestionCreation = ({ open, onClose, question }) => {
+  let initialQuestion = {
+    questionText: "",
+    answersList: [
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+    ],
+  };
+  if (question) {
+    initialQuestion = question;
+  }
+  const [form, setForm] = React.useState(initialQuestion);
   const classes = useStyles();
 
-  const [open, setOpen] = React.useState(false);
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleQuestionTextChange = (e) => {
+    setForm({ ...form, questionText: e.target.value });
   };
-
-  const handleClose = () => {
-    setOpen(false);
+  const handleAnswerChange = (newAnswers) => {
+    setForm({ ...form, answersList: newAnswers });
   };
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Créer une question
-      </Button>
       <Dialog
         fullScreen={fullScreen}
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle className={classes.title} id="responsive-dialog-title">{form.title}</DialogTitle>
+        <DialogTitle className={classes.title} id="responsive-dialog-title">
+          {form.title}
+        </DialogTitle>
         <DialogContent>
-          <CreationQuestion />
-        {/* {form.questions?.map((question) => (
-         <CreationQuestion question={question}/>
-         ))} */}
+          <CreationQuestion
+            question={form}
+            onChange={handleQuestionTextChange}
+            onAnswerChange={handleAnswerChange}
+          />
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button autoFocus onClick={onClose} color="primary">
             Annuler
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={onClose} color="primary" autoFocus>
             Enregistrer
           </Button>
         </DialogActions>
       </Dialog>
     </div>
   );
-}
+};
 
 export default ButtonQuestionCreation;
