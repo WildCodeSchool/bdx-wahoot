@@ -59,7 +59,7 @@ const ColorButtonPink = withStyles((theme) => ({
   },
 }))(Button);
 
-const Answers = ({ answers, onChange }) => {
+const Answers = ({ answers, onChange, onSwitchChange }) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -78,10 +78,14 @@ const Answers = ({ answers, onChange }) => {
     onChange(newAnswers);
   };
   const handleChangeAnswerTwo = (event) => {
-    //setAnswerTwo(event.target.value);
+    const newAnswers = [...answers];
+    newAnswers[2] = { ...answers[2], text: event.target.value };
+    onChange(newAnswers);
   };
   const handleChangeAnswerThree = (event) => {
-    //setAnswerThree(event.target.value);
+    const newAnswers = [...answers];
+    newAnswers[3] = { ...answers[3], text: event.target.value };
+    onChange(newAnswers);
   };
 
   const handleClickOpen = () => {
@@ -116,6 +120,10 @@ const Answers = ({ answers, onChange }) => {
     setOpenthree(false);
   };
 
+  const handleSwitchChange = () => {
+
+  }
+
   return (
     <div>
       <ColorButtonIndigo
@@ -143,8 +151,8 @@ const Answers = ({ answers, onChange }) => {
             value={answers[0]?.text}
             onChange={handleChangeAnswer}
           />
-          <SwitchRightAnswer />
-          {/* <button>{answerBis.isGoodAnswer ? "oui" : "non"}</button> */}
+          <SwitchRightAnswer isGoodAnswer={answers.isGoodAnswer ? "oui" : "non"} onSwitchChange={onSwitchChange}/>
+          {/* <button>{answers.isGoodAnswer ? "oui" : "non"}</button> */}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
@@ -233,7 +241,7 @@ const Answers = ({ answers, onChange }) => {
         color="primary"
         onClick={handleClickOpenThree}
       >
-        {answers[3]?.text ? answers[3].text : "Ajouter une question"}
+        {answers[3]?.text ? answers[3].text : "Ajouter une réponse"}
       </ColorButtonPink>
       <Dialog
         open={openthree}
