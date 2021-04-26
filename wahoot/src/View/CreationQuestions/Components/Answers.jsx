@@ -59,7 +59,7 @@ const ColorButtonPink = withStyles((theme) => ({
   },
 }))(Button);
 
-const Answers = ({ answers }) => {
+const Answers = ({ answers, onChange }) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -68,16 +68,18 @@ const Answers = ({ answers }) => {
   const [openthree, setOpenthree] = React.useState(false);
 
   const handleChangeAnswer = (event) => {
-    setAnswer(event.target.value);
+    const newAnswers = [...answers];
+    newAnswers[0] = { ...answers[0], text: event.target.value };
+    onChange(newAnswers);
   };
   const handleChangeAnswerOne = (event) => {
-    setAnswerOne(event.target.value);
+    //setAnswerOne(event.target.value);
   };
   const handleChangeAnswerTwo = (event) => {
-    setAnswerTwo(event.target.value);
+    //setAnswerTwo(event.target.value);
   };
   const handleChangeAnswerThree = (event) => {
-    setAnswerThree(event.target.value);
+    //setAnswerThree(event.target.value);
   };
 
   const handleClickOpen = () => {
@@ -120,7 +122,7 @@ const Answers = ({ answers }) => {
         color="primary"
         onClick={handleClickOpen}
       >
-        {answers[0]?.text ? answers[0].text : "Ajouter une question"}
+        {answers[0]?.text ? answers[0].text : "Ajouter une réponse"}
       </ColorButtonIndigo>
       <Dialog
         open={open}
@@ -157,7 +159,7 @@ const Answers = ({ answers }) => {
         color="primary"
         onClick={handleClickOpenOne}
       >
-        {answers[1]?.text ? answers[1].text : "Ajouter une question"}
+        {answers[1]?.text ? answers[1].text : "Ajouter une réponse"}
       </ColorButtonTeal>
       <Dialog
         open={openone}
@@ -193,7 +195,7 @@ const Answers = ({ answers }) => {
         color="primary"
         onClick={handleClickOpenTwo}
       >
-        {answers[2]?.text ? answers[2].text : "Ajouter une question"}
+        {answers[2]?.text ? answers[2].text : "Ajouter une réponse"}
       </ColorButtonDeepPurple>
       <Dialog
         open={opentwo}

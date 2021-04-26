@@ -80,31 +80,31 @@ const wahoots = {
 };
 
 const ButtonQuestionCreation = ({ open, onClose, question }) => {
+  let initialQuestion = {
+    questionText: "",
+    answersList: [
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+    ],
+  };
   if (question) {
-    const [form, setForm] = React.useState(question);
-  } else {
-    const [form, setForm] = React.useState({
-      questionText: "",
-      answersList: [
-        {
-          text: "",
-          isGoodAnswer: false,
-        },
-        {
-          text: "",
-          isGoodAnswer: false,
-        },
-        {
-          text: "",
-          isGoodAnswer: false,
-        },
-        {
-          text: "",
-          isGoodAnswer: false,
-        },
-      ],
-    });
+    initialQuestion = question;
   }
+  const [form, setForm] = React.useState(initialQuestion);
   const classes = useStyles();
 
   const theme = useTheme();
@@ -112,6 +112,9 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
 
   const handleQuestionTextChange = (e) => {
     setForm({ ...form, questionText: e.target.value });
+  };
+  const handleAnswerChange = (newAnswers) => {
+    setForm({ ...form, answersList: newAnswers });
   };
 
   return (
@@ -127,8 +130,9 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
         </DialogTitle>
         <DialogContent>
           <CreationQuestion
-            question={question}
+            question={form}
             onChange={handleQuestionTextChange}
+            onAnswerChange={handleAnswerChange}
           />
         </DialogContent>
         <DialogActions>

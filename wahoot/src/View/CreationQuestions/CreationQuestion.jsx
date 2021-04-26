@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
 }));
-const CreationQuestion = ({ question, onChange }) => {
+const CreationQuestion = ({ question, onChange, onAnswerChange }) => {
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ const CreationQuestion = ({ question, onChange }) => {
           questionText={question.questionText}
           onChange={onChange}
         />
-        <Answers answers={question.answers} />
+        <Answers answers={question.answersList} onChange={onAnswerChange} />
         {/* {question.answersList.map((answer, index) => (
           <Answers
             answerBis={answer}
