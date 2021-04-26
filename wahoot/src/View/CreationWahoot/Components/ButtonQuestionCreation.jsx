@@ -107,7 +107,7 @@ const ButtonQuestionCreation = ()=> {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle className={classes.title} id="responsive-dialog-title">{"Titre du Wahoot"}</DialogTitle>
+        <DialogTitle className={classes.title} id="responsive-dialog-title">{form.title}</DialogTitle>
         <DialogContent>
           <CreationQuestion />
         {/* {form.questions?.map((question) => (
