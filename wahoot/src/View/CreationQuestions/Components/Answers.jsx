@@ -1,11 +1,6 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import {
-  deepPurple,
-  indigo,
-  pink,
-  teal,
-} from "@material-ui/core/colors";
+import { deepPurple, indigo, pink, teal } from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -64,23 +59,16 @@ const ColorButtonPink = withStyles((theme) => ({
   },
 }))(Button);
 
-
-
-const Answers = ({ answerBis }) => {
+const Answers = ({ answers }) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
   const [openone, setOpenone] = React.useState(false);
   const [opentwo, setOpentwo] = React.useState(false);
   const [openthree, setOpenthree] = React.useState(false);
-  const [answer, setAnswer] = React.useState("Ajouter une réponse");
-  const [answerone, setAnswerOne] = React.useState("Ajouter une réponse");
-  const [answertwo, setAnswerTwo] = React.useState("Ajouter une réponse");
-  const [answerthree, setAnswerThree] = React.useState("Ajouter une réponse");
 
   const handleChangeAnswer = (event) => {
     setAnswer(event.target.value);
-    //setAnswer(wahoots.questions.answersList.text)
   };
   const handleChangeAnswerOne = (event) => {
     setAnswerOne(event.target.value);
@@ -132,7 +120,7 @@ const Answers = ({ answerBis }) => {
         color="primary"
         onClick={handleClickOpen}
       >
-        {answer}
+        {answers[0]?.text ? answers[0].text : "Ajouter une question"}
       </ColorButtonIndigo>
       <Dialog
         open={open}
@@ -148,9 +136,7 @@ const Answers = ({ answerBis }) => {
             label="Réponse"
             type="text"
             fullWidth
-            value={answer}
-            // value={answerBis.text}
-            // name={`text_${answerBis._id}`}
+            value={answers[0]?.text}
             onChange={handleChangeAnswer}
           />
           <SwitchRightAnswer />
@@ -171,7 +157,7 @@ const Answers = ({ answerBis }) => {
         color="primary"
         onClick={handleClickOpenOne}
       >
-        {answerone}
+        {answers[1]?.text ? answers[1].text : "Ajouter une question"}
       </ColorButtonTeal>
       <Dialog
         open={openone}
@@ -187,7 +173,7 @@ const Answers = ({ answerBis }) => {
             label="Réponse"
             type="text"
             fullWidth
-            value={answerone}
+            value={answers[1]?.text}
             onChange={handleChangeAnswerOne}
           />
           <SwitchRightAnswer />
@@ -207,7 +193,7 @@ const Answers = ({ answerBis }) => {
         color="primary"
         onClick={handleClickOpenTwo}
       >
-        {answertwo}
+        {answers[2]?.text ? answers[2].text : "Ajouter une question"}
       </ColorButtonDeepPurple>
       <Dialog
         open={opentwo}
@@ -223,7 +209,7 @@ const Answers = ({ answerBis }) => {
             label="Réponse"
             type="text"
             fullWidth
-            value={answertwo}
+            value={answers[2]?.text}
             onChange={handleChangeAnswerTwo}
           />
           <SwitchRightAnswer />
@@ -243,7 +229,7 @@ const Answers = ({ answerBis }) => {
         color="primary"
         onClick={handleClickOpenThree}
       >
-        {answerthree}
+        {answers[3]?.text ? answers[3].text : "Ajouter une question"}
       </ColorButtonPink>
       <Dialog
         open={openthree}
@@ -259,7 +245,7 @@ const Answers = ({ answerBis }) => {
             label="Réponse"
             type="text"
             fullWidth
-            value={answerthree}
+            value={answers[3]?.text}
             onChange={handleChangeAnswerThree}
           />
           <SwitchRightAnswer />
