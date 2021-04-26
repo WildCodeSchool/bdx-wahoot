@@ -6,6 +6,7 @@ import AddQuestionButton from "./Components/AddQuestionButton";
 import ButtonCancel from "../CreationWahoot/Components/ButtonCancel";
 import ButtonSave from "../CreationWahoot/Components/ButtonSave";
 import QuestionsPlayer from "../StartGame/Components/QuestionsPlayer";
+import TitleCreationWahoot from "../CreationWahoot/Components/TitleCreationWahoot";
 
 const useStyles = makeStyles((theme) => ({
   container: {

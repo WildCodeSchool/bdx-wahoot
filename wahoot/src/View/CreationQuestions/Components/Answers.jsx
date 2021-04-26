@@ -73,7 +73,9 @@ const Answers = ({ answers, onChange }) => {
     onChange(newAnswers);
   };
   const handleChangeAnswerOne = (event) => {
-    //setAnswerOne(event.target.value);
+    const newAnswers = [...answers];
+    newAnswers[1] = { ...answers[1], text: event.target.value };
+    onChange(newAnswers);
   };
   const handleChangeAnswerTwo = (event) => {
     //setAnswerTwo(event.target.value);
