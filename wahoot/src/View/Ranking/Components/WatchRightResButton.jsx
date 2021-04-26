@@ -1,13 +1,14 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 
 const WatchRightResButton = () => {
   return (
     <div>
-      <Button variant="contained" color="primary">
+      <Link to="/answers"><Button variant="contained" color="primary">
         Voir les bonnes réponses
-      </Button>
+      </Button></Link>
     </div>
   );
 }

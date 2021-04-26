@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const QuestionInput = ({ value, handleChange }) => {
+const QuestionInput = ({ questionText, onChange }) => {
   const classes = useStyles();
 
   return (
@@ -37,8 +37,8 @@ const QuestionInput = ({ value, handleChange }) => {
             defaultValue=""
             variant="outlined"
             size="small"
-            value={value}
-            onChange={handleChange}
+            onChange={onChange}
+            value={questionText}
           />
         </div>
       </form>

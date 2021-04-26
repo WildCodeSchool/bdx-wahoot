@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,9 +21,9 @@ const ButtonClassement= () => {
     <div> 
      <div className={classes.root}>
 
-      <Button variant="contained" color="primary">
+      <Link to="/ranking"><Button variant="contained" color="primary">
         Retour au classement
-      </Button>
+      </Button></Link>
       </div>
     </div>
      
