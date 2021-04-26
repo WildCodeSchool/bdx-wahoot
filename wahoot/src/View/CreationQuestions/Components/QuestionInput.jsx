@@ -1,6 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,29 +24,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const QuestionInput = () => {
+const QuestionInput = ({ value, handleChange }) => {
+  const classes = useStyles();
 
-    const classes = useStyles();
-
-    return (
-        <div className={classes.container}>
-            
-            <form className={classes.root} noValidate autoComplete="off">
-                <div>
-                    <TextField
-                    label="Question"
-                    id="outlined-size-small"
-                    defaultValue=""
-                    variant="outlined"
-                    size="small"
-                    />
-                </div>
-            </form>
-            <div className={classes.p}>
-             <p>1</p> 
-            </div>
+  return (
+    <div className={classes.container}>
+      <form className={classes.root} noValidate autoComplete="off">
+        <div>
+          <TextField
+            label="Question"
+            id="outlined-size-small"
+            defaultValue=""
+            variant="outlined"
+            size="small"
+            value={value}
+            onChange={handleChange}
+          />
         </div>
-    );
-}
+      </form>
+      <div className={classes.p}>
+        <p>1</p>
+      </div>
+    </div>
+  );
+};
 
 export default QuestionInput;

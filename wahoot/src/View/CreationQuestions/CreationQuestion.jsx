@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
 }));
+
 const CreationQuestion = ({ question }) => {
   const [form, setForm] = useState(question);
   const classes = useStyles();
