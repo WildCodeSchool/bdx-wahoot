@@ -117,6 +117,9 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
     setForm({ ...form, answersList: newAnswers });
   };
 
+  const [title, setTitle] = React.useState(wahoots);
+
+
   return (
     <div>
       <Dialog
@@ -125,8 +128,8 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle className={classes.title} id="responsive-dialog-title">
-          {form.title}
+        <DialogTitle className={classes.title} id="responsive-dialog-title" >
+          {title.title} 
         </DialogTitle>
         <DialogContent>
           <CreationQuestion
