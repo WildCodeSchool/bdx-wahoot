@@ -8,6 +8,7 @@ import ButtonSave from "../CreationWahoot/Components/ButtonSave";
 import QuestionsPlayer from "../StartGame/Components/QuestionsPlayer";
 import TitleCreationWahoot from "../CreationWahoot/Components/TitleCreationWahoot";
 import { DialogTitle } from "@material-ui/core";
+import AnswerTest from "./Components/AnswerTest";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -34,7 +35,8 @@ const CreationQuestion = ({ question, onChange, onAnswerChange }) => {
           questionText={question.questionText}
           onChange={onChange}
         />
-        <Answers answers={question.answersList} onChange={onAnswerChange} />
+        {/* <Answers answers={question.answersList} onChange={onAnswerChange} /> */}
+        <AnswerTest answers={question.answersList} onChange={onAnswerChange}/>
         {/* {question.answersList.map((answer, index) => (
           <Answers
             answerBis={answer}

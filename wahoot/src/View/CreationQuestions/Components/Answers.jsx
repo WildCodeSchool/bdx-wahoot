@@ -8,6 +8,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import SwitchRightAnswer from "./SwitchRightAnswer";
+import Switcher from "./Checker";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -153,6 +154,7 @@ const Answers = ({ answers, onChange, onSwitchChange }) => {
           />
           <SwitchRightAnswer isGoodAnswer={answers.isGoodAnswer ? "oui" : "non"} onSwitchChange={onSwitchChange}/>
           {/* <button>{answers.isGoodAnswer ? "oui" : "non"}</button> */}
+          <Switcher />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
