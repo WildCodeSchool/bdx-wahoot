@@ -8,6 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import CreationQuestion from "../../CreationQuestions/CreationQuestion";
+import TitleCreationWahoot from "./TitleCreationWahoot";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -119,7 +120,6 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
 
   const [title, setTitle] = React.useState(wahoots);
 
-
   return (
     <div>
       <Dialog
@@ -128,8 +128,8 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle className={classes.title} id="responsive-dialog-title" >
-          {title.title} 
+        <DialogTitle className={classes.title} id="responsive-dialog-title">
+          {title.title}
         </DialogTitle>
         <DialogContent>
           <CreationQuestion
