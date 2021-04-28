@@ -26,7 +26,6 @@ const TitleCreationWahoot= ({value, handleChange}) => {
           size="small"
           value={value}
           onChange={handleChange}
-
         />
       </div>
     </form>
