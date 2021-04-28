@@ -90,11 +90,8 @@ const AnswerTest = ({ answers, onChange }) => {
 
     return (
         <div>
-            <ColorButtonIndigo
-                onClick={handleClickOpen}
-            >
+            <ColorButtonIndigo onClick={handleClickOpen} >
                 {answers[0]?.text ? answers[0].text : "Ajouter une réponse"}
-
             </ColorButtonIndigo>
             <Dialog
                 open={open}
@@ -125,9 +122,7 @@ const AnswerTest = ({ answers, onChange }) => {
                 </DialogActions>
             </Dialog>
 
-            <ColorButtonTeal
-                onClick={handleClickOpenOne}
-            >
+            <ColorButtonTeal onClick={handleClickOpenOne}>
                 {answers[1]?.text ? answers[1].text : "Ajouter une réponse"}
             </ColorButtonTeal>
             <Dialog
@@ -158,9 +153,7 @@ const AnswerTest = ({ answers, onChange }) => {
                     </Button>
                 </DialogActions>
             </Dialog>
-            <ColorButtonDeepPurple
-                onClick={handleClickOpenTwo}
-            >
+            <ColorButtonDeepPurple onClick={handleClickOpenTwo}>
                 {answers[2]?.text ? answers[2].text : "Ajouter une réponse"}
             </ColorButtonDeepPurple>
             <Dialog
@@ -191,9 +184,7 @@ const AnswerTest = ({ answers, onChange }) => {
                     </Button>
                 </DialogActions>
             </Dialog>
-            <ColorButtonPink
-                onClick={handleClickOpenThree}
-            >
+            <ColorButtonPink onClick={handleClickOpenThree} >
                 {answers[3]?.text ? answers[3].text : "Ajouter une réponse"}
             </ColorButtonPink>
             <Dialog
