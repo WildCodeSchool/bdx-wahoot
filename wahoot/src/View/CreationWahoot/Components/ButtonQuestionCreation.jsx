@@ -8,6 +8,10 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import CreationQuestion from "../../CreationQuestions/CreationQuestion";
+<<<<<<< HEAD
+=======
+import TitleCreationWahoot from "./TitleCreationWahoot";
+>>>>>>> 2826b2664abd79cb263077f97742a621743fda88
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -79,33 +83,60 @@ const wahoots = {
   ],
 };
 
+<<<<<<< HEAD
 const ButtonQuestionCreation = ({ titleWahoot, handleChange }) => {
   const [form, setForm] = React.useState(wahoots);
+=======
+const ButtonQuestionCreation = ({ open, onClose, question }) => {
+  let initialQuestion = {
+    questionText: "",
+    answersList: [
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+      {
+        text: "",
+        isGoodAnswer: false,
+      },
+    ],
+  };
+  if (question) {
+    initialQuestion = question;
+  }
+  const [form, setForm] = React.useState(initialQuestion);
+>>>>>>> 2826b2664abd79cb263077f97742a621743fda88
   const classes = useStyles();
 
-  const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleQuestionTextChange = (e) => {
+    setForm({ ...form, questionText: e.target.value });
+  };
+  const handleAnswerChange = (newAnswers) => {
+    setForm({ ...form, answersList: newAnswers });
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [title, setTitle] = React.useState(wahoots);
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Créer une question
-      </Button>
       <Dialog
         fullScreen={fullScreen}
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
+<<<<<<< HEAD
         <DialogTitle
           className={classes.title}
           id="responsive-dialog-title"
@@ -120,12 +151,23 @@ const ButtonQuestionCreation = ({ titleWahoot, handleChange }) => {
           {/* {form.questions?.map((question) => (
          <CreationQuestion question={question}/>
          ))} */}
+=======
+        <DialogTitle className={classes.title} id="responsive-dialog-title">
+          {title.title}
+        </DialogTitle>
+        <DialogContent>
+          <CreationQuestion
+            question={form}
+            onChange={handleQuestionTextChange}
+            onAnswerChange={handleAnswerChange}
+          />
+>>>>>>> 2826b2664abd79cb263077f97742a621743fda88
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button autoFocus onClick={onClose} color="primary">
             Annuler
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={onClose} color="primary" autoFocus>
             Enregistrer
           </Button>
         </DialogActions>

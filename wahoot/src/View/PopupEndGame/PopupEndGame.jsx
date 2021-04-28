@@ -1,74 +1,58 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import { Button } from '@material-ui/core';
-import Calendar from '../CreationWahoot/Components/Calendar';
-import ColorButtonDeepPurple from '../StartGame/Components/ColorButtonDeepPurple';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+import ColorButtonIndigo from '../StartGame/Components/ColorButtonIndigo';
+import { Link } from 'react-router-dom';
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
+const PopupEndGame = ({pseudo})=>{
+  const [open, setOpen] = React.useState(false);
 
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+  const handleClickOpen = () => {
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <ColorButtonIndigo variant="contained" color="primary" onClick={handleClickOpen}>
+       dernière réponse 
+        </ColorButtonIndigo>
+
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Wahoot terminé! 
+            <p>Revenez plus tard pour voir ton résultat! </p>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Link to="/player"><Button onClick={handleClose} color="primary">
+            Fermer
+          </Button></Link>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
 }
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    width: '90%',
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
-const PopupEndGame = () => {
-    const classes = useStyles();
-    
-    const [modalStyle] = React.useState(getModalStyle);
-    const [open, setOpen] = React.useState(false);
-  
-    const handleOpen = () => {
-      setOpen(true);
-    };
-  
-    const handleClose = () => {
-      setOpen(false);
-    };
-  
-    const body = (
-      <div style={modalStyle} className={classes.paper}>
-        <h2>Wahoot terminé !</h2>
-        <p>
-        Le classement et les réponses au questionnaire seront disponibles à partir du 
-<Calendar />
-        </p>
-        <Button onClick={handleClose}>OK !</Button>
-      </div>
-    );
-  
-    return (
-      <div>
-        <ColorButtonDeepPurple type="button" onClick={handleOpen}>
-          (Dernière réponse) 
-        </ColorButtonDeepPurple>
-        <Modal
-          open={open}
-          onClose={handleClose}
-        >
-          {body}
-        </Modal>
-      </div>
-    );
-  }
 
 export default PopupEndGame;

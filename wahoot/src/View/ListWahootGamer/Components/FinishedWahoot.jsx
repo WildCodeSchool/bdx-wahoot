@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import StarsIcon from "@material-ui/icons/Stars";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: "center",
@@ -54,14 +55,14 @@ const FinishedWahoot = () => {
     <div className={classes.container}>
       <h2>Wahoots terminés</h2>
       {wahoots.map((wahoot) => (
-        <Button
+        <Link to="/ranking"><Button
           variant="contained"
           color="primary"
           className={classes.button}
           endIcon={<StarsIcon className={classes.go}></StarsIcon>}
         >
           {wahoot.title}
-        </Button>
+        </Button></Link>
       ))}
     </div>
   );

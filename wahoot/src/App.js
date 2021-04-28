@@ -35,103 +35,73 @@ function App() {
   };
 
   return (
-    <div>
-      <ButtonQuestionCreation
-        handleChange={handleChange}
-        titleWahoot={titleWahoot}
-      />
-
+    <Router>
       <Main>
-        <Router>
-          <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link className={classes.link} to="/">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/admin">
-                    Admin
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/wahoot-creation">
-                    Création du Wahoot
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/home-player">
-                    Home Joueur
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/player">
-                    Joueur
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/game-player">
-                    Lancer Wahoot
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/end-game-player">
-                    Fin Wahoot
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/ranking">
-                    Classement
-                  </Link>
-                </li>
-                <li>
-                  <Link className={classes.link} to="/answers">
-                    Bonnes réponses
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+        <div>
+          {/* <nav>
+          <ul>
+            <li>
+              <Link className={classes.link} to="/"> Home</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/admin">Admin</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/wahoot-creation">Création du Wahoot</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/home-player">Home Joueur</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/player">Joueur</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/game-player">Lancer Wahoot</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/end-game-player">Fin Wahoot</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/ranking">Classement</Link>
+            </li>
+            <li>
+              <Link className={classes.link} to="/answers">Bonnes réponses</Link>
+            </li>
+          </ul>
+        </nav> */}
 
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/admin">
-                <ListWahoot />
-              </Route>
-              <Route path="/wahoot-creation">
-                <CreationWahoot />
-              </Route>
-              <Route path="/home-player">
-                <PseudoGamer />
-              </Route>
-              <Route path="/player">
-                <ListWahootGamer />
-              </Route>
-              <Route path="/game-player">
-                <StartGame />
-              </Route>
-              <Route path="/end-game-player">
-                <PopupEndGame />
-              </Route>
-              <Route path="/ranking">
-                <Ranking />
-              </Route>
-              <Route path="/answers">
-                <ReponsesW />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/admin">
+              <ListWahoot />
+            </Route>
+            <Route path="/wahoot-creation">
+              <CreationWahoot />
+            </Route>
+            <Route path="/home-player">
+              <PseudoGamer />
+            </Route>
+            <Route path="/player">
+              <ListWahootGamer />
+            </Route>
+            <Route path="/game-player">
+              <StartGame />
+            </Route>
+            <Route path="/end-game-player">
+              <PopupEndGame />
+            </Route>
+            <Route path="/ranking">
+              <Ranking />
+            </Route>
+            <Route path="/answers">
+              <ReponsesW />
+            </Route>
+          </Switch>
+        </div>
       </Main>
-    </div>
+    </Router>
   );
 }
 

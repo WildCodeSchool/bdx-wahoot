@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "bacf4cb5-65d8-4f80-af6a-e189b4582a72",
+		"name": "Wahoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create Player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@toto.fr\",\n    \"firstName\": \"Toto\",\n    \"lastName\": \"Tutu\",\n    \"plainPassword\": \"test1234\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/users/player",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"users",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@admin.fr\",\n    \"firstName\": \"Admin\",\n    \"lastName\": \"Super\",\n    \"plainPassword\": \"test1234\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/users/admin",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"users",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test@toto.fr\",\n    \"password\":\"test1234\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/users/player/login",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"users",
+								"player",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@admin.fr\",\n    \"password\": \"test1234\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/users/admin/login",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"users",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkQXQiOiIyMDIxLTA0LTI3VDE0OjI0OjEwLjU1MloiLCJfaWQiOiI2MDg4MWUwYzY4MTM5OGNhYTBkYzcyYzYiLCJmaXJzdE5hbWUiOiJBZG1pbiIsImxhc3ROYW1lIjoiU3VwZXIiLCJlbWFpbCI6ImFkbWluQGFkbWluLmZyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE2MTk1MzM0NTAsImV4cCI6MTY0NDUzMzQ1MH0.veO5vZFgm75KhMMLWFfS86zo8CWV6ZWXvTPw2DQTjTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Admin - Edited\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/users/60881e0c681398caa0dc72c6",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"users",
+								"60881e0c681398caa0dc72c6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkQXQiOiIyMDIxLTA0LTI3VDE0OjI0OjEwLjU1MloiLCJfaWQiOiI2MDg4MWUwYzY4MTM5OGNhYTBkYzcyYzYiLCJmaXJzdE5hbWUiOiJBZG1pbiIsImxhc3ROYW1lIjoiU3VwZXIiLCJlbWFpbCI6ImFkbWluQGFkbWluLmZyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE2MTk1MzM0NTAsImV4cCI6MTY0NDUzMzQ1MH0.veO5vZFgm75KhMMLWFfS86zo8CWV6ZWXvTPw2DQTjTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/users/60881e0c681398caa0dc72c6",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"users",
+								"60881e0c681398caa0dc72c6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wahoot",
+			"item": [
+				{
+					"name": "Create Wahoot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"JS pour débutant\",\n    \"endDate\":\"2021-05-12\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/wahoot",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"wahoot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update wahoot",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"JS pour les grands débutants !\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/wahoot/60881f8e681398caa0dc72c7",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"wahoot",
+								"60881f8e681398caa0dc72c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Wahoot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/wahoot/60881ff8681398caa0dc72c8",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"wahoot",
+								"60881ff8681398caa0dc72c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all wahoot (admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/wahoot/all",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"wahoot",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get active wahoot (player)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/wahoot/active",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"wahoot",
+								"active"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "Create Question",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wahootId\": \"60881f8e681398caa0dc72c7\",\n    \"questionText\": \"Js c'est comme Java ?\",\n    \"answerList\":[\n        {\n            \"text\": \"oui\",\n            \"isGoodAnswer\": false\n        },\n        {\n            \"text\": \"non\",\n            \"isGoodAnswer\": true\n        },\n        {\n            \"text\": \"peut-etre\",\n            \"isGoodAnswer\": false\n        },\n        {\n            \"text\": \"je ne sais pas\",\n            \"isGoodAnswer\": false\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/questions",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"questionText\": \"JS est Java sont les mêmes langages\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/questions/608821ef8ee57acb550425ff",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"questions",
+								"608821ef8ee57acb550425ff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/questions/608822d151489ccb81dc6c4d",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"questions",
+								"608822d151489ccb81dc6c4d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get questions by wahoot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/questions/60881f8e681398caa0dc72c7",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"questions",
+								"60881f8e681398caa0dc72c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player Answers",
+			"item": [
+				{
+					"name": "Create Palyer Answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"questionId\":\"608821ef8ee57acb550425ff\",\n    \"answerId\":\"608821ef8ee57acb55042601\",\n    \"wahootId\":\"60881f8e681398caa0dc72c7\",\n    \"player\": {\n        \"name\": \"toto\",\n        \"_id\":\"123\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3006/player-answers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"player-answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get player Answers by wahoot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/player-answers/123?wahootId=60881f8e681398caa0dc72c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"player-answers",
+								"123"
+							],
+							"query": [
+								{
+									"key": "wahootId",
+									"value": "60881f8e681398caa0dc72c7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ranking",
+			"item": [
+				{
+					"name": "Rank Player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\":\"123\",\n    \"name\":\"toto\"\n}"
+						},
+						"url": {
+							"raw": "{{wahoot_url}}/ranking/60881f8e681398caa0dc72c7",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"ranking",
+								"60881f8e681398caa0dc72c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ranking by WahootId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{wahoot_url}}/ranking/60881f8e681398caa0dc72c7",
+							"host": [
+								"{{wahoot_url}}"
+							],
+							"path": [
+								"ranking",
+								"60881f8e681398caa0dc72c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "wahoot_url",
+			"value": "https://wahoot-api.herokuapp.com"
+		}
+	]
+}

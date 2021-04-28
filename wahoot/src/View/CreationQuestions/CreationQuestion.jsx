@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import QuestionInput from "./Components/QuestionInput";
-import { makeStyles } from "@material-ui/core/styles";
+import { formatMs, makeStyles } from "@material-ui/core/styles";
 import Answers from "./Components/Answers";
 import AddQuestionButton from "./Components/AddQuestionButton";
 import ButtonCancel from "../CreationWahoot/Components/ButtonCancel";
 import ButtonSave from "../CreationWahoot/Components/ButtonSave";
+import QuestionsPlayer from "../StartGame/Components/QuestionsPlayer";
+import TitleCreationWahoot from "../CreationWahoot/Components/TitleCreationWahoot";
+import { DialogTitle } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -20,19 +23,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
 }));
-const CreationQuestion = ({ question }) => {
-  const [form, setForm] = useState(question);
+const CreationQuestion = ({ question, onChange, onAnswerChange }) => {
   const classes = useStyles();
 
   return (
     <div>
       <div className={classes.container}>
+  
         <QuestionInput
-          onChange={(e) => {
-            setForm({ ...form, questionText: e.target.value });
-          }}
+          questionText={question.questionText}
+          onChange={onChange}
         />
-        <Answers />
+        <Answers answers={question.answersList} onChange={onAnswerChange} />
         {/* {question.answersList.map((answer, index) => (
           <Answers
             answerBis={answer}
@@ -40,7 +42,7 @@ const CreationQuestion = ({ question }) => {
             onStatusChange={() => {}}
           />
         ))} */}
-        <AddQuestionButton />
+        {/* <AddQuestionButton /> */}
       </div>
       {/* <div className={classes.buttons}>     
                 <ButtonCancel/> 
