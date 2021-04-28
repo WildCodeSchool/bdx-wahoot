@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonQuestionCreation from "./Components/ButtonQuestionCreation";
 import Calendar from "./Components/Calendar";
 import MainTitleCreationWahoot from "./Components/MainTitleCreationWahoot";
@@ -8,6 +8,8 @@ import ButtonSave from "./Components/ButtonSave";
 import QuestionsW from "./Components/QuestionsW";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+
+
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -88,7 +90,10 @@ const questions = [
 ];
 
 const CreationWahoot = () => {
-  const [form, setForm] = React.useState(wahoots);
+  const [form, setForm] = React.useState([]);
+  const [title, setTitle] = React.useState("");
+  const [endDate, setEndDate] = React.useState("");
+
   const [open, setOpen] = React.useState(false);
 
   const handleTitleChange = (e) => {
@@ -106,6 +111,17 @@ const CreationWahoot = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // const getWahoot = () => {
+  //   axios
+  //     .get("https://wahoot-api.herokuapp.com/wahoot")
+  //     .then((response) => response.data)
+  //     .then((data) => {
+  //       console.log(data);
+  //       setForm(data[0]);
+  //     })
+
+  // }
 
   const classes = useStyles();
 
