@@ -8,10 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import CreationQuestion from "../../CreationQuestions/CreationQuestion";
-<<<<<<< HEAD
-=======
 import TitleCreationWahoot from "./TitleCreationWahoot";
->>>>>>> 2826b2664abd79cb263077f97742a621743fda88
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -83,10 +80,6 @@ const wahoots = {
   ],
 };
 
-<<<<<<< HEAD
-const ButtonQuestionCreation = ({ titleWahoot, handleChange }) => {
-  const [form, setForm] = React.useState(wahoots);
-=======
 const ButtonQuestionCreation = ({ open, onClose, question }) => {
   let initialQuestion = {
     questionText: "",
@@ -113,7 +106,6 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
     initialQuestion = question;
   }
   const [form, setForm] = React.useState(initialQuestion);
->>>>>>> 2826b2664abd79cb263077f97742a621743fda88
   const classes = useStyles();
 
   const theme = useTheme();
@@ -136,22 +128,6 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
-<<<<<<< HEAD
-        <DialogTitle
-          className={classes.title}
-          id="responsive-dialog-title"
-          value={titleWahoot}
-          name={titleWahoot}
-          onChange={handleChange}
-        >
-          {"Titre du Wahoot"}
-        </DialogTitle>
-        <DialogContent>
-          <CreationQuestion />
-          {/* {form.questions?.map((question) => (
-         <CreationQuestion question={question}/>
-         ))} */}
-=======
         <DialogTitle className={classes.title} id="responsive-dialog-title">
           {title.title}
         </DialogTitle>
@@ -161,7 +137,6 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
             onChange={handleQuestionTextChange}
             onAnswerChange={handleAnswerChange}
           />
->>>>>>> 2826b2664abd79cb263077f97742a621743fda88
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={onClose} color="primary">
