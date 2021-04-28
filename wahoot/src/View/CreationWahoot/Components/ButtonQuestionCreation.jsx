@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
-import CreationQuestion from '../../CreationQuestions/CreationQuestion';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import CreationQuestion from "../../CreationQuestions/CreationQuestion";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -16,10 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const wahoots = {
   _id: "123456",
-  title: "Le JS c'est de la balle",
+  titleWahoot: "Le JS c'est de la balle",
   status: "Terminé",
   endDate: "20/04/2021",
   questions: [
@@ -31,24 +30,24 @@ const wahoots = {
         {
           _id: "12345678",
           text: "JS",
-          isGoodAnswer: true
+          isGoodAnswer: true,
         },
         {
           _id: "8784",
           text: "Var",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "12345678",
           text: "Toto",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "8784",
           text: "Tata",
-          isGoodAnswer: false
-        }
-      ]
+          isGoodAnswer: false,
+        },
+      ],
     },
     {
       _id: "47256247",
@@ -58,35 +57,35 @@ const wahoots = {
         {
           _id: "98759286",
           text: "réponse 1",
-          isGoodAnswer: true
+          isGoodAnswer: true,
         },
         {
           _id: "454",
           text: "Réponse 2",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "98759286",
           text: "réponse 3",
-          isGoodAnswer: false
+          isGoodAnswer: false,
         },
         {
           _id: "454",
           text: "Réponse 4",
-          isGoodAnswer: false
-        }
-      ]
-    }
-  ]
+          isGoodAnswer: false,
+        },
+      ],
+    },
+  ],
 };
 
-const ButtonQuestionCreation = ()=> {
+const ButtonQuestionCreation = ({ titleWahoot, handleChange }) => {
   const [form, setForm] = React.useState(wahoots);
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -107,10 +106,18 @@ const ButtonQuestionCreation = ()=> {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle className={classes.title} id="responsive-dialog-title">{"Titre du Wahoot"}</DialogTitle>
+        <DialogTitle
+          className={classes.title}
+          id="responsive-dialog-title"
+          value={titleWahoot}
+          name={titleWahoot}
+          onChange={handleChange}
+        >
+          {"Titre du Wahoot"}
+        </DialogTitle>
         <DialogContent>
           <CreationQuestion />
-        {/* {form.questions?.map((question) => (
+          {/* {form.questions?.map((question) => (
          <CreationQuestion question={question}/>
          ))} */}
         </DialogContent>
@@ -125,6 +132,6 @@ const ButtonQuestionCreation = ()=> {
       </Dialog>
     </div>
   );
-}
+};
 
 export default ButtonQuestionCreation;
