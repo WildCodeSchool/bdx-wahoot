@@ -10,15 +10,12 @@ import ColorButtonIndigo from "../../StartGame/Components/ColorButtonIndigo";
 import ColorButtonTeal from "../../StartGame/Components/ColorButtonTeal";
 import ColorButtonDeepPurple from "../../StartGame/Components/ColorButtonDeepPurple";
 import ColorButtonPink from "../../StartGame/Components/ColorButtonPink";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
 
 
 
 const AnswerTest = ({ answers, onChange }) => {
 
-    // 4 ANSWERS HANDLERS
+    // 4 ANSWERS & HANDLERS
     const [open, setOpen] = React.useState(false);
     const [openone, setOpenone] = React.useState(false);
     const [opentwo, setOpentwo] = React.useState(false);
@@ -30,48 +27,51 @@ const AnswerTest = ({ answers, onChange }) => {
         onChange(newAnswers);
     };
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const handleClickOpenOne = () => {
-        setOpenone(true);
-    };
-
     const handleChangeAnswerOne = (event) => {
         const newAnswers = [...answers];
         newAnswers[1] = { ...answers[1], text: event.target.value };
         onChange(newAnswers);
     };
+
     const handleChangeAnswerTwo = (event) => {
         const newAnswers = [...answers];
         newAnswers[2] = { ...answers[2], text: event.target.value };
         onChange(newAnswers);
     };
+
     const handleChangeAnswerThree = (event) => {
         const newAnswers = [...answers];
         newAnswers[3] = { ...answers[3], text: event.target.value };
         onChange(newAnswers);
     };
 
-    const handleCloseOne = () => {
-        setOpenone(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClickOpenOne = () => {
+        setOpenone(true);
     };
 
     const handleClickOpenTwo = () => {
         setOpentwo(true);
     };
 
-    const handleCloseTwo = () => {
-        setOpentwo(false);
-    };
-
     const handleClickOpenThree = () => {
         setOpenthree(true);
+    };
+
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const handleCloseOne = () => {
+        setOpenone(false);
+    };
+
+    const handleCloseTwo = () => {
+        setOpentwo(false);
     };
 
     const handleCloseThree = () => {
@@ -113,7 +113,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[0]?.text}
                         onChange={handleChangeAnswer}
                     />
-                    <Checker checked={checked} onChange={setChecked} />
+                    <Checker checked={checked} onChange={setChecked}>{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
@@ -147,7 +147,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[1]?.text}
                         onChange={handleChangeAnswerOne}
                     />
-                    <Checker checked={checked1} onChange={setChecked1} />
+                    <Checker checked={checked1} onChange={setChecked1} >{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseOne} color="primary">
@@ -180,7 +180,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[2]?.text}
                         onChange={handleChangeAnswerTwo}
                     />
-                    <Checker checked={checked2} onChange={setChecked2} />
+                    <Checker checked={checked2} onChange={setChecked2} >{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseTwo} color="primary">
@@ -213,7 +213,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[3]?.text}
                         onChange={handleChangeAnswerThree}
                     />
-                    <Checker checked={checked3} onChange={setChecked3} />
+                    <Checker checked={checked3} onChange={setChecked3} >{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseThree} color="primary">
