@@ -4,8 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import CardsWahootList from "./Components/CardsWahootList.jsx";
 import axios from "axios";
 
-
-
 const useStyles = makeStyles((theme) => ({
   content: {
     width: "90%",
@@ -25,12 +23,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ListWahoot = () => {
-<<<<<<< HEAD
-
-  
-  const classes = useStyles();
-
-=======
   const classes = useStyles();
   const [form, setForm] = React.useState([]);
   useEffect(() => {
@@ -42,7 +34,6 @@ const ListWahoot = () => {
         setForm(data[0].data);
       });
   }, []);
->>>>>>> 485418b8c0a9a99564895e5aa4d80e9c299326cc
 
   return (
     <div className={classes.content}>
