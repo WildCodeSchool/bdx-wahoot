@@ -1,33 +1,19 @@
 
 import { Card, CardContent, Typography } from '@material-ui/core';
 import React from 'react';
-import TitlePlayer from './TitlePlayer';
 
-const questionReps = [{
-    id:"123",
-    question : "Quel est le langage web ? ",
-}
-];
 
-const QuestionsPlayer = () => {
+const QuestionsPlayer = ({ questionText }) => {
     return (
-        <div>
-            {questionReps.map((qr) => {
-                return (
-                    <div>
-                        <Card>
+        <Card>
             <CardContent>
-            <Typography variant="h6">{qr.question}</Typography> 
+                <Typography variant="h6">{questionText}</Typography>
             </CardContent>
-            </Card>
-                    </div>
-                )
-            })}
-        </div>
+        </Card>
     )
 };
-        
-           
-        
+
+
+
 
 export default QuestionsPlayer;
