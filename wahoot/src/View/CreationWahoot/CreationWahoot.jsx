@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const wahoots = {
   _id: "123456",
-  title: "php c'est de la balle",
+  title: "js c'est de la balle",
   status: "Terminé",
   endDate: "2022-05-13T22:30",
 };
@@ -88,9 +88,9 @@ const questions = [
 ];
 
 const CreationWahoot = () => {
-  const [form, setForm] = React.useState(wahoots);
+  const [form, setForm] = useState(wahoots);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleTitleChange = (e) => {
     setForm({ ...form, title: e.target.value });

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import QuestionInput from "./Components/QuestionInput";
-import { formatMs, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Answers from "./Components/Answers";
 import AddQuestionButton from "./Components/AddQuestionButton";
 import ButtonCancel from "../CreationWahoot/Components/ButtonCancel";
@@ -30,13 +30,12 @@ const CreationQuestion = ({ question, onChange, onAnswerChange }) => {
   return (
     <div>
       <div className={classes.container}>
-  
         <QuestionInput
           questionText={question.questionText}
           onChange={onChange}
         />
         {/* <Answers answers={question.answersList} onChange={onAnswerChange} /> */}
-        <AnswerTest answers={question.answersList} onChange={onAnswerChange}/>
+        <AnswerTest answers={question.answersList} onChange={onAnswerChange} />
         {/* {question.answersList.map((answer, index) => (
           <Answers
             answerBis={answer}

@@ -27,7 +27,6 @@ function Home() {
   const classes = useStyles();
   const [form, setForm] = React.useState([]);
 
-
   const getWahoot = () => {
     axios
       .get("https://wahoot-api.herokuapp.com/wahoot/all")

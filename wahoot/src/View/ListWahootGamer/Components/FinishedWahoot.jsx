@@ -3,13 +3,13 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import StarsIcon from "@material-ui/icons/Stars";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: "center",
     padding: "15px 0",
     width: "100%",
     maxWidth: "36ch",
-    backgroundColor: "primary.main",
     margin: "10px auto",
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     backdropFilter: "blur(30px)",
@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     webki: "10px",
     color: "rgb(31, 31, 31)",
-    textAlign: "center",
     "& h2": {
       margin: "5px",
     },
@@ -55,14 +54,16 @@ const FinishedWahoot = () => {
     <div className={classes.container}>
       <h2>Wahoots terminés</h2>
       {wahoots.map((wahoot) => (
-        <Link to="/ranking"><Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          endIcon={<StarsIcon className={classes.go}></StarsIcon>}
-        >
-          {wahoot.title}
-        </Button></Link>
+        <Link to="/ranking">
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            endIcon={<StarsIcon className={classes.go}></StarsIcon>}
+          >
+            {wahoot.title}
+          </Button>
+        </Link>
       ))}
     </div>
   );
