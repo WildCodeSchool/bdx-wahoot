@@ -36,14 +36,12 @@ function Home() {
         console.log(data);
         setForm(data[0]);
       });
-
   };
-
 
   return (
     <div className={classes.block}>
       <Link to="/admin">
-        <ButtonAdmin {...form} onClick={getWahoot}/>
+        <ButtonAdmin {...form} onClick={getWahoot} />
       </Link>
       <Link to="/home-player">
         <ButtonJoueur />

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const wahoots = {
   _id: "123456",
-  title: "Le JS c'est de la balle",
+  title: "php c'est de la balle",
   status: "Terminé",
   endDate: "2022-05-13T22:30",
 };
@@ -108,17 +108,6 @@ const CreationWahoot = () => {
     setOpen(false);
   };
 
-  // const getWahoot = () => {
-  //   axios
-  //     .get("https://wahoot-api.herokuapp.com/wahoot")
-  //     .then((response) => response.data)
-  //     .then((data) => {
-  //       console.log(data);
-  //       setForm(data[0]);
-  //     })
-
-  // }
-
   const classes = useStyles();
 
   return (
@@ -147,7 +136,11 @@ const CreationWahoot = () => {
         <ButtonCancel />
         <ButtonSave />
       </div>
-      <ButtonQuestionCreation open={open} onClose={handleClose} />
+      <ButtonQuestionCreation
+        open={open}
+        onClose={handleClose}
+        titleQuestion={form.title}
+      />
       {/*<ModalQuestions/>*/}
     </div>
   );

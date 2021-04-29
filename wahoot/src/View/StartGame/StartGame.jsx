@@ -4,11 +4,11 @@ import ColorButtonPink from "./Components/ColorButtonPink";
 import ColorButtonTeal from "./Components/ColorButtonTeal";
 import QuestionsPlayer from "./Components/QuestionsPlayer";
 import Timer from "./Components/Timer";
-import TitlePlayer from "./Components/TitlePlayer";
 import { makeStyles } from '@material-ui/core/styles';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-//test
+
 
 const useStyles = makeStyles((theme) => ({
     block: {
@@ -16,41 +16,45 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         alignItems: "center",
     }
-  }));
+}));
 
 
-const questionReps = [{
-    id:"123",
-    rep1: "CSS",
-    rep2: "Français",
-    rep3: "Anglais",
-    rep4: "Japonais"
-}
-];
-
-//tant que l'id est le même partour : titre, questions, réponses , peut on reprendre sur diff composants? 
-const StartGame = () => {
 
 
+const StartGame = (props) => {
+    const wahootId = props.match.params.wahootId;
     const classes = useStyles();
+    const [question, setQuestion] = useState([]);
+    const [positionQuestion, setPositionQuestion] = useState(0);
+    useEffect(() => {
+        axios
+            .get(`https://wahoot-api.herokuapp.com/questions/${wahootId}`)
+            .then((response) => response.data)
+            .then((data) => {
+                console.log(data);
+                setQuestion(data);
+            })
+    }, []);
+
+    const handleClick = (answerId) => {
+        console.log(answerId, wahootId, question[positionQuestion]?._id);
+    };
+
+    console.log(wahootId);
     return (
         <div className={classes.block}>
-            <TitlePlayer />
-            {questionReps.map((qr) => {
-                return (
-                    <div >
-                        <QuestionsPlayer />
-                        <p><Timer /></p>
-                        <ColorButtonIndigo >{qr.rep1}</ColorButtonIndigo>
-                        <ColorButtonPink >{qr.rep2}</ColorButtonPink>
-                        <ColorButtonDeepPurple >{qr.rep3}</ColorButtonDeepPurple>
-                        <ColorButtonTeal >{qr.rep4}</ColorButtonTeal>
-                    </div>
-                )
-            })}
+            <div >
+                <QuestionsPlayer questionText={question[positionQuestion]?.questionText} />
+                <p><Timer /></p>
+                <ColorButtonIndigo onClick={() => handleClick(question[positionQuestion]?.answerList[0]._id)} >
+                    {question[positionQuestion]?.answerList[0].text}
+                    </ColorButtonIndigo>
+                <ColorButtonPink onClick={() => handleClick(question[positionQuestion]?.answerList[1]._id)}>{question[positionQuestion]?.answerList[1].text}</ColorButtonPink>
+                <ColorButtonDeepPurple onClick={() => handleClick(question[positionQuestion]?.answerList[2]._id)}>{question[positionQuestion]?.answerList[2].text}</ColorButtonDeepPurple>
+                <ColorButtonTeal onClick={() => handleClick(question[positionQuestion]?.answerList[3]._id)}>{question[positionQuestion]?.answerList[3].text}</ColorButtonTeal>
+            </div>
         </div>
     )
 };
-                  
 
 export default StartGame;
