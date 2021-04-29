@@ -70,36 +70,35 @@ function App() {
           </ul>
         </nav> */}
 
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/admin">
-              <ListWahoot />
-            </Route>
-            <Route path="/wahoot-creation">
-              <CreationWahoot />
-            </Route>
-            <Route path="/home-player">
-              <PseudoGamer />
-            </Route>
-            <Route path="/player">
-              <ListWahootGamer />
-            </Route>
-            <Route path="/game-player">
-              <StartGame />
-            </Route>
-            <Route path="/end-game-player">
-              <PopupEndGame />
-            </Route>
-            <Route path="/ranking">
-              <Ranking />
-            </Route>
-            <Route path="/answers">
-              <ReponsesW />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/admin">
+            <ListWahoot />
+          </Route>
+          <Route path="/wahoot-creation">
+            <CreationWahoot />
+          </Route>
+          <Route path="/home-player">
+            <PseudoGamer />
+          </Route>
+          <Route path="/player">
+            <ListWahootGamer />
+          </Route>
+          <Route path="/game-player/:wahootId" component={StartGame} />
+    
+          <Route path="/end-game-player">
+            <PopupEndGame />
+          </Route>
+          <Route path="/ranking">
+            <Ranking />
+          </Route>
+          <Route path="/answers">
+            <ReponsesW />
+          </Route>
+        </Switch>
+      </div>
       </Main>
     </Router>
   );

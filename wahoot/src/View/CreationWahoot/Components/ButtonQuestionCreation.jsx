@@ -8,7 +8,6 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import CreationQuestion from "../../CreationQuestions/CreationQuestion";
-import TitleCreationWahoot from "./TitleCreationWahoot";
 
 const useStyles = makeStyles((theme) => ({
   title: {
