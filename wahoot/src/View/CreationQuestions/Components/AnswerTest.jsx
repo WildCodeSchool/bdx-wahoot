@@ -6,10 +6,10 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Checker from "./Checker";
-import ColorButtonIndigo from "../../StartGame/Components/ColorButtonIndigo";
-import ColorButtonTeal from "../../StartGame/Components/ColorButtonTeal";
-import ColorButtonDeepPurple from "../../StartGame/Components/ColorButtonDeepPurple";
-import ColorButtonPink from "../../StartGame/Components/ColorButtonPink";
+import ColorButtonIndigo from "../../../Common/Components/ColorButtonIndigo";
+import ColorButtonTeal from "../../../Common/Components/ColorButtonTeal";
+import ColorButtonDeepPurple from "../../../Common/Components/ColorButtonDeepPurple";
+import ColorButtonPink from "../../../Common/Components/ColorButtonPink";
 
 
 
