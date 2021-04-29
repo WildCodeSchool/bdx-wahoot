@@ -9,8 +9,6 @@ import QuestionsW from "./Components/QuestionsW";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
-
-
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -27,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const wahoots = {
   _id: "123456",
-  title: "Le JS c'est de la balle",
+  title: "JS c'est de la balle",
   status: "Terminé",
   endDate: "2022-05-13T22:30",
 };
@@ -91,7 +89,7 @@ const questions = [
 
 const CreationWahoot = () => {
   const [form, setForm] = React.useState(wahoots);
-  
+
   const [open, setOpen] = React.useState(false);
 
   const handleTitleChange = (e) => {
@@ -109,17 +107,6 @@ const CreationWahoot = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-  // const getWahoot = () => {
-  //   axios
-  //     .get("https://wahoot-api.herokuapp.com/wahoot")
-  //     .then((response) => response.data)
-  //     .then((data) => {
-  //       console.log(data);
-  //       setForm(data[0]);
-  //     })
-
-  // }
 
   const classes = useStyles();
 
@@ -149,7 +136,11 @@ const CreationWahoot = () => {
         <ButtonCancel />
         <ButtonSave />
       </div>
-      <ButtonQuestionCreation open={open} onClose={handleClose} />
+      <ButtonQuestionCreation
+        open={open}
+        onClose={handleClose}
+        titleQuestion={form.title}
+      />
       {/*<ModalQuestions/>*/}
     </div>
   );

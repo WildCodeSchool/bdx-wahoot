@@ -12,9 +12,8 @@ import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
-
-
+import { makeStyles } from "@material-ui/core/styles";
+import ButtonQuestionCreation from "./View/CreationWahoot/Components/ButtonQuestionCreation";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -24,17 +23,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 function App() {
-
   const classes = useStyles();
 
+  const [form, setForm] = React.useState({
+    titleWahoot: "hello",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   return (
-    
     <Router>
       <Main>
-      <div>
-        {/* <nav>
+        <div>
+          {/* <nav>
           <ul>
             <li>
               <Link className={classes.link} to="/"> Home</Link>
@@ -97,7 +101,6 @@ function App() {
       </div>
       </Main>
     </Router>
-   
   );
 }
 

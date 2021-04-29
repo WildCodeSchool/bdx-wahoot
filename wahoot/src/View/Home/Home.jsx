@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const classes = useStyles();
-  const [form, setForm] = React.useState([]);
+  const [form, setForm] = React.useState("[]");
   const [title, setTitle] = React.useState("");
   const [endDate, setEndDate] = React.useState("");
 
@@ -37,14 +37,12 @@ function Home() {
         console.log(data);
         setForm(data[0]);
       });
-
   };
-
 
   return (
     <div className={classes.block}>
       <Link to="/admin">
-        <ButtonAdmin {...form} onClick={getWahoot}/>
+        <ButtonAdmin {...form} onClick={getWahoot} />
       </Link>
       <Link to="/home-player">
         <ButtonJoueur />

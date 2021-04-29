@@ -17,70 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const wahoots = {
-  _id: "123456",
-  title: "Le JS c'est de la balle",
-  status: "Terminé",
-  endDate: "20/04/2021",
-  questions: [
-    {
-      _id: "ABC",
-      numberQuestion: "Q1",
-      questionText: "Lequel de ces langages existe ?",
-      answersList: [
-        {
-          _id: "12345678",
-          text: "JS",
-          isGoodAnswer: true,
-        },
-        {
-          _id: "8784",
-          text: "Var",
-          isGoodAnswer: false,
-        },
-        {
-          _id: "12345678",
-          text: "Toto",
-          isGoodAnswer: false,
-        },
-        {
-          _id: "8784",
-          text: "Tata",
-          isGoodAnswer: false,
-        },
-      ],
-    },
-    {
-      _id: "47256247",
-      numberQuestion: "Q2",
-      questionText: "Quels sont les props ?",
-      answersList: [
-        {
-          _id: "98759286",
-          text: "réponse 1",
-          isGoodAnswer: true,
-        },
-        {
-          _id: "454",
-          text: "Réponse 2",
-          isGoodAnswer: false,
-        },
-        {
-          _id: "98759286",
-          text: "réponse 3",
-          isGoodAnswer: false,
-        },
-        {
-          _id: "454",
-          text: "Réponse 4",
-          isGoodAnswer: false,
-        },
-      ],
-    },
-  ],
-};
-
-const ButtonQuestionCreation = ({ open, onClose, question }) => {
+const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion }) => {
   let initialQuestion = {
     questionText: "",
     answersList: [
@@ -118,8 +55,6 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
     setForm({ ...form, answersList: newAnswers });
   };
 
-  const [title, setTitle] = React.useState(wahoots);
-
   return (
     <div>
       <Dialog
@@ -129,7 +64,7 @@ const ButtonQuestionCreation = ({ open, onClose, question }) => {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle className={classes.title} id="responsive-dialog-title">
-          {title.title}
+          {titleQuestion}
         </DialogTitle>
         <DialogContent>
           <CreationQuestion

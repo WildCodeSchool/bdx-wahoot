@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     webki: "10px",
     color: "rgb(31, 31, 31)",
     margin: "40px auto",
-    
+
     "& h2": {
       textAlign: "center",
     },
