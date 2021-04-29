@@ -1,9 +1,7 @@
-import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { pink } from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
 
-//test
 const ColorButtonPink = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(pink[500]),
