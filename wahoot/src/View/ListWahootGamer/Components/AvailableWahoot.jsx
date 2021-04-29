@@ -57,14 +57,16 @@ const AvailableWahoot = () => {
     <div className={classes.container}>
       <h2>Wahoots disponibles</h2>
       {wahoots.map((wahoot) => (
-        <Link to="/game-player"><Button
-          variant="contained"
-          color="secondary"
-          className={classes.button}
-          endIcon={<SendIcon className={classes.go}></SendIcon>}
-        >
-          {wahoot.title}
-        </Button></Link>
+        <Link to="/game-player/60881f8e681398caa0dc72c7">
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            endIcon={<SendIcon className={classes.go}></SendIcon>}
+          >
+            {wahoot.title}
+          </Button>
+        </Link>
       ))}
     </div>
   );

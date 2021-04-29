@@ -12,9 +12,7 @@ import CreationQuestion from "./View/CreationQuestions/CreationQuestion";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
-
-
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -24,17 +22,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 function App() {
-
   const classes = useStyles();
 
   return (
-    
     <Router>
       <Main>
-      <div>
-        {/* <nav>
+        <div>
+          {/* <nav>
           <ul>
             <li>
               <Link className={classes.link} to="/"> Home</Link>
@@ -66,39 +61,38 @@ function App() {
           </ul>
         </nav> */}
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/admin">
-            <ListWahoot />
-          </Route>
-          <Route path="/wahoot-creation">
-            <CreationWahoot />
-          </Route>
-          <Route path="/home-player">
-            <PseudoGamer />
-          </Route>
-          <Route path="/player">
-            <ListWahootGamer />
-          </Route>
-          <Route path="/game-player">
-            <StartGame />
-          </Route>
-          <Route path="/end-game-player">
-            <PopupEndGame />
-          </Route>
-          <Route path="/ranking">
-            <Ranking />
-          </Route>
-          <Route path="/answers">
-            <ReponsesW />
-          </Route>
-        </Switch>
-      </div>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/admin">
+              <ListWahoot />
+            </Route>
+            <Route path="/wahoot-creation">
+              <CreationWahoot />
+            </Route>
+            <Route path="/home-player">
+              <PseudoGamer />
+            </Route>
+            <Route path="/player">
+              <ListWahootGamer />
+            </Route>
+            <Route path="/game-player">
+              <StartGame />
+            </Route>
+            <Route path="/end-game-player">
+              <PopupEndGame />
+            </Route>
+            <Route path="/ranking">
+              <Ranking />
+            </Route>
+            <Route path="/answers">
+              <ReponsesW />
+            </Route>
+          </Switch>
+        </div>
       </Main>
     </Router>
-   
   );
 }
 
