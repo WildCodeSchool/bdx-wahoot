@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonQuestionCreation from "./Components/ButtonQuestionCreation";
 import Calendar from "./Components/Calendar";
 import MainTitleCreationWahoot from "./Components/MainTitleCreationWahoot";
@@ -89,6 +89,7 @@ const questions = [
 
 const CreationWahoot = () => {
   const [form, setForm] = React.useState(wahoots);
+
   const [open, setOpen] = React.useState(false);
 
   const handleTitleChange = (e) => {
@@ -106,6 +107,17 @@ const CreationWahoot = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // const getWahoot = () => {
+  //   axios
+  //     .get("https://wahoot-api.herokuapp.com/wahoot")
+  //     .then((response) => response.data)
+  //     .then((data) => {
+  //       console.log(data);
+  //       setForm(data[0]);
+  //     })
+
+  // }
 
   const classes = useStyles();
 
