@@ -3,6 +3,8 @@ import CreateW from "./Components/CreateW.jsx";
 import ListAffichageW from "./Components/ListAffichageW.jsx";
 import { makeStyles } from "@material-ui/core/styles";
 
+
+
 const useStyles = makeStyles((theme) => ({
   content: {
     width: "90%",
@@ -21,8 +23,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ListWahoot = () => {
+
   
   const classes = useStyles();
+
+
   return (
     <div className={classes.content}>
       <CreateW />
