@@ -5,7 +5,6 @@ import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import EditIconLink from "./EditIcon";
 import PublicModal from "./PublicModal";
@@ -46,89 +45,99 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const wahoots = [
-  {
-    id: 1,
-    title: "PHP",
-    status: "Brouillon",
-    date: "12/07/2020",
-  },
-  {
-    id: 2,
-    title: "Javascript",
-    status: "Publié",
-    date: "14/03/2021",
-  },
-  {
-    id: 3,
-    title: "HTML",
-    status: "Publié",
-    date: "27/04/2021",
-  },
-  {
-    id: 4,
-    title: "CSS",
-    status: "Brouillon",
-    date: "12/07/2020",
-  },
-  {
-    id: 5,
-    title: "Flexbox",
-    status: "Publié",
-    date: "03/05/2021",
-  },
-  {
-    id: 6,
-    title: "UseEffect",
-    status: "Brouillon",
-    date: "12/07/2020",
-  },
-  {
-    id: 7,
-    title: "Flower Power",
-    status: "Publié",
-    date: "21/07/2021",
-  },
-];
+// const wahoots = [
+//   {
+//     id: 1,
+//     title: "PHP",
+//     status: "Brouillon",
+//     date: "12/07/2020",
+//   },
+//   {
+//     id: 2,
+//     title: "Javascript",
+//     status: "Publié",
+//     date: "14/03/2021",
+//   },
+//   {
+//     id: 3,
+//     title: "HTML",
+//     status: "Publié",
+//     date: "27/04/2021",
+//   },
+//   {
+//     id: 4,
+//     title: "CSS",
+//     status: "Brouillon",
+//     date: "12/07/2020",
+//   },
+//   {
+//     id: 5,
+//     title: "Flexbox",
+//     status: "Publié",
+//     date: "03/05/2021",
+//   },
+//   {
+//     id: 6,
+//     title: "UseEffect",
+//     status: "Brouillon",
+//     date: "12/07/2020",
+//   },
+//   {
+//     id: 7,
+//     title: "Flower Power",
+//     status: "Publié",
+//     date: "21/07/2021",
+//   },
+// ];
 
-const CardsWahootList = () => {
+// const wahoots = [
+//   {
+//     title: title,
+//     status: status,
+//     endDate: endDate
+//   }
+// ];
+const CardsWahootList = ({ form }) => {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
-      <h2>Liste des Wahoots</h2>
-      {wahoots.map((wahoot) => (
-        <>
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <h3>W{wahoot.id}</h3>
-            </ListItemAvatar>
-            <ListItemText
-              primary={wahoot.title}
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    {wahoot.status}
-                  </Typography>
-                  ` — {wahoot.date}`
-                  <div className={classes.icons}>
-                    <EditIconLink />
-                    <PublicModal />
-                    <SupprimeModal />
-                  </div>
-                </React.Fragment>
-              }
-            />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-        </>
-      ))}
-    </List>
+    form && (
+      <List className={classes.root}>
+        <h2>Liste des Wahoots</h2>
+        {form.map((wahoot, index) => (
+          <div key={wahoot._id}>
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <h3>W{index + 1}</h3>
+              </ListItemAvatar>
+              <ListItemText
+                primary={wahoot.title}
+                secondary={
+                  <React.Fragment>
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      className={classes.inline}
+                      color="textPrimary"
+                    >
+                      {wahoot.status}
+                    </Typography>
+                    — {wahoot.endDate}
+                    <div className={classes.icons}>
+                      <EditIconLink />
+                      <PublicModal />
+                      <SupprimeModal />
+                    </div>
+                  </React.Fragment>
+                }
+              />
+            </ListItem>
+
+            <Divider variant="inset" component="li" />
+          </div>
+        ))}
+      </List>
+    )
   );
 };
 

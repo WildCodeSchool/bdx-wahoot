@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "15px 0",
     width: "100%",
     maxWidth: "36ch",
-    backgroundColor: "primary.main",
     margin: "10px auto",
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     backdropFilter: "blur(30px)",
@@ -19,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     webki: "10px",
     color: "rgb(31, 31, 31)",
-    textAlign: "center",
 
     "& h2": {
       margin: "5px",
@@ -35,28 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const wahoots = [
-  {
-    title: "Wahoot 5",
-  },
-  {
-    title: "Wahoot 6",
-  },
-  {
-    title: "Wahoot 7",
-  },
-  {
-    title: "Wahoot 8",
-  },
-];
-
-const AvailableWahoot = () => {
+const AvailableWahoot = ({ wahootDispo }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
       <h2>Wahoots disponibles</h2>
-      {wahoots.map((wahoot) => (
+      {wahootDispo.map((wahoot) => (
         <Link to="/game-player/60881f8e681398caa0dc72c7">
           <Button
             variant="contained"

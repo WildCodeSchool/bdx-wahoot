@@ -36,7 +36,8 @@ const SwitchRightAnswer = () => {
   });
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    const checked= true;
+    setState({ ...state, checkedA:true });
   };
 
   // const [invisible, setInvisible] = React.useState(false);
