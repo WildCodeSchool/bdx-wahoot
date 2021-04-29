@@ -52,12 +52,11 @@ const wahoots = [
 
 const AvailableWahoot = () => {
   const classes = useStyles();
-
   return (
     <div className={classes.container}>
       <h2>Wahoots disponibles</h2>
       {wahoots.map((wahoot) => (
-        <Link to="/game-player"><Button
+        <Link to="/game-player/60881f8e681398caa0dc72c7"><Button
           variant="contained"
           color="secondary"
           className={classes.button}

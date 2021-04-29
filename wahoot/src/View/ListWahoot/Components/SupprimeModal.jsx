@@ -11,7 +11,7 @@ import ListWahoot from '../ListWahoot';
 
 
 function SupprimeModal() {
-  
+
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
 
@@ -33,12 +33,9 @@ function SupprimeModal() {
       }
     }
   }, [open]);
-
   return (
     <div>
-
-      <Button onClick={handleClickOpen('paper')} ><DeleteIcon/></Button>
-
+      <Button onClick={handleClickOpen('paper')} ><DeleteIcon /></Button>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -53,11 +50,10 @@ function SupprimeModal() {
             ref={descriptionElementRef}
             tabIndex={-1}
           ><p>Voulez-vous vraiment supprimer ce questionnaire ?</p>
-            
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={<ListWahoot/>} color="primary">
+          <Button onClick={<ListWahoot />} color="primary">
             Oui
           </Button>
           <Button onClick={handleClose} color="secondary">
@@ -69,5 +65,5 @@ function SupprimeModal() {
   );
 }
 
-  
+
 export default SupprimeModal;

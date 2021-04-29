@@ -8,8 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
-
 const useStyles = makeStyles((theme) => ({
     block: {
         display: "flex",
@@ -17,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
     }
 }));
-
-
-
 
 const StartGame = (props) => {
     const wahootId = props.match.params.wahootId;
@@ -40,7 +35,6 @@ const StartGame = (props) => {
         console.log(answerId, wahootId, question[positionQuestion]?._id);
     };
 
-    console.log(wahootId);
     return (
         <div className={classes.block}>
             <div >
@@ -48,10 +42,16 @@ const StartGame = (props) => {
                 <p><Timer /></p>
                 <ColorButtonIndigo onClick={() => handleClick(question[positionQuestion]?.answerList[0]._id)} >
                     {question[positionQuestion]?.answerList[0].text}
-                    </ColorButtonIndigo>
-                <ColorButtonPink onClick={() => handleClick(question[positionQuestion]?.answerList[1]._id)}>{question[positionQuestion]?.answerList[1].text}</ColorButtonPink>
-                <ColorButtonDeepPurple onClick={() => handleClick(question[positionQuestion]?.answerList[2]._id)}>{question[positionQuestion]?.answerList[2].text}</ColorButtonDeepPurple>
-                <ColorButtonTeal onClick={() => handleClick(question[positionQuestion]?.answerList[3]._id)}>{question[positionQuestion]?.answerList[3].text}</ColorButtonTeal>
+                </ColorButtonIndigo>
+                <ColorButtonPink onClick={() => handleClick(question[positionQuestion]?.answerList[1]._id)}>
+                    {question[positionQuestion]?.answerList[1].text}
+                </ColorButtonPink>
+                <ColorButtonDeepPurple onClick={() => handleClick(question[positionQuestion]?.answerList[2]._id)}>
+                    {question[positionQuestion]?.answerList[2].text}
+                </ColorButtonDeepPurple>
+                <ColorButtonTeal onClick={() => handleClick(question[positionQuestion]?.answerList[3]._id)}>
+                    {question[positionQuestion]?.answerList[3].text}
+                </ColorButtonTeal>
             </div>
         </div>
     )

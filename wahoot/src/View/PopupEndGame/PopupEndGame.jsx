@@ -4,7 +4,6 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import { Link } from 'react-router-dom';
 import ColorButtonIndigo from '../StartGame/Components/ColorButtonIndigo';
@@ -28,8 +27,7 @@ const PopupEndGame = ({pseudo})=>{
     <div>
       <ColorButtonIndigo variant="contained" color="primary" onClick={handleClickOpen}>
        dernière réponse 
-        </ColorButtonIndigo>
-
+      </ColorButtonIndigo>
       <Dialog
         open={open}
         TransitionComponent={Transition}

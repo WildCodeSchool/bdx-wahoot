@@ -88,9 +88,9 @@ const questions = [
 ];
 
 const CreationWahoot = () => {
-  const [form, setForm] = React.useState(wahoots);
+  const [form, setForm] = useState(wahoots);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleTitleChange = (e) => {
     setForm({ ...form, title: e.target.value });
