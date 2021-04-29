@@ -12,8 +12,8 @@ const ColorButtonIndigo = withStyles((theme) => ({
       color: theme.palette.getContrastText(indigo[300]),
       backgroundColor: indigo[400],
       width: "120px",
-    height: "100px",
-    margin: "10px",
+      height: "100px",
+      margin: "10px",
       "&:hover": {
         backgroundColor: indigo[700],
       },

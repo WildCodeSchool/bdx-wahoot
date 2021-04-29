@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonQuestionCreation from "./Components/ButtonQuestionCreation";
 import Calendar from "./Components/Calendar";
 import MainTitleCreationWahoot from "./Components/MainTitleCreationWahoot";
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const wahoots = {
   _id: "123456",
-  title: "Le JS c'est de la balle",
+  title: "php c'est de la balle",
   status: "Terminé",
   endDate: "2022-05-13T22:30",
 };
@@ -89,6 +89,7 @@ const questions = [
 
 const CreationWahoot = () => {
   const [form, setForm] = React.useState(wahoots);
+
   const [open, setOpen] = React.useState(false);
 
   const handleTitleChange = (e) => {
@@ -135,7 +136,11 @@ const CreationWahoot = () => {
         <ButtonCancel />
         <ButtonSave />
       </div>
-      <ButtonQuestionCreation open={open} onClose={handleClose} />
+      <ButtonQuestionCreation
+        open={open}
+        onClose={handleClose}
+        titleQuestion={form.title}
+      />
       {/*<ModalQuestions/>*/}
     </div>
   );

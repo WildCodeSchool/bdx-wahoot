@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     webki: "10px",
     color: "rgb(31, 31, 31)",
     margin: "40px auto",
-    
+
     "& h2": {
       textAlign: "center",
     },
@@ -46,62 +46,74 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const wahoots = [
-  {
-    id: 1,
-    title: "PHP",
-    status: "Brouillon",
-    date: "12/07/2020",
-  },
-  {
-    id: 2,
-    title: "Javascript",
-    status: "Publié",
-    date: "14/03/2021",
-  },
-  {
-    id: 3,
-    title: "HTML",
-    status: "Publié",
-    date: "27/04/2021",
-  },
-  {
-    id: 4,
-    title: "CSS",
-    status: "Brouillon",
-    date: "12/07/2020",
-  },
-  {
-    id: 5,
-    title: "Flexbox",
-    status: "Publié",
-    date: "03/05/2021",
-  },
-  {
-    id: 6,
-    title: "UseEffect",
-    status: "Brouillon",
-    date: "12/07/2020",
-  },
-  {
-    id: 7,
-    title: "Flower Power",
-    status: "Publié",
-    date: "21/07/2021",
-  },
-];
 
-const CardsWahootList = () => {
+
+
+// const wahoots = [
+//   {
+//     id: 1,
+//     title: "PHP",
+//     status: "Brouillon",
+//     date: "12/07/2020",
+//   },
+//   {
+//     id: 2,
+//     title: "Javascript",
+//     status: "Publié",
+//     date: "14/03/2021",
+//   },
+//   {
+//     id: 3,
+//     title: "HTML",
+//     status: "Publié",
+//     date: "27/04/2021",
+//   },
+//   {
+//     id: 4,
+//     title: "CSS",
+//     status: "Brouillon",
+//     date: "12/07/2020",
+//   },
+//   {
+//     id: 5,
+//     title: "Flexbox",
+//     status: "Publié",
+//     date: "03/05/2021",
+//   },
+//   {
+//     id: 6,
+//     title: "UseEffect",
+//     status: "Brouillon",
+//     date: "12/07/2020",
+//   },
+//   {
+//     id: 7,
+//     title: "Flower Power",
+//     status: "Publié",
+//     date: "21/07/2021",
+//   },
+// ];
+
+
+// const wahoots = [
+//   {
+//     title: title,
+//     status: status,
+//     endDate: endDate
+//   }
+// ];
+const CardsWahootList = ({form}) => {
   const classes = useStyles();
-
+  
   return (
+    form && (
     <List className={classes.root}>
       <h2>Liste des Wahoots</h2>
-      {wahoots.map((wahoot) => (
-        <>
+      {form.map((wahoot, index) => ( 
+        <div key={wahoot._id}>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <h3>W{wahoot.id}</h3>
+              <h3>W{index+1}</h3>
             </ListItemAvatar>
             <ListItemText
               primary={wahoot.title}
@@ -115,7 +127,7 @@ const CardsWahootList = () => {
                   >
                     {wahoot.status}
                   </Typography>
-                  ` — {wahoot.date}`
+                   — {wahoot.endDate}
                   <div className={classes.icons}>
                     <EditIconLink />
                     <PublicModal />
@@ -125,10 +137,12 @@ const CardsWahootList = () => {
               }
             />
           </ListItem>
+          
           <Divider variant="inset" component="li" />
-        </>
-      ))}
+          </div>
+      ))} 
     </List>
+  )
   );
 };
 

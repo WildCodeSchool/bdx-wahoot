@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import QuestionInput from "./Components/QuestionInput";
-import { makeStyles } from "@material-ui/core/styles";
+import { formatMs, makeStyles } from "@material-ui/core/styles";
 import Answers from "./Components/Answers";
 import AddQuestionButton from "./Components/AddQuestionButton";
 import ButtonCancel from "../CreationWahoot/Components/ButtonCancel";
 import ButtonSave from "../CreationWahoot/Components/ButtonSave";
 import QuestionsPlayer from "../StartGame/Components/QuestionsPlayer";
+import TitleCreationWahoot from "../CreationWahoot/Components/TitleCreationWahoot";
+import { DialogTitle } from "@material-ui/core";
+import AnswerTest from "./Components/AnswerTest";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -27,11 +30,13 @@ const CreationQuestion = ({ question, onChange, onAnswerChange }) => {
   return (
     <div>
       <div className={classes.container}>
+  
         <QuestionInput
           questionText={question.questionText}
           onChange={onChange}
         />
-        <Answers answers={question.answersList} onChange={onAnswerChange} />
+        {/* <Answers answers={question.answersList} onChange={onAnswerChange} /> */}
+        <AnswerTest answers={question.answersList} onChange={onAnswerChange}/>
         {/* {question.answersList.map((answer, index) => (
           <Answers
             answerBis={answer}

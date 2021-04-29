@@ -36,13 +36,14 @@ const SwitchRightAnswer = () => {
   });
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    const checked= true;
+    setState({ ...state, checkedA:true });
   };
 
-  const [invisible, setInvisible] = React.useState(false);
-  const handleBadgeVisibility = () => {
-    setInvisible(!invisible);
-  };
+  // const [invisible, setInvisible] = React.useState(false);
+  // const handleBadgeVisibility = () => {
+  //   setInvisible(!invisible);
+  // };
 
   return (
     <div className={classes.root}>
@@ -53,8 +54,10 @@ const SwitchRightAnswer = () => {
               checked={state.checkedA}
               onChange={handleChange}
               name="checkedA"
-              checked={invisible}
-              onChange={handleBadgeVisibility}
+              
+             
+              //checked={invisible}
+              //onChange={handleBadgeVisibility}
             />
           }
           label="Bonne réponse"
@@ -62,7 +65,7 @@ const SwitchRightAnswer = () => {
         <Badge
           color="secondary"
           variant="standard"
-          invisible={!invisible}
+          //invisible={!invisible}
         ></Badge>
       </FormGroup>
     </div>
