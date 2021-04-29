@@ -25,9 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const classes = useStyles();
-  const [form, setForm] = React.useState("[]");
-  const [title, setTitle] = React.useState("");
-  const [endDate, setEndDate] = React.useState("");
+  const [form, setForm] = React.useState([]);
 
   const getWahoot = () => {
     axios
