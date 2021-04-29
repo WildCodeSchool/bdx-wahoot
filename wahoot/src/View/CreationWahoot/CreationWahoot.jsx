@@ -9,8 +9,6 @@ import QuestionsW from "./Components/QuestionsW";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
-
-
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -90,9 +88,7 @@ const questions = [
 ];
 
 const CreationWahoot = () => {
-  const [form, setForm] = React.useState([]);
-  const [title, setTitle] = React.useState("");
-  const [endDate, setEndDate] = React.useState("");
+  const [form, setForm] = React.useState(wahoots);
 
   const [open, setOpen] = React.useState(false);
 
