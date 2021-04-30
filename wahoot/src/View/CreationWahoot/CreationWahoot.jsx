@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const wahoots = {
   _id: "123456",
-  title: "php c'est de la balle",
+  title: "js c'est de la balle",
   status: "Terminé",
   endDate: "2022-05-13T22:30",
 };

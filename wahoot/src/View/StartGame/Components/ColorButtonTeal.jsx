@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import {teal} from "@material-ui/core/colors";
+import { teal } from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
 
 const ColorButtonTeal = withStyles((theme) => ({

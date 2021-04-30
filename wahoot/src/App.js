@@ -10,15 +10,14 @@ import Ranking from "./View/Ranking/Ranking";
 import ReponsesW from "./View/ReponsesW/ReponsesW";
 import PseudoGamer from "./View/PseudoGamer/PseudoGamer";
 import ListWahootGamer from "./View/ListWahootGamer/ListWahootGamer";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Main>
-        <Switch>
-          <Route exact path="/" component={Home} />
+        {/* <Switch> */}
+          {/* <Route exact path="/" component={Home} />
           <Route path="/admin" component={ListWahoot} />
           <Route path="/wahoot-creation" component={CreationWahoot} />
           <Route path="/home-player" component={PseudoGamer} />
@@ -27,7 +26,36 @@ function App() {
           <Route path="/end-game-player" component={PopupEndGame} />
           <Route path="/ranking" component={Ranking} />
           <Route path="/answers" component={ReponsesW} />
-        </Switch>
+        </Switch>*/}
+        <div> 
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/admin">
+              <ListWahoot />
+            </Route>
+            <Route path="/wahoot-creation">
+              <CreationWahoot />
+            </Route>
+            <Route path="/home-player">
+              <PseudoGamer />
+            </Route>
+            <Route path="/player" component={ListWahootGamer} />
+
+            <Route path="/game-player/:wahootId" component={StartGame} />
+
+            <Route path="/end-game-player">
+              <PopupEndGame />
+            </Route>
+            <Route path="/ranking">
+              <Ranking />
+            </Route>
+            <Route path="/answers">
+              <ReponsesW />
+            </Route>
+          </Switch>
+        </div>
       </Main>
     </Router>
   );

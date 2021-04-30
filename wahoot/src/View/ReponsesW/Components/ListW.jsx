@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     maxWidth: "36ch",
-    backgroundColor: "primary.main",
     margin: "10px auto",
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     backdropFilter: "blur(30px)",

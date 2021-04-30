@@ -121,10 +121,6 @@ const Answers = ({ answers, onChange, onSwitchChange }) => {
     setOpenthree(false);
   };
 
-  const handleSwitchChange = () => {
-
-  }
-
   return (
     <div>
       <ColorButtonIndigo
@@ -152,7 +148,10 @@ const Answers = ({ answers, onChange, onSwitchChange }) => {
             value={answers[0]?.text}
             onChange={handleChangeAnswer}
           />
-          <SwitchRightAnswer isGoodAnswer={answers.isGoodAnswer ? "oui" : "non"} onSwitchChange={onSwitchChange}/>
+          <SwitchRightAnswer
+            isGoodAnswer={answers.isGoodAnswer ? "oui" : "non"}
+            onSwitchChange={onSwitchChange}
+          />
           {/* <button>{answers.isGoodAnswer ? "oui" : "non"}</button> */}
           <Switcher />
         </DialogContent>
