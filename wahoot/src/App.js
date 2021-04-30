@@ -16,7 +16,18 @@ function App() {
   return (
     <Router>
       <Main>
-        <div>
+        {/* <Switch> */}
+          {/* <Route exact path="/" component={Home} />
+          <Route path="/admin" component={ListWahoot} />
+          <Route path="/wahoot-creation" component={CreationWahoot} />
+          <Route path="/home-player" component={PseudoGamer} />
+          <Route path="/player" component={ListWahootGamer} />
+          <Route path="/game-player/:wahootId" component={StartGame} />
+          <Route path="/end-game-player" component={PopupEndGame} />
+          <Route path="/ranking" component={Ranking} />
+          <Route path="/answers" component={ReponsesW} />
+        </Switch>*/}
+        <div> 
           <Switch>
             <Route exact path="/">
               <Home />
