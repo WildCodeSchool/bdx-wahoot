@@ -13,7 +13,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const PopupEndGame = ({ pseudo }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -25,13 +25,6 @@ const PopupEndGame = ({ pseudo }) => {
 
   return (
     <div>
-      <ColorButtonIndigo
-        variant="contained"
-        color="primary"
-        onClick={handleClickOpen}
-      >
-        dernière réponse
-      </ColorButtonIndigo>
 
       <Dialog
         open={open}
