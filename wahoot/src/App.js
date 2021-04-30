@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Main>
         {/* <Switch> */}
-          {/* <Route exact path="/" component={Home} />
+        {/* <Route exact path="/" component={Home} />
           <Route path="/admin" component={ListWahoot} />
           <Route path="/wahoot-creation" component={CreationWahoot} />
           <Route path="/home-player" component={PseudoGamer} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/ranking" component={Ranking} />
           <Route path="/answers" component={ReponsesW} />
         </Switch>*/}
-        <div> 
+        <div>
           <Switch>
             <Route exact path="/">
               <Home />

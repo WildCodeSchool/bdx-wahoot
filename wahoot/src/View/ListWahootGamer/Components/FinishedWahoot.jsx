@@ -32,28 +32,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const wahoots = [
-  {
-    title: "Wahoot 1",
-  },
-  {
-    title: "Wahoot 2",
-  },
-  {
-    title: "Wahoot 3",
-  },
-  {
-    title: "Wahoot 4",
-  },
-];
-
-const FinishedWahoot = () => {
+const FinishedWahoot = ({ wahoots }) => {
   const classes = useStyles();
-
+  let wahootFinished = wahoots.filter((wahoot) => wahoot.status === "finished");
   return (
     <div className={classes.container}>
       <h2>Wahoots terminés</h2>
-      {wahoots.map((wahoot) => (
+      {wahootFinished.map((wahoot) => (
         <Link to="/ranking">
           <Button
             variant="contained"

@@ -14,21 +14,21 @@ const useStyle = makeStyles((theme) => ({
 const ListWahootGamer = () => {
   const classes = useStyle();
 
-  const [wahootDispo, setWahootDispo] = useState([]);
+  const [wahoots, setWahoots] = useState([]);
   useEffect(() => {
     axios
       .get(`https://wahoot-api.herokuapp.com/wahoot/active`)
       .then((response) => response.data)
       .then((data) => {
         console.log(data);
-        setWahootDispo(data[0].data);
+        setWahoots(data[0].data);
       });
   }, []);
 
   return (
     <div className={classes.content}>
-      <AvailableWahoot wahootDispo={wahootDispo} />
-      <FinishedWahoot />
+      <AvailableWahoot wahoots={wahoots} />
+      <FinishedWahoot wahoots={wahoots} />
     </div>
   );
 };
