@@ -54,8 +54,6 @@ const SwitchRightAnswer = () => {
               checked={state.checkedA}
               onChange={handleChange}
               name="checkedA"
-              
-             
               //checked={invisible}
               //onChange={handleBadgeVisibility}
             />

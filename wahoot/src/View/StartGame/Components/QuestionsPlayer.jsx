@@ -12,7 +12,4 @@ const QuestionsPlayer = ({ questionText }) => {
     )
 };
 
-
-
-
 export default QuestionsPlayer;
