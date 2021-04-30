@@ -37,22 +37,31 @@ const StartGame = (props) => {
   const handleClick = (answerId) => {
     console.log(answerId, wahootId, question[positionQuestion]?._id);
     axios
-      .post(`https://wahoot-api.herokuapp.com/player-answers`, { 
+      .post(`https://wahoot-api.herokuapp.com/player-answers`, {
         questionId: question[positionQuestion]?._id,
         answerId: answerId,
         wahootId: wahootId,
         player: {
           name: "toto",
-          _id: "123456789"
+          _id: "123456789",
+        },
+      })
+      .then(() => {
+        if (positionQuestion < question.length - 1) {
+          setPositionQuestion(positionQuestion + 1);
+        } else {
+          axios
+            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`)
+            .then(() =>
+              history.push("/end-game-player", {
+                player: {
+                  name: "toto",
+                  _id: "123456789",
+                },
+              })
+            );
         }
-       })
-       .then(()=> { 
-         if (positionQuestion < question.length-1) {
-          setPositionQuestion(positionQuestion+1);
-         }else {
-           history.push("/end-game-player");
-         }
-       })
+      });
   };
 
   console.log(wahootId);
