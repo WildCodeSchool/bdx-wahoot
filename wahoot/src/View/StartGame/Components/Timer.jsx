@@ -2,16 +2,11 @@ import * as React from "react";
 import { render } from "react-dom";
 import { Box } from "@material-ui/core";
 
-
-
-function Timer() {
-    
+function Timer() {   
     const [counter, setCounter] = React.useState(20);
-
      React.useEffect(() => {
         counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
      }, [counter]);
-
     return (
     <div>
       <Box
@@ -27,8 +22,5 @@ function Timer() {
         }}>{counter}</Box>
     </div>
   );
-}
-
-const rootElement = document.getElementById("root");
-render(<Timer />, rootElement);
+};
 export default Timer;
