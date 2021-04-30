@@ -33,12 +33,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AvailableWahoot = ({ wahootDispo }) => {
+const AvailableWahoot = ({ wahoots }) => {
   const classes = useStyles();
+  let wahootPublished = wahoots.filter(
+    (wahoot) => wahoot.status === "published"
+  );
   return (
     <div className={classes.container}>
       <h2>Wahoots disponibles</h2>
-      {wahootDispo.map((wahoot) => (
+
+      {wahootPublished.map((wahoot) => (
         <Link to={`/game-player/${wahoot._id}`}>
           <Button
             variant="contained"
