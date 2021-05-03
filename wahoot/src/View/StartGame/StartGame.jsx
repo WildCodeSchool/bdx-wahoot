@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const StartGame = (props) => {
-  const wahootId = props.match.params.wahootId;
   const classes = useStyles();
+
+  const wahootId = props.match.params.wahootId;
   const [question, setQuestion] = useState([]);
   const [positionQuestion, setPositionQuestion] = useState(0);
   const history = useHistory();
