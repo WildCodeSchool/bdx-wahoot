@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const StartGame = (props) => {
-  const wahootId = props.match.params.wahootId;
   const classes = useStyles();
+
+  const wahootId = props.match.params.wahootId;
   const [question, setQuestion] = useState([]);
   const [positionQuestion, setPositionQuestion] = useState(0);
   const history = useHistory();
@@ -51,14 +52,15 @@ const StartGame = (props) => {
           setPositionQuestion(positionQuestion + 1);
         } else {
           axios
-            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`)
-            .then(() =>
-              history.push("/end-game-player", {
+            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`,
+              {
                 player: {
                   name: "toto",
                   _id: "123456789",
-                },
+                }
               })
+            .then(() =>
+              history.push("/end-game-player/"+ wahootId)
             );
         }
       });

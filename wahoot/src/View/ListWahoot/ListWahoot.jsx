@@ -4,8 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import CardsWahootList from "./Components/CardsWahootList.jsx";
 import axios from "axios";
 
-
-
 const useStyles = makeStyles((theme) => ({
   content: {
     width: "90%",
@@ -35,7 +33,6 @@ const ListWahoot = () => {
         setForm(data[0].data);
       });
   }, []);
-
 
   return (
     <div className={classes.content}>

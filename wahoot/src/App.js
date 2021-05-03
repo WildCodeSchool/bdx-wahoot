@@ -44,9 +44,8 @@ function App() {
 
             <Route path="/game-player/:wahootId" component={StartGame} />
 
-            <Route path="/end-game-player">
-              <PopupEndGame />
-            </Route>
+            <Route path="/end-game-player/:wahootId" component={PopupEndGame} />
+             
             <Route path="/ranking">
               <Ranking />
             </Route>
