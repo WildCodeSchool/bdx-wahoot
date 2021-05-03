@@ -7,22 +7,23 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import Slide from "@material-ui/core/Slide";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import EndDatePopup from "./EndDatePopup";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const PopupEndGame = () => {
+const PopupEndGame = (props) => {
   const [open, setOpen] = useState(true);
+  
+  const wahootId = props.match.params.wahootId;
   const [wahoots, setWahoots] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://wahoot-api.herokuapp.com/wahoot/active`)
+      .get(`https://wahoot-api.herokuapp.com/wahoot/${wahootId}`)
       .then((response) => response.data)
       .then((data) => {
         console.log(data);
-        setWahoots(data[0].data);
+        setWahoots(data);
       });
   }, []);
 
@@ -51,13 +52,13 @@ const PopupEndGame = () => {
           <DialogContentText id="alert-dialog-slide-description">
             Wahoot terminé!<br/>
           Le classement et les réponses aux questionnaire seront disponibles à partir du
-          <EndDatePopup wahoots={wahoots} />
+          : {wahoots.endDate}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Link to="/player">
             <Button onClick={handleClose} color="primary">
-              Fermer
+              OK!
             </Button>
           </Link>
         </DialogActions>
