@@ -24,6 +24,18 @@ const useStyles = makeStyles((theme) => ({
 const ListWahoot = () => {
   const classes = useStyles();
   const [form, setForm] = React.useState([]);
+
+  const deleteWahoot = (wahootId) => {
+    axios
+      .delete(`https://wahoot-api.herokuapp.com/wahoot/${wahootId}`)
+      .then(() => {
+        //console.log("Delete Wahoot" + wahootId);
+        const filteredWahoot = form.filter((wahoot) => wahoot._id !== wahootId);
+        setForm(filteredWahoot);
+        console.log("Wahoot bien supprimé du serveur");
+      });
+  };
+
   useEffect(() => {
     axios
       .get("https://wahoot-api.herokuapp.com/wahoot/all")
@@ -42,7 +54,7 @@ const ListWahoot = () => {
       )}
       {form.length && (
         <div>
-          <CardsWahootList form={form} />
+          <CardsWahootList form={form} onDeleteWahoot={deleteWahoot} />
         </div>
       )}
     </div>

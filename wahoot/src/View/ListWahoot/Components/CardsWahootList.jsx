@@ -45,8 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-const CardsWahootList = ({ form }) => {
+const CardsWahootList = ({ form, onDeleteWahoot }) => {
   const classes = useStyles();
 
   return (
@@ -73,9 +72,12 @@ const CardsWahootList = ({ form }) => {
                     </Typography>
                     — {wahoot.endDate}
                     <div className={classes.icons}>
-                      <EditIconLink wahootId={wahoot._id}/>
+                      <EditIconLink wahootId={wahoot._id} />
                       <PublicModal />
-                      <SupprimeModal />
+                      <SupprimeModal
+                        onDelete={onDeleteWahoot}
+                        wahootId={wahoot._id}
+                      />
                     </div>
                   </React.Fragment>
                 }
