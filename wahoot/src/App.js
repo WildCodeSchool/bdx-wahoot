@@ -35,9 +35,8 @@ function App() {
             <Route path="/admin">
               <ListWahoot />
             </Route>
-            <Route path="/wahoot-creation">
-              <CreationWahoot />
-            </Route>
+            <Route path="/wahoot-creation" render={(matchProps) => <CreationWahoot {...matchProps} />}/>
+            <Route path="/wahoot-edition/:id" render={(matchProps) => <CreationWahoot {...matchProps} />}/>
             <Route path="/home-player">
               <PseudoGamer />
             </Route>
@@ -45,9 +44,8 @@ function App() {
 
             <Route path="/game-player/:wahootId" component={StartGame} />
 
-            <Route path="/end-game-player">
-              <PopupEndGame />
-            </Route>
+            <Route path="/end-game-player/:wahootId" component={PopupEndGame} />
+             
             <Route path="/ranking">
               <Ranking />
             </Route>
