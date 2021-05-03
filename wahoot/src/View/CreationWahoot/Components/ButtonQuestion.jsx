@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
@@ -29,8 +29,16 @@ const numbers = [
   },
 ];
 
+
+
+
 const ButtonQuestion = () => {
   const classes = useStyles();
+
+const [questions, setQuestions] = useState(numbers);
+
+
+  
 
   return (
     <div className={classes.test}>
