@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -8,6 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import CreationQuestion from "../../CreationQuestions/CreationQuestion";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -16,9 +17,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion }) => {
+const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahootId }) => {
   let initialQuestion = {
     questionText: "",
+    wahootId: wahootId,
     answersList: [
       {
         text: "",
@@ -53,6 +55,20 @@ const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion }) => {
   const handleAnswerChange = (newAnswers) => {
     setForm({ ...form, answersList: newAnswers });
   };
+
+const handleOnSave = () => {
+  if (question) {
+  axios
+  .patch(`https://wahoot-api.herokuapp.com/questions/${question._id}`, form)
+  .then(() => onClose())
+    
+  } else {
+    axios
+.post("https://wahoot-api.herokuapp.com/questions", form)
+.then(() => onClose())
+  }
+
+};
 
   return (
     <div>

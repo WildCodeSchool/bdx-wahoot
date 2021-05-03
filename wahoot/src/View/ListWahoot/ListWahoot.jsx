@@ -36,6 +36,7 @@ const ListWahoot = () => {
       });
   }, []);
 
+
   return (
     <div className={classes.content}>
       <CreateW />
