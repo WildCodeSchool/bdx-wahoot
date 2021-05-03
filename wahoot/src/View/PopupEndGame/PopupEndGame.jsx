@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -6,14 +6,26 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import Slide from "@material-ui/core/Slide";
 import { Link } from "react-router-dom";
-import ColorButtonIndigo from "../StartGame/Components/ColorButtonIndigo";
+import axios from "axios";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const PopupEndGame = ({ pseudo }) => {
-  const [open, setOpen] = React.useState(true);
+const PopupEndGame = (props) => {
+  const [open, setOpen] = useState(true);
+  
+  const wahootId = props.match.params.wahootId;
+  const [wahoots, setWahoots] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://wahoot-api.herokuapp.com/wahoot/${wahootId}`)
+      .then((response) => response.data)
+      .then((data) => {
+        console.log(data);
+        setWahoots(data);
+      });
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -22,6 +34,8 @@ const PopupEndGame = ({ pseudo }) => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  
 
   return (
     <div>
@@ -36,14 +50,15 @@ const PopupEndGame = ({ pseudo }) => {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Wahoot terminé!
-            <p>Revenez plus tard pour voir ton résultat! </p>
+            Wahoot terminé!<br/>
+          Le classement et les réponses aux questionnaire seront disponibles à partir du
+          : {wahoots.endDate}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Link to="/player">
             <Button onClick={handleClose} color="primary">
-              Fermer
+              OK!
             </Button>
           </Link>
         </DialogActions>
