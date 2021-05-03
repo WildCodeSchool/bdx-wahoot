@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -6,6 +6,7 @@ import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,37 +41,54 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const answers = [
-  {
-    number: "Q1",
-    question: "Comment déclare-t-on une variable?",
-    rep: "let",
-  },
-  {
-    number: "Q2",
-    question: "Quel est le langage back-end?",
-    rep: "java",
-  },
-  {
-    number: "Q3",
-    question: "Quel est le langage front-end?",
-    rep: "javascript",
-  },
-];
+// const answers = [
+//   {
+//     number: "Q1",
+//     question: "Comment déclare-t-on une variable?",
+//     rep: "let",
+//   },
+//   {
+//     number: "Q2",
+//     question: "Quel est le langage back-end?",
+//     rep: "java",
+//   },
+//   {
+//     number: "Q3",
+//     question: "Quel est le langage front-end?",
+//     rep: "javascript",
+//   },
+// ];
 
 const ListW = () => {
   const classes = useStyles();
 
+  const [questions, setQuestions] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `https://wahoot-api.herokuapp.com/questions/60881f8e681398caa0dc72c7`
+      )
+      .then((response) => response.data)
+      .then((data) => {
+        console.log(data);
+        setQuestions(data);
+      });
+  }, []);
+
+  // const goodAnswer = questions.filter(
+  //   (question) => question.answerList.isGoodAnswer == "true"
+  //
+
   return (
     <List className={classes.root}>
-      {answers.map((answer) => (
+      {questions.map((question, index) => (
         <div>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <h3>{answer.number} </h3>
+              <h3>{index + 1} </h3>
             </ListItemAvatar>
             <ListItemText
-              primary={answer.question}
+              primary={question.questionText}
               secondary={
                 <React.Fragment>
                   <Typography
@@ -79,7 +97,12 @@ const ListW = () => {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    Bonne réponse : {answer.rep}
+                    Bonne réponse :
+                    {
+                      question.answerList.find(
+                        (answer) => answer.isGoodAnswer === true
+                      ).text
+                    }
                   </Typography>
                 </React.Fragment>
               }
