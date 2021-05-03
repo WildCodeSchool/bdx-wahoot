@@ -34,26 +34,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const topRank = [
-  {
-    id: "123",
-    position: "1",
-    pseudo: "Jennifer",
-    points: "10000 points",
-  },
-  {
-    id: "124",
-    position: "2",
-    pseudo: "Poulidor",
-    points: "1000 points",
-  },
-  {
-    id: "125",
-    position: "3",
-    pseudo: "Toto",
-    points: "100 points",
-  },
-];
+// const topRank = [
+//   {
+//     id: "123",
+//     position: "1",
+//     pseudo: "Jennifer",
+//     points: "10000 points",
+//   },
+//   {
+//     id: "124",
+//     position: "2",
+//     pseudo: "Poulidor",
+//     points: "1000 points",
+//   },
+//   {
+//     id: "125",
+//     position: "3",
+//     pseudo: "Toto",
+//     points: "100 points",
+//   },
+// ];
 
 // const [wahootDispo, setWahootDispo] = useState([]);
 // useEffect(() => {
@@ -76,7 +76,7 @@ const Ranking = () => {
       .then((response) => response.data)
       .then((data) => {
         console.log(data);
-        setRanking(data[0].data);
+        setRanking(data);
       });
   }, []);
 
@@ -84,19 +84,24 @@ const Ranking = () => {
     <div>
       <h2 className={classes.root}>CLASSEMENT</h2>
       <div className={classes.block}>
-        {ranking.map((player) => {
-          return (
-            <List>
-              <ListItem alignItems="flex-start" key={player._id}>
-                {/* <ListItemAvatar>
+        <List>
+          {ranking.map((player) => {
+            return (
+              <>
+                <ListItem alignItems="flex-start" key={player._id}>
+                  {/* <ListItemAvatar>
                   <Avatar>{player.position}</Avatar>
                 </ListItemAvatar> */}
-                <ListItemText primary={player.name} secondary={player.points} />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-            </List>
-          );
-        })}
+                  <ListItemText
+                    primary={player?.player?.name}
+                    secondary={player.points}
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </>
+            );
+          })}
+        </List>
       </div>
       <div className={classes.root}>
         <WatchRightResButton />
