@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import ButtonClassement from "./Components/ButtonClassement";
 import ListW from "./Components/ListW";
 import { makeStyles } from '@material-ui/core/styles';
