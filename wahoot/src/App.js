@@ -16,17 +16,7 @@ function App() {
   return (
     <Router>
       <Main>
-        {/* <Switch> */}
-        {/* <Route exact path="/" component={Home} />
-          <Route path="/admin" component={ListWahoot} />
-          <Route path="/wahoot-creation" component={CreationWahoot} />
-          <Route path="/home-player" component={PseudoGamer} />
-          <Route path="/player" component={ListWahootGamer} />
-          <Route path="/game-player/:wahootId" component={StartGame} />
-          <Route path="/end-game-player" component={PopupEndGame} />
-          <Route path="/ranking" component={Ranking} />
-          <Route path="/answers" component={ReponsesW} />
-        </Switch>*/}
+      
         <div>
           <Switch>
             <Route exact path="/">
@@ -35,8 +25,14 @@ function App() {
             <Route path="/admin">
               <ListWahoot />
             </Route>
-            <Route path="/wahoot-creation" render={(matchProps) => <CreationWahoot {...matchProps} />}/>
-            <Route path="/wahoot-edition/:id" render={(matchProps) => <CreationWahoot {...matchProps} />}/>
+            <Route
+              path="/wahoot-creation"
+              render={(matchProps) => <CreationWahoot {...matchProps} />}
+            />
+            <Route
+              path="/wahoot-edition/:id"
+              render={(matchProps) => <CreationWahoot {...matchProps} />}
+            />
             <Route path="/home-player">
               <PseudoGamer />
             </Route>
@@ -45,13 +41,15 @@ function App() {
             <Route path="/game-player/:wahootId" component={StartGame} />
 
             <Route path="/end-game-player/:wahootId" component={PopupEndGame} />
-             
-            <Route path="/ranking">
-              <Ranking />
-            </Route>
-            <Route path="/answers">
+
+            <Route path="/ranking/:wahootId" component={Ranking} />
+            {/* <Ranking />
+            </Route> */}
+
+            <Route path="/answers/:wahootId" component={ReponsesW} />
+            {/* <Route path="/answers">
               <ReponsesW />
-            </Route>
+            </Route> */}
           </Switch>
         </div>
       </Main>

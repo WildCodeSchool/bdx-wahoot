@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const PopupEndGame = (props) => {
   const [open, setOpen] = useState(true);
-  
+
   const wahootId = props.match.params.wahootId;
   const [wahoots, setWahoots] = useState([]);
   useEffect(() => {
@@ -35,11 +35,8 @@ const PopupEndGame = (props) => {
     setOpen(false);
   };
 
-  
-
   return (
     <div>
-
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -50,7 +47,7 @@ const PopupEndGame = (props) => {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Wahoot terminé!<br/>
+            Wahoot terminé!<br />
           Le classement et les réponses aux questionnaire seront disponibles à partir du
           : {wahoots.endDate}
           </DialogContentText>
