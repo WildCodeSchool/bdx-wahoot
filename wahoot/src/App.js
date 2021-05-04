@@ -35,8 +35,14 @@ function App() {
             <Route path="/admin">
               <ListWahoot />
             </Route>
-            <Route path="/wahoot-creation" render={(matchProps) => <CreationWahoot {...matchProps} />}/>
-            <Route path="/wahoot-edition/:id" render={(matchProps) => <CreationWahoot {...matchProps} />}/>
+            <Route
+              path="/wahoot-creation"
+              render={(matchProps) => <CreationWahoot {...matchProps} />}
+            />
+            <Route
+              path="/wahoot-edition/:id"
+              render={(matchProps) => <CreationWahoot {...matchProps} />}
+            />
             <Route path="/home-player">
               <PseudoGamer />
             </Route>
@@ -45,13 +51,15 @@ function App() {
             <Route path="/game-player/:wahootId" component={StartGame} />
 
             <Route path="/end-game-player/:wahootId" component={PopupEndGame} />
-             
-            <Route path="/ranking">
-              <Ranking />
-            </Route>
-            <Route path="/answers">
+
+            <Route path="/ranking/:wahootId" component={Ranking} />
+            {/* <Ranking />
+            </Route> */}
+
+            <Route path="/answers/:wahootId" component={ReponsesW} />
+            {/* <Route path="/answers">
               <ReponsesW />
-            </Route>
+            </Route> */}
           </Switch>
         </div>
       </Main>

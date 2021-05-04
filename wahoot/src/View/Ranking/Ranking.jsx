@@ -66,13 +66,13 @@ const useStyles = makeStyles((theme) => ({
 //     });
 // }, []);
 
-const Ranking = () => {
+const Ranking = (props) => {
   const classes = useStyles();
-
+  const { wahootId } = props.match.params;
   const [ranking, setRanking] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://wahoot-api.herokuapp.com/ranking/60881f8e681398caa0dc72c7`)
+      .get(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`)
       .then((response) => response.data)
       .then((data) => {
         console.log(data);
@@ -104,7 +104,7 @@ const Ranking = () => {
         </List>
       </div>
       <div className={classes.root}>
-        <WatchRightResButton />
+        <WatchRightResButton wahootId={wahootId} />
       </div>
     </div>
   );
