@@ -73,7 +73,7 @@ const CardsWahootList = ({ form, onDeleteWahoot }) => {
                     — {wahoot.endDate}
                     <div className={classes.icons}>
                       <EditIconLink wahootId={wahoot._id} />
-                      <PublicModal />
+                      <PublishedButton wahootId={wahoot._id} />
                       <SupprimeModal
                         onDelete={onDeleteWahoot}
                         wahootId={wahoot._id}
