@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ButtonQuestionCreation from "./Components/ButtonQuestionCreation";
 import Calendar from "./Components/Calendar";
 import MainTitleCreationWahoot from "./Components/MainTitleCreationWahoot";
@@ -8,6 +8,8 @@ import ButtonSave from "./Components/ButtonSave";
 import QuestionsW from "./Components/QuestionsW";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -23,71 +25,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const wahoots = {
-  _id: "123456",
-  title: "js c'est de la balle",
-  status: "Terminé",
-  endDate: "2022-05-13T22:30",
-};
-
-const questions = [
-  {
-    _id: "ABC",
-    numberQuestion: "Q1",
-    questionText: "Lequel de ces langages existe ?",
-    answersList: [
-      {
-        _id: "12345678",
-        text: "JS",
-        isGoodAnswer: true,
-      },
-      {
-        _id: "8784",
-        text: "Var",
-        isGoodAnswer: false,
-      },
-      {
-        _id: "12345678",
-        text: "Toto",
-        isGoodAnswer: false,
-      },
-      {
-        _id: "8784",
-        text: "Tata",
-        isGoodAnswer: false,
-      },
-    ],
-  },
-  {
-    _id: "47256247",
-    numberQuestion: "Q2",
-    questionText: "Quels sont les props ?",
-    answersList: [
-      {
-        _id: "98759286",
-        text: "réponse 1",
-        isGoodAnswer: true,
-      },
-      {
-        _id: "454",
-        text: "Réponse 2",
-        isGoodAnswer: false,
-      },
-      {
-        _id: "98759286",
-        text: "réponse 3",
-        isGoodAnswer: false,
-      },
-      {
-        _id: "454",
-        text: "Réponse 4",
-        isGoodAnswer: false,
-      },
-    ],
-  },
-];
-
-const CreationWahoot = () => {
+const CreationWahoot = (match) => {
+  const [wahoots, setWahoots] = useState({
+    _id: "",
+    title: "",
+    status: "",
+    endDate: "",
+  });
   const [form, setForm] = useState(wahoots);
 
   const [open, setOpen] = useState(false);
@@ -109,6 +53,35 @@ const CreationWahoot = () => {
   };
 
   const classes = useStyles();
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (match?.params?.id) {
+      axios
+        .get(`https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`)
+        .then((response) => setWahoots(response.data));
+    }
+  }, []);
+
+  const handleSubmit = () => {
+    if (match?.params?.id) {
+      axios
+        .patch(
+          `https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`,
+          form
+        )
+        .then(() => {
+          history.push("/");
+        });
+    } else {
+      axios
+        .post("https://wahoot-api.herokuapp.com/wahoot", wahoots)
+        .then(() => {
+          history.push("/");
+        });
+    }
+  };
 
   return (
     <div>
@@ -134,7 +107,7 @@ const CreationWahoot = () => {
       </div>
       <div className={classes.container}>
         <ButtonCancel />
-        <ButtonSave />
+        <ButtonSave onClick={handleSubmit} />
       </div>
       <ButtonQuestionCreation
         open={open}

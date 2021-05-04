@@ -35,9 +35,16 @@ function App() {
             <Route path="/admin">
               <ListWahoot />
             </Route>
-            <Route path="/wahoot-creation">
-              <CreationWahoot />
-            </Route>
+            <Route
+              path="/wahoot-creation"
+              render={(matchProps) => <CreationWahoot {...matchProps} />}
+            />
+
+            <Route
+              path="/wahoot/:id"
+              render={(matchProps) => <CreationWahoot {...matchProps} />}
+            />
+
             <Route path="/home-player">
               <PseudoGamer />
             </Route>
