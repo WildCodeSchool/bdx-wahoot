@@ -7,7 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
 import EditIconLink from "./EditIcon";
-import PublicModal from "./PublicModal";
+import PublishedButton from "./PublishedButton";
 import SupprimeModal from "./SupprimeModal";
 
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +74,7 @@ const CardsWahootList = ({ form }) => {
                     — {wahoot.endDate}
                     <div className={classes.icons}>
                       <EditIconLink wahootId={wahoot._id}/>
-                      <PublicModal />
+                      <PublishedButton wahootId={wahoot._id} />
                       <SupprimeModal />
                     </div>
                   </React.Fragment>
