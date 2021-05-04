@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import ButtonQuestionCreation from "./Components/ButtonQuestionCreation";
 import Calendar from "./Components/Calendar";
 import MainTitleCreationWahoot from "./Components/MainTitleCreationWahoot";
@@ -25,16 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CreationWahoot = (match) => {
-  const [wahoots, setWahoots] = useState({
-    _id: "",
+const CreationWahoot = ({ match }) => {
+  const [wahootId, setWahootId] = useState("");
+  const [form, setForm] = React.useState({
     title: "",
-    status: "",
     endDate: "",
   });
-  const [form, setForm] = useState(wahoots);
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const handleTitleChange = (e) => {
     setForm({ ...form, title: e.target.value });
@@ -50,6 +48,40 @@ const CreationWahoot = (match) => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (match?.params?.id) {
+      setWahootId(match.params.id);
+      axios
+        .get(`https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`)
+        .then((response) => {
+          console.log(response.data);
+          setForm(response.data);
+        });
+    }
+  }, []);
+
+  const handleSaveWahoot = () => {
+    if (match?.params?.id) {
+      axios
+        .patch(
+          `https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`,
+          form
+        )
+        .then(() => {
+          setOpen(true);
+        });
+    } else {
+      axios
+        .post("https://wahoot-api.herokuapp.com/wahoot", form)
+        .then((response) => {
+          setWahootId(response.data._id);
+          setOpen(true);
+        });
+    }
   };
 
   const classes = useStyles();
@@ -98,7 +130,7 @@ const CreationWahoot = (match) => {
         <Calendar value={form.endDate} handleChange={handleDateChange} />
       </div>
       <div className={classes.block}>
-        <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        <Button variant="contained" color="primary" onClick={handleSaveWahoot}>
           Créer une question
         </Button>
       </div>
@@ -113,6 +145,7 @@ const CreationWahoot = (match) => {
         open={open}
         onClose={handleClose}
         titleQuestion={form.title}
+        wahootId={wahootId}
       />
       {/*<ModalQuestions/>*/}
     </div>
