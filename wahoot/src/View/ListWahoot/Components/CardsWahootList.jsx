@@ -72,18 +72,12 @@ const CardsWahootList = ({ form, onDeleteWahoot }) => {
                     </Typography>
                     — {wahoot.endDate}
                     <div className={classes.icons}>
-<<<<<<< HEAD
                       <EditIconLink wahootId={wahoot._id} />
                       <PublicModal />
                       <SupprimeModal
                         onDelete={onDeleteWahoot}
                         wahootId={wahoot._id}
                       />
-=======
-                      <EditIconLink wahootId={wahoot._id}/>
-                      <PublishedButton wahootId={wahoot._id} />
-                      <SupprimeModal />
->>>>>>> dev
                     </div>
                   </React.Fragment>
                 }
