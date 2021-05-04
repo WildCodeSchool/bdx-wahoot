@@ -10,18 +10,12 @@ import axios from 'axios';
 
 function PublishedButton({ wahootId }) {
   //publier le questionnaire
-
-
   const handleOnSave = () => {
-
-
     axios
       .patch(`https://wahoot-api.herokuapp.com/wahoot/${wahootId}`, { status: "published" })
       .then(() => setOpen(false));
-
   };
 
-  //
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState('paper');
   const handleClickOpen = (scrollType) => () => {
