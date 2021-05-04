@@ -6,9 +6,16 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DoneIcon from '@material-ui/icons/Done';
+import axios from 'axios';
 
-function PublicModal() {
-  
+function PublishedButton({ wahootId }) {
+  //publier le questionnaire
+  const handleOnSave = () => {
+    axios
+      .patch(`https://wahoot-api.herokuapp.com/wahoot/${wahootId}`, { status: "published" })
+      .then(() => setOpen(false));
+  };
+
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState('paper');
   const handleClickOpen = (scrollType) => () => {
@@ -30,7 +37,7 @@ function PublicModal() {
 
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')} ><DoneIcon/></Button>
+      <Button onClick={handleClickOpen('paper')} ><DoneIcon /></Button>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -46,11 +53,11 @@ function PublicModal() {
             tabIndex={-1}
           ><p>Voulez-vous vraiment publier ce
           questionnaire ?</p>
-            
+
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button color="primary" onClick={handleOnSave} >
             Oui
           </Button>
           <Button onClick={handleClose} color="secondary">
@@ -62,5 +69,5 @@ function PublicModal() {
   );
 }
 
-  
-export default PublicModal;
+
+export default PublishedButton;

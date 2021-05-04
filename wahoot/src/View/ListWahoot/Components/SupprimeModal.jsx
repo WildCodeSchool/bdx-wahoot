@@ -8,8 +8,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ListWahoot from '../ListWahoot';
 
-
-
 function SupprimeModal() {
 
   const [open, setOpen] = React.useState(false);

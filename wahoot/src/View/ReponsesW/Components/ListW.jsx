@@ -41,23 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const answers = [
-//   {
-//     number: "Q1",
-//     question: "Comment déclare-t-on une variable?",
-//     rep: "let",
-//   },
-//   {
-//     number: "Q2",
-//     question: "Quel est le langage back-end?",
-//     rep: "java",
-//   },
-//   {
-//     number: "Q3",
-//     question: "Quel est le langage front-end?",
-//     rep: "javascript",
-//   },
-// ];
+
 
 const ListW = ({ wahootId }) => {
   const classes = useStyles();
