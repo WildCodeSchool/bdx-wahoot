@@ -58,16 +58,6 @@ const ListW = ({ wahootId }) => {
       });
   }, []);
 
-  // axios
-  //   .get(
-  //     `https://wahoot-api.herokuapp.com/questions/60881f8e681398caa0dc72c7`
-  //   )
-  //   .then((response) => response.data)
-  //   .then((data) => {
-  //     console.log(data);
-  //     setQuestions(data);
-  //   });
-
   return (
     <List className={classes.root}>
       {questions.map((question, index) => (
