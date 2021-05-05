@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   inline: {
     display: "inline",
-    color: "grey",
+    color: "green",
   },
 }));
 
@@ -86,7 +86,7 @@ const ListW = ({ wahootId }) => {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    Bonne réponse :
+                    Bonne réponse :{" "}
                     {
                       question.answerList.find(
                         (answer) => answer.isGoodAnswer === true

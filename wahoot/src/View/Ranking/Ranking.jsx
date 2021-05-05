@@ -6,9 +6,9 @@ import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   block: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    width: "100%",
+    maxWidth: "36ch",
+    margin: "10px auto",
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     backdropFilter: "blur(30px)",
     border: "1px solid rgba(255, 255, 255, 0.18)",
@@ -19,10 +19,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    margin: "30px",
+    textAlign: "center",
   },
 }));
 
@@ -41,31 +38,26 @@ const Ranking = (props) => {
   }, []);
 
   return (
-    <div>
-      <h2 className={classes.root}>CLASSEMENT</h2>
+    <div className={classes.root}>
       <div className={classes.block}>
+        <h2>CLASSEMENT</h2>
         <List>
           {ranking.map((player) => {
             return (
               <>
                 <ListItem alignItems="flex-start" key={player._id}>
-                  {/* <ListItemAvatar>
-                  <Avatar>{player.position}</Avatar>
-                </ListItemAvatar> */}
                   <ListItemText
-                    primary={player?.player?.name}
-                    secondary={player.points}
+                    primary={`${player?.player?.name} : `}
+                    secondary={`${player.points} points`}
                   />
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="outset" component="li" />
               </>
             );
           })}
         </List>
       </div>
-      <div className={classes.root}>
-        <WatchRightResButton wahootId={wahootId} />
-      </div>
+      <WatchRightResButton wahootId={wahootId} />
     </div>
   );
 };
