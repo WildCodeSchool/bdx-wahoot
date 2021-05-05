@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ReponsesW = (props) => {
   const classes = useStyles();
-  console.log(props.match.params.wahootId);
+  //console.log(props.match.params.wahootId);
 
   return (
     <div className={classes.block}>

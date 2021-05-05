@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 const ListW = ({ wahootId }) => {
   const classes = useStyles();
 
-  const { user } = UserContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const [questions, setQuestions] = useState([]);
 
@@ -90,7 +90,7 @@ const ListW = ({ wahootId }) => {
                     {
                       question.answerList.find(
                         (answer) => answer.isGoodAnswer === true
-                      ).text
+                      )?.text
                     }
                   </Typography>
                 </React.Fragment>
