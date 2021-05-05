@@ -1,3 +1,4 @@
+import React from "react";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -6,6 +7,19 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ListWahoot from "../ListWahoot";
+
+function SupprimeModal({ onDelete, wahootId }) {
+  const [open, setOpen] = React.useState(false);
+  const [scroll, setScroll] = React.useState("paper");
+
+  const handleClickOpen = (scrollType) => () => {
+    setOpen(true);
+    setScroll(scrollType);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleDelete = () => {
     setOpen(false);
@@ -54,6 +68,6 @@ import ListWahoot from "../ListWahoot";
       </Dialog>
     </div>
   );
-};
+}
 
 export default SupprimeModal;
