@@ -52,16 +52,13 @@ const StartGame = (props) => {
           setPositionQuestion(positionQuestion + 1);
         } else {
           axios
-            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`,
-              {
-                player: {
-                  name: "toto",
-                  _id: "123456789",
-                }
-              })
-            .then(() =>
-              history.push("/end-game-player/"+ wahootId)
-            );
+            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`, {
+              player: {
+                name: "toto",
+                _id: "123456789",
+              },
+            })
+            .then(() => history.push("/end-game-player/" + wahootId));
         }
       });
   };
@@ -73,9 +70,7 @@ const StartGame = (props) => {
         <QuestionsPlayer
           questionText={question[positionQuestion]?.questionText}
         />
-        <p>
-          <Timer />
-        </p>
+        <Timer />
         <ColorButtonIndigo
           onClick={() =>
             handleClick(question[positionQuestion]?.answerList[0]._id)
