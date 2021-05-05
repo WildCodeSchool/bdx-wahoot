@@ -8,7 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ListWahoot from "../ListWahoot";
 
-function SupprimeModal() {
+function SupprimeModal({ onDelete, wahootId }) {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
 
@@ -19,6 +19,11 @@ function SupprimeModal() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleDelete = () => {
+    setOpen(false);
+    onDelete(wahootId);
   };
 
   const descriptionElementRef = React.useRef(null);
@@ -53,7 +58,7 @@ function SupprimeModal() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={<ListWahoot />} color="primary">
+          <Button onClick={handleDelete} color="primary">
             Oui
           </Button>
           <Button onClick={handleClose} color="secondary">

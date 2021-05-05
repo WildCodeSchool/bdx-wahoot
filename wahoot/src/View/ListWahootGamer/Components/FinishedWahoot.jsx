@@ -39,7 +39,7 @@ const FinishedWahoot = ({ wahoots }) => {
     <div className={classes.container}>
       <h2>Wahoots terminés</h2>
       {wahootFinished.map((wahoot) => (
-        <Link to="/ranking">
+        <Link to={`/ranking/${wahoot._id}`}>
           <Button
             variant="contained"
             color="primary"

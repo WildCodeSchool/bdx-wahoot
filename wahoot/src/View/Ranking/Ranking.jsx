@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import WatchRightResButton from "./Components/WatchRightResButton";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
-
 import {
-  Avatar,
   Divider,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemText,
 } from "@material-ui/core";
 
@@ -34,45 +31,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const topRank = [
-//   {
-//     id: "123",
-//     position: "1",
-//     pseudo: "Jennifer",
-//     points: "10000 points",
-//   },
-//   {
-//     id: "124",
-//     position: "2",
-//     pseudo: "Poulidor",
-//     points: "1000 points",
-//   },
-//   {
-//     id: "125",
-//     position: "3",
-//     pseudo: "Toto",
-//     points: "100 points",
-//   },
-// ];
 
-// const [wahootDispo, setWahootDispo] = useState([]);
-// useEffect(() => {
-//   axios
-//     .get(`https://wahoot-api.herokuapp.com/wahoot/active`)
-//     .then((response) => response.data)
-//     .then((data) => {
-//       console.log(data);
-//       setWahootDispo(data[0].data);
-//     });
-// }, []);
 
-const Ranking = () => {
+const Ranking = (props) => {
   const classes = useStyles();
-
+  const { wahootId } = props.match.params;
   const [ranking, setRanking] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://wahoot-api.herokuapp.com/ranking/60881f8e681398caa0dc72c7`)
+      .get(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`)
       .then((response) => response.data)
       .then((data) => {
         console.log(data);
@@ -104,7 +71,7 @@ const Ranking = () => {
         </List>
       </div>
       <div className={classes.root}>
-        <WatchRightResButton />
+        <WatchRightResButton wahootId={wahootId} />
       </div>
     </div>
   );
