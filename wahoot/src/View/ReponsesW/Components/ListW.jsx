@@ -41,43 +41,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const answers = [
-//   {
-//     number: "Q1",
-//     question: "Comment déclare-t-on une variable?",
-//     rep: "let",
-//   },
-//   {
-//     number: "Q2",
-//     question: "Quel est le langage back-end?",
-//     rep: "java",
-//   },
-//   {
-//     number: "Q3",
-//     question: "Quel est le langage front-end?",
-//     rep: "javascript",
-//   },
-// ];
 
-const ListW = () => {
+
+const ListW = ({ wahootId }) => {
   const classes = useStyles();
 
   const [questions, setQuestions] = useState([]);
+
   useEffect(() => {
     axios
-      .get(
-        `https://wahoot-api.herokuapp.com/questions/60881f8e681398caa0dc72c7`
-      )
-      .then((response) => response.data)
-      .then((data) => {
-        console.log(data);
-        setQuestions(data);
+      .get(`https://wahoot-api.herokuapp.com/questions/${wahootId}`)
+      .then((response) => {
+        console.log(response.data);
+        setQuestions(response.data);
       });
   }, []);
 
-  // const goodAnswer = questions.filter(
-  //   (question) => question.answerList.isGoodAnswer == "true"
-  //
+  // axios
+  //   .get(
+  //     `https://wahoot-api.herokuapp.com/questions/60881f8e681398caa0dc72c7`
+  //   )
+  //   .then((response) => response.data)
+  //   .then((data) => {
+  //     console.log(data);
+  //     setQuestions(data);
+  //   });
 
   return (
     <List className={classes.root}>

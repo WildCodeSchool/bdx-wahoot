@@ -1,19 +1,16 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DeleteIcon from '@material-ui/icons/Delete';
-import ListWahoot from '../ListWahoot';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DeleteIcon from "@material-ui/icons/Delete";
+import ListWahoot from "../ListWahoot";
 
-
-
-function SupprimeModal() {
-
+function SupprimeModal({ onDelete, wahootId }) {
   const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState('paper');
+  const [scroll, setScroll] = React.useState("paper");
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
@@ -22,6 +19,11 @@ function SupprimeModal() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleDelete = () => {
+    setOpen(false);
+    onDelete(wahootId);
   };
 
   const descriptionElementRef = React.useRef(null);
@@ -35,7 +37,9 @@ function SupprimeModal() {
   }, [open]);
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')} ><DeleteIcon /></Button>
+      <Button onClick={handleClickOpen("paper")}>
+        <DeleteIcon />
+      </Button>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -44,16 +48,17 @@ function SupprimeModal() {
         aria-describedby="scroll-dialog-description"
       >
         <DialogTitle id="scroll-dialog-title"></DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogContent dividers={scroll === "paper"}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
-          ><p>Voulez-vous vraiment supprimer ce questionnaire ?</p>
+          >
+            <p>Voulez-vous vraiment supprimer ce questionnaire ?</p>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={<ListWahoot />} color="primary">
+          <Button onClick={handleDelete} color="primary">
             Oui
           </Button>
           <Button onClick={handleClose} color="secondary">
@@ -64,6 +69,5 @@ function SupprimeModal() {
     </div>
   );
 }
-
 
 export default SupprimeModal;
