@@ -7,6 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
+import UserContext from "../../../context/user";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,26 +42,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const answers = [
-//   {
-//     number: "Q1",
-//     question: "Comment déclare-t-on une variable?",
-//     rep: "let",
-//   },
-//   {
-//     number: "Q2",
-//     question: "Quel est le langage back-end?",
-//     rep: "java",
-//   },
-//   {
-//     number: "Q3",
-//     question: "Quel est le langage front-end?",
-//     rep: "javascript",
-//   },
-// ];
-
 const ListW = () => {
   const classes = useStyles();
+
+  const { user } = UserContext(UserContext);
 
   const [questions, setQuestions] = useState([]);
   useEffect(() => {

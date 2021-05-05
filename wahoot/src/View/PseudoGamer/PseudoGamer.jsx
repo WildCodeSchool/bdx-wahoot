@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputPseudoGamer from "./Components/InputPseudoGamer";
 import OkGamer from "./Components/OkGamer";
+import UserContext from "../../context/user";
 
 const useStyles = makeStyles((theme) => ({
   block: {
@@ -14,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
 
 const PseudoGamer = () => {
   const [pseudo, setPseudo] = useState("");
+  const { user } = UserContext(UserContext);
+
   const handleChange = (event) => {
     setPseudo(event.target.value);
   };
@@ -22,13 +25,11 @@ const PseudoGamer = () => {
   return (
     <div>
       <div className={classes.block}>
-        <InputPseudoGamer pseudo={pseudo} handleChange={handleChange} />
+        <InputPseudoGamer user={pseudo} handleChange={handleChange} />
       </div>
       <div className={classes.block}>
-        <OkGamer pseudo={pseudo} />
+        <OkGamer user={pseudo} />
       </div>
-
-      {/*<div className={classes.block}><WahootRules /></div>*/}
     </div>
   );
 };

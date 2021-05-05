@@ -86,35 +86,6 @@ const CreationWahoot = ({ match }) => {
 
   const classes = useStyles();
 
-  const history = useHistory();
-
-  useEffect(() => {
-    if (match?.params?.id) {
-      axios
-        .get(`https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`)
-        .then((response) => setWahoots(response.data));
-    }
-  }, []);
-
-  const handleSubmit = () => {
-    if (match?.params?.id) {
-      axios
-        .patch(
-          `https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`,
-          form
-        )
-        .then(() => {
-          history.push("/");
-        });
-    } else {
-      axios
-        .post("https://wahoot-api.herokuapp.com/wahoot", wahoots)
-        .then(() => {
-          history.push("/");
-        });
-    }
-  };
-
   return (
     <div>
       <div className={classes.block}>
@@ -139,7 +110,7 @@ const CreationWahoot = ({ match }) => {
       </div>
       <div className={classes.container}>
         <ButtonCancel />
-        <ButtonSave onClick={handleSubmit} />
+        <ButtonSave />
       </div>
       <ButtonQuestionCreation
         open={open}
