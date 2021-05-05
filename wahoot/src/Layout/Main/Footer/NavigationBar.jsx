@@ -20,7 +20,7 @@ const NavigationBar = () => {
   const [value, setValue] = React.useState(0);
 
   return (
-    <BottomNavigation button
+    <BottomNavigation
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);
@@ -28,9 +28,24 @@ const NavigationBar = () => {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction component={Link} to="/admin" label="Admin" icon={<PersonIcon />} /> 
-      <BottomNavigationAction component={Link} to="/" label="Accueil" icon={<HomeIcon />} />
-      <BottomNavigationAction component={Link} to="/player" label="Joueur" icon={<VideogameAssetIcon />} />
+      <BottomNavigationAction
+        component={Link}
+        to="/admin"
+        label="Admin"
+        icon={<PersonIcon />}
+      />
+      <BottomNavigationAction
+        component={Link}
+        to="/"
+        label="Accueil"
+        icon={<HomeIcon />}
+      />
+      <BottomNavigationAction
+        component={Link}
+        to="/player"
+        label="Joueur"
+        icon={<VideogameAssetIcon />}
+      />
     </BottomNavigation>
   );
 };

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
     const displayElement = !true;
 
-    function QuestionsW ({wahootId}) {
+    function QuestionsW ({wahootId, open}) {
 
         const classes = useStyles();
 
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
                 </div>
                 <div className={classes.question}>
                     {displayElement && (<p className={classes.p}>Pas de question pour le moment.</p>)}
-                    {!displayElement && (<ButtonQuestion wahootId={wahootId}/>)}
+                    {!displayElement && (<ButtonQuestion open={open} wahootId={wahootId}/>)}
                 </div>
             </div>
         );

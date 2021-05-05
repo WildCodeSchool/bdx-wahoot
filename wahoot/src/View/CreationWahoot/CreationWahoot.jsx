@@ -25,15 +25,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const CreationWahoot = ({ match }) => {
-
   const [wahootId, setWahootId] = useState("");
   const [form, setForm] = React.useState({
     title: "",
     endDate: "",
   });
-
 
   const [open, setOpen] = React.useState(false);
 
@@ -62,32 +59,31 @@ const CreationWahoot = ({ match }) => {
         .get(`https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`)
         .then((response) => {
           console.log(response.data);
-          setForm(response.data)});
+          setForm(response.data);
+        });
     }
-  }, []);
+  }, [match?.params?.id]);
 
   const handleSaveWahoot = () => {
     if (match?.params?.id) {
-    axios
-    .patch(
+      axios
+        .patch(
           `https://wahoot-api.herokuapp.com/wahoot/${match.params.id}`,
           form
         )
-        .then(() => { 
+        .then(() => {
           setOpen(true);
-  
         });
     } else {
       axios
-    .post("https://wahoot-api.herokuapp.com/wahoot", form)
-    .then((response) => {
-        setOpen(history.push(`/wahoot-edition/${response.data._id}`));
-      });
+        .post("https://wahoot-api.herokuapp.com/wahoot", form)
+        .then((response) => {
+          setOpen(history.push(`/wahoot-edition/${response.data._id}`));
+        });
     }
   };
 
   const classes = useStyles();
-
 
   return (
     <div>
@@ -105,11 +101,11 @@ const CreationWahoot = ({ match }) => {
       </div>
       <div className={classes.block}>
         <Button variant="contained" color="primary" onClick={handleSaveWahoot}>
-          {match?.params?.id ? "Créer une question" : "Sauvegarder le Wahoot"} 
+          {match?.params?.id ? "Créer une question" : "Sauvegarder le Wahoot"}
         </Button>
       </div>
       <div className={classes.block}>
-        <QuestionsW wahootId={match?.params?.id}/>
+        <QuestionsW open={open} wahootId={match?.params?.id} />
       </div>
       <div className={classes.container}>
         <ButtonCancel />

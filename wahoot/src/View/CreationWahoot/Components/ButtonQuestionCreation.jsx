@@ -17,13 +17,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahootId }) => {
-  console.log(wahootId);
-  
-  useEffect(() => {
-    let initialQuestion = {
+const ButtonQuestionCreation = ({
+  open,
+  onClose,
+  question,
+  titleQuestion,
+  wahootId,
+}) => {
+  let initialQuestion = {
     questionText: "",
-    wahootId: wahootId,
+    wahootId: "",
     answerList: [
       {
         text: "",
@@ -43,18 +46,19 @@ const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahoot
       },
     ],
   };
-  if (question) {
-    initialQuestion = question;
-  }
-  setForm(initialQuestion);
-  }, []);
-const [form, setForm] = React.useState({});
+
+  useEffect(() => {
+    if (question) {
+      initialQuestion = question;
+    }
+    setForm({ ...initialQuestion, wahootId: wahootId });
+  }, [wahootId]);
+  const [form, setForm] = React.useState({});
 
   const classes = useStyles();
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  
 
   const handleQuestionTextChange = (e) => {
     setForm({ ...form, questionText: e.target.value });
@@ -63,25 +67,29 @@ const [form, setForm] = React.useState({});
     setForm({ ...form, answerList: newAnswers });
   };
 
-const handleOnSave = () => {
-  if (question) {
-  axios
-  .patch(`https://wahoot-api.herokuapp.com/questions/${question._id}`, form)
-  .then(() => onClose())
-    
-  } else {
-    axios
-.post("https://wahoot-api.herokuapp.com/questions", form)
-.then(() => onClose())
-  }
-
-};
+  const handleOnSave = () => {
+    if (question) {
+      axios
+        .patch(
+          `https://wahoot-api.herokuapp.com/questions/${question._id}`,
+          form
+        )
+        .then(() => onClose());
+    } else {
+      axios
+        .post("https://wahoot-api.herokuapp.com/questions", form)
+        .then(() => {
+          setForm({ ...initialQuestion, wahootId: wahootId });
+          onClose();
+        });
+    }
+  };
 
   return (
     <div>
       <Dialog
         fullScreen={fullScreen}
-        open={open}
+        open={open || false}
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >

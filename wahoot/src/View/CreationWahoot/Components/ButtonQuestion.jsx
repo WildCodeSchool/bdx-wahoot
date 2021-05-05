@@ -11,46 +11,39 @@ const useStyles = makeStyles((theme) => ({
   test: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
 }));
 
-const ButtonQuestion = ({ wahootId }) => {
+const ButtonQuestion = ({ wahootId, open }) => {
   const classes = useStyles();
 
-const [questions, setQuestions] = useState([]);
-
+  const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    if (wahootId) {
+    if (wahootId && !open) {
       axios
         .get(`https://wahoot-api.herokuapp.com/questions/${wahootId}`)
         .then((response) => {
-          setQuestions(response.data)});
+          setQuestions(response.data);
+        });
     }
-  }, []);
+  }, [open]);
 
-
-  const handleEditQuestion = () => {
-
-
-  };
-
-
+  const handleEditQuestion = () => {};
 
   return (
     <div className={classes.test}>
       {questions.map((question) => (
-        <div>
-          <Button
-            variant="contained"
-            color="secondary"
-            className={classes.button}
-            endIcon={<BorderColorIcon />}
-          >
-            {question.questionText}
-          </Button>
-        </div>
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.button}
+          key={question._id}
+          endIcon={<BorderColorIcon />}
+        >
+          {question.questionText}
+        </Button>
       ))}
     </div>
   );
