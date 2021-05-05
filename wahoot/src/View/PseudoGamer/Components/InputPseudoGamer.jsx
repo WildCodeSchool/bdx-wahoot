@@ -1,17 +1,17 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
+    "& .MuiTextField-root": {
       margin: theme.spacing(1),
       width: 200,
     },
   },
 }));
 
-const InputPseudoGamer= ({pseudo, handleChange}) => {
+const InputPseudoGamer = ({ pseudo, handleChange }) => {
   const classes = useStyles();
 
   return (
@@ -20,17 +20,14 @@ const InputPseudoGamer= ({pseudo, handleChange}) => {
         <TextField
           label="Entrez votre pseudo"
           id="outlined-size-small"
-          defaultValue=""
           variant="outlined"
-          size="small" 
-          value={pseudo} 
+          size="small"
+          value={pseudo}
           onChange={handleChange}
         />
       </div>
     </form>
   );
-}
-
-
+};
 
 export default InputPseudoGamer;

@@ -1,14 +1,14 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 function WahootRules() {
   const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState('paper');
+  const [scroll, setScroll] = React.useState("paper");
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
@@ -31,7 +31,13 @@ function WahootRules() {
 
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')} variant="contained" color="secondary">Règles du Wahoot</Button>
+      <Button
+        onClick={handleClickOpen("paper")}
+        variant="contained"
+        color="secondary"
+      >
+        Règles du Wahoot
+      </Button>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -40,20 +46,21 @@ function WahootRules() {
         aria-describedby="scroll-dialog-description"
       >
         <DialogTitle id="scroll-dialog-title">REGLES DU WAHOOT</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogContent dividers={scroll === "paper"}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
-          ><h2>Tout ce que vous avez toujours voulu savoir sur le Wahoot!</h2>
+          >
+            <h2>Tout ce que vous avez toujours voulu savoir sur le Wahoot!</h2>
             {[...new Array(10)]
               .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
+                () => `Le but du jeu est de choisir la bonne réponse dans un lapse de temps de 20secondes.
+                Chaque bonne réponse vous donne 5points. Vous pourrez voir votre position dans le classement à la fin du jeu et consulter les bonnes réponses.
+                Pour jouer à un Wahoot, choisissez le dans la rubrique Wahoot disponibles!
+                .`
               )
-              .join('\n')}
+              .join("\n")}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -66,5 +73,4 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
   );
 }
 
-  
 export default WahootRules;

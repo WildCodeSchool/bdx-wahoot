@@ -21,7 +21,6 @@ const TitleCreationWahoot= ({value, handleChange}) => {
         <TextField
           label="Titre du Wahoot"
           id="outlined-size-small"
-          defaultValue=""
           variant="outlined"
           size="small"
           value={value}

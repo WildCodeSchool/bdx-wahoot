@@ -23,7 +23,6 @@ const Calendar = ({ value, handleChange }) => {
         id="datetime-local"
         label="Date/heure fin Wahoot"
         type="datetime-local"
-        defaultValue=""
         value={value}
         onChange={handleChange}
         className={classes.textField}
