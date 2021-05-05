@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Ranking = (props) => {
   const classes = useStyles();
-  const { wahootId } = props.match.params;
+  const wahootId = props.match.params.wahootId;
   const [ranking, setRanking] = useState([]);
   useEffect(() => {
     axios

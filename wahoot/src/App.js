@@ -70,12 +70,9 @@ function App() {
                 component={PopupEndGame}
               />
 
-              <Route path="/ranking">
-                <Ranking />
-              </Route>
-              <Route path="/answers">
-                <ReponsesW />
-              </Route>
+              <Route path="/ranking/:wahootId" component={Ranking} />
+
+              <Route path="/answers/:wahootId" component={ReponsesW} />
             </Switch>
           </div>
         </Main>

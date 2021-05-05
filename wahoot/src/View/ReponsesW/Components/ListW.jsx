@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 const ListW = ({ wahootId }) => {
   const classes = useStyles();
 
-  const { user } = UserContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const [questions, setQuestions] = useState([]);
 
@@ -57,16 +57,6 @@ const ListW = ({ wahootId }) => {
         setQuestions(response.data);
       });
   }, []);
-
-  // axios
-  //   .get(
-  //     `https://wahoot-api.herokuapp.com/questions/60881f8e681398caa0dc72c7`
-  //   )
-  //   .then((response) => response.data)
-  //   .then((data) => {
-  //     console.log(data);
-  //     setQuestions(data);
-  //   });
 
   return (
     <List className={classes.root}>
