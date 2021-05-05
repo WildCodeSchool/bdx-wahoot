@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import WatchRightResButton from "./Components/WatchRightResButton";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core";
+import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   block: {
@@ -31,11 +26,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 const Ranking = (props) => {
   const classes = useStyles();
-  const { wahootId } = props.match.params;
+  const wahootId = props.match.params.wahootId;
   const [ranking, setRanking] = useState([]);
   useEffect(() => {
     axios
