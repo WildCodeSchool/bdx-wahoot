@@ -34,7 +34,6 @@ const QuestionInput = ({ questionText, onChange }) => {
           <TextField
             label="Question"
             id="outlined-size-small"
-            defaultValue=""
             variant="outlined"
             size="small"
             onChange={onChange}

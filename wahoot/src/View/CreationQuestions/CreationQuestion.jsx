@@ -34,21 +34,10 @@ const CreationQuestion = ({ question, onChange, onAnswerChange }) => {
           questionText={question.questionText}
           onChange={onChange}
         />
-        {/* <Answers answers={question.answersList} onChange={onAnswerChange} /> */}
-        <AnswerTest answers={question.answersList} onChange={onAnswerChange} />
-        {/* {question.answersList.map((answer, index) => (
-          <Answers
-            answerBis={answer}
-            onTextChange={() => {}}
-            onStatusChange={() => {}}
-          />
-        ))} */}
-        {/* <AddQuestionButton /> */}
+        
+        <AnswerTest answers={question.answerList} onChange={onAnswerChange} />
+        
       </div>
-      {/* <div className={classes.buttons}>     
-                <ButtonCancel/> 
-                <ButtonSave/>
-            </div>  */}
     </div>
   );
 };
