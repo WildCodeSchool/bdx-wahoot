@@ -7,6 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
+import UserContext from "../../../context/user";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,10 +42,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 const ListW = ({ wahootId }) => {
   const classes = useStyles();
+
+  const { user } = UserContext(UserContext);
 
   const [questions, setQuestions] = useState([]);
 

@@ -5,9 +5,10 @@ import ColorButtonTeal from "./Components/ColorButtonTeal";
 import QuestionsPlayer from "./Components/QuestionsPlayer";
 import Timer from "./Components/Timer";
 import { makeStyles } from "@material-ui/core/styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
+import UserContext from "../../context/user";
 
 const useStyles = makeStyles((theme) => ({
   block: {
@@ -24,6 +25,7 @@ const StartGame = (props) => {
   const [question, setQuestion] = useState([]);
   const [positionQuestion, setPositionQuestion] = useState(0);
   const history = useHistory();
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -42,22 +44,14 @@ const StartGame = (props) => {
         questionId: question[positionQuestion]?._id,
         answerId: answerId,
         wahootId: wahootId,
-        player: {
-          name: "toto",
-          _id: "123456789",
-        },
+        player: user,
       })
       .then(() => {
         if (positionQuestion < question.length - 1) {
           setPositionQuestion(positionQuestion + 1);
         } else {
           axios
-            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`, {
-              player: {
-                name: "toto",
-                _id: "123456789",
-              },
-            })
+            .post(`https://wahoot-api.herokuapp.com/ranking/${wahootId}`, user)
             .then(() => history.push("/end-game-player/" + wahootId));
         }
       });
