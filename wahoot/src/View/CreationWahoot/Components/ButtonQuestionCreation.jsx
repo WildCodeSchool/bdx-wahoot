@@ -17,11 +17,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahootId }) => {
+const ButtonQuestionCreation = ({
+  open,
+  onClose,
+  question,
+  titleQuestion,
+  wahootId,
+}) => {
   let initialQuestion = {
     questionText: "",
-    wahootId: wahootId,
-    answersList: [
+    wahootId: "",
+    answerList: [
       {
         text: "",
         isGoodAnswer: false,
@@ -40,10 +46,15 @@ const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahoot
       },
     ],
   };
-  if (question) {
-    initialQuestion = question;
-  }
-  const [form, setForm] = React.useState(initialQuestion);
+
+  useEffect(() => {
+    if (question) {
+      initialQuestion = question;
+    }
+    setForm({ ...initialQuestion, wahootId: wahootId });
+  }, [wahootId]);
+  const [form, setForm] = React.useState({});
+
   const classes = useStyles();
 
   const theme = useTheme();
@@ -53,28 +64,32 @@ const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahoot
     setForm({ ...form, questionText: e.target.value });
   };
   const handleAnswerChange = (newAnswers) => {
-    setForm({ ...form, answersList: newAnswers });
+    setForm({ ...form, answerList: newAnswers });
   };
 
-const handleOnSave = () => {
-  if (question) {
-  axios
-  .patch(`https://wahoot-api.herokuapp.com/questions/${question._id}`, form)
-  .then(() => onClose())
-    
-  } else {
-    axios
-.post("https://wahoot-api.herokuapp.com/questions", form)
-.then(() => onClose())
-  }
-
-};
+  const handleOnSave = () => {
+    if (question) {
+      axios
+        .patch(
+          `https://wahoot-api.herokuapp.com/questions/${question._id}`,
+          form
+        )
+        .then(() => onClose());
+    } else {
+      axios
+        .post("https://wahoot-api.herokuapp.com/questions", form)
+        .then(() => {
+          setForm({ ...initialQuestion, wahootId: wahootId });
+          onClose();
+        });
+    }
+  };
 
   return (
     <div>
       <Dialog
         fullScreen={fullScreen}
-        open={open}
+        open={open || false}
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
@@ -92,7 +107,7 @@ const handleOnSave = () => {
           <Button autoFocus onClick={onClose} color="primary">
             Annuler
           </Button>
-          <Button onClick={onClose} color="primary" autoFocus>
+          <Button onClick={handleOnSave} color="primary" autoFocus>
             Enregistrer
           </Button>
         </DialogActions>
