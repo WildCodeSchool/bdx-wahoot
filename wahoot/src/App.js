@@ -14,7 +14,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserContext from "./context/user";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    _id: Math.random()
+      .toString(36)
+      .replace(/[^a-z]+/g, "")
+      .substr(0, 9),
+  });
 
   return (
     <UserContext.Provider
@@ -23,9 +29,6 @@ function App() {
         setUser,
       }}
     >
-      <div className="App">
-        <PseudoGamer />
-      </div>
       <Router>
         <Main>
           {/* <Switch> */}
