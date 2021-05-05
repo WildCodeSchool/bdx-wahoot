@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 export default function EditIconLink({ wahootId }) {
   return (
     <div>
-      <Button>
-        <Link to={`wahoot-edition/${wahootId}`}>
-          <EditIcon />
-        </Link>
+      <Button component={Link} to={`wahoot-edition/${wahootId}`}>
+        <EditIcon />
       </Button>
     </div>
   );

@@ -62,7 +62,7 @@ const CreationWahoot = ({ match }) => {
           setForm(response.data);
         });
     }
-  }, []);
+  }, [match?.params?.id]);
 
   const handleSaveWahoot = () => {
     if (match?.params?.id) {
@@ -78,8 +78,7 @@ const CreationWahoot = ({ match }) => {
       axios
         .post("https://wahoot-api.herokuapp.com/wahoot", form)
         .then((response) => {
-          setWahootId(response.data._id);
-          setOpen(true);
+          setOpen(history.push(`/wahoot-edition/${response.data._id}`));
         });
     }
   };
@@ -102,11 +101,11 @@ const CreationWahoot = ({ match }) => {
       </div>
       <div className={classes.block}>
         <Button variant="contained" color="primary" onClick={handleSaveWahoot}>
-          Créer une question
+          {match?.params?.id ? "Créer une question" : "Sauvegarder le Wahoot"}
         </Button>
       </div>
       <div className={classes.block}>
-        <QuestionsW />
+        <QuestionsW open={open} wahootId={match?.params?.id} />
       </div>
       <div className={classes.container}>
         <ButtonCancel />
