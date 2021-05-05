@@ -18,10 +18,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahootId }) => {
-  let initialQuestion = {
+  console.log(wahootId);
+  
+  useEffect(() => {
+    let initialQuestion = {
     questionText: "",
     wahootId: wahootId,
-    answersList: [
+    answerList: [
       {
         text: "",
         isGoodAnswer: false,
@@ -43,17 +46,21 @@ const ButtonQuestionCreation = ({ open, onClose, question, titleQuestion, wahoot
   if (question) {
     initialQuestion = question;
   }
-  const [form, setForm] = React.useState(initialQuestion);
+  setForm(initialQuestion);
+  }, []);
+const [form, setForm] = React.useState({});
+
   const classes = useStyles();
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  
 
   const handleQuestionTextChange = (e) => {
     setForm({ ...form, questionText: e.target.value });
   };
   const handleAnswerChange = (newAnswers) => {
-    setForm({ ...form, answersList: newAnswers });
+    setForm({ ...form, answerList: newAnswers });
   };
 
 const handleOnSave = () => {
@@ -92,7 +99,7 @@ const handleOnSave = () => {
           <Button autoFocus onClick={onClose} color="primary">
             Annuler
           </Button>
-          <Button onClick={onClose} color="primary" autoFocus>
+          <Button onClick={handleOnSave} color="primary" autoFocus>
             Enregistrer
           </Button>
         </DialogActions>

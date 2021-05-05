@@ -45,6 +45,28 @@ const AnswerTest = ({ answers, onChange }) => {
         onChange(newAnswers);
     };
 
+    const handleChangeCheck = (event) => {
+            const newAnswers = [...answers];
+            newAnswers[0] = { ...answers[0], isGoodAnswer: event };
+            onChange(newAnswers);
+        };
+    const handleChangeCheckOne = (event) => {
+        const newAnswers = [...answers];
+        newAnswers[1] = { ...answers[1], isGoodAnswer: event };
+        onChange(newAnswers);
+    };
+
+    const handleChangeCheckTwo = (event) => {
+        const newAnswers = [...answers];
+        newAnswers[2] = { ...answers[2], isGoodAnswer: event };
+        onChange(newAnswers);
+    };
+
+    const handleChangeCheckThree = (event) => {
+        const newAnswers = [...answers];
+        newAnswers[3] = { ...answers[3], isGoodAnswer: event };
+        onChange(newAnswers);
+    };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -78,15 +100,6 @@ const AnswerTest = ({ answers, onChange }) => {
         setOpenthree(false);
     };
 
-    //4 CHECKERS
-
-
-    let [checked, setChecked] = React.useState(false);
-    let [checked1, setChecked1] = React.useState(false);
-    let [checked2, setChecked2] = React.useState(false);
-    let [checked3, setChecked3] = React.useState(false);
-
-
 
     return (
         <div>
@@ -110,7 +123,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[0]?.text}
                         onChange={handleChangeAnswer}
                     />
-                    <Checker checked={checked} onChange={setChecked}>{answers.isGoodAnswer ? true : false}</Checker>
+                    <Checker checked={answers[0]?.isGoodAnswer} onChange={handleChangeCheck}>{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
@@ -142,7 +155,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[1]?.text}
                         onChange={handleChangeAnswerOne}
                     />
-                    <Checker checked={checked1} onChange={setChecked1} >{answers.isGoodAnswer ? true : false}</Checker>
+                    <Checker checked={answers[1]?.isGoodAnswer} onChange={handleChangeCheckOne}>{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseOne} color="primary">
@@ -173,7 +186,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[2]?.text}
                         onChange={handleChangeAnswerTwo}
                     />
-                    <Checker checked={checked2} onChange={setChecked2} >{answers.isGoodAnswer ? true : false}</Checker>
+                    <Checker checked={answers[2]?.isGoodAnswer} onChange={handleChangeCheckTwo}>{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseTwo} color="primary">
@@ -204,7 +217,7 @@ const AnswerTest = ({ answers, onChange }) => {
                         value={answers[3]?.text}
                         onChange={handleChangeAnswerThree}
                     />
-                    <Checker checked={checked3} onChange={setChecked3} >{answers.isGoodAnswer ? true : false}</Checker>
+                    <Checker checked={answers[3]?.isGoodAnswer} onChange={handleChangeCheckThree}>{answers.isGoodAnswer ? true : false}</Checker>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseThree} color="primary">

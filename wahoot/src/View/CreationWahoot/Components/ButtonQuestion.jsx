@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -14,35 +15,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const numbers = [
-  {
-    number: "Question 1",
-  },
-  {
-    number: "Question 2",
-  },
-  {
-    number: "Question 3",
-  },
-  {
-    number: "Question 4",
-  },
-];
-
-
-
-
-const ButtonQuestion = () => {
+const ButtonQuestion = ({ wahootId }) => {
   const classes = useStyles();
 
-const [questions, setQuestions] = useState(numbers);
+const [questions, setQuestions] = useState([]);
 
 
-  
+  useEffect(() => {
+    if (wahootId) {
+      axios
+        .get(`https://wahoot-api.herokuapp.com/questions/${wahootId}`)
+        .then((response) => {
+          setQuestions(response.data)});
+    }
+  }, []);
+
+
+  const handleEditQuestion = () => {
+
+
+  };
+
+
 
   return (
     <div className={classes.test}>
-      {numbers.map((numb) => (
+      {questions.map((question) => (
         <div>
           <Button
             variant="contained"
@@ -50,7 +48,7 @@ const [questions, setQuestions] = useState(numbers);
             className={classes.button}
             endIcon={<BorderColorIcon />}
           >
-            {numb.number}
+            {question.questionText}
           </Button>
         </div>
       ))}
