@@ -25,15 +25,16 @@ const useStyles = makeStyles((theme) => ({
 
     "& h2": {
       textAlign: "center",
+      color: "#423881"
     },
     "& h3": {
       width: "40px",
       height: "40px",
       textAlign: "center",
       lineHeight: "40px",
-      border: "solid 1px black",
       borderRadius: "50%",
-      backgroundColor: "#7fe8a4",
+      backgroundColor: "#F87070",
+      color: "white"
     },
   },
   inline: {
